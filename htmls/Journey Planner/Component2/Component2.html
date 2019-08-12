@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create your fleet route</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./font/Font-ITCFranklinGothicStd.css">
+</head>
+<body>
+
+	<div class="create-your-fleet-route-section">
+		<div class="page-center">
+			<div class="journeyPlanner-popup-container">
+				<span class="journeyPlanner-close-icon"><img src="./img/icons_close copy 2.svg" alt="Close"></span>
+				<div class="clearfix journeyPlanner-row">
+					<div class="journeyPlanner-col left-col">
+						<h3>Your Routes</h3>
+						<div class="giveItGo-group">
+							<h3>Give it a go.</h3>
+							<p>You don’t have any routes, begin by adding in your first fleet route.</p>
+							<img src="./img/route%20graphic@3x.png" width="365" height="285" alt="Give It Go | Route" style="width: 365px;" class="map-markers">
+						</div>
+					</div>
+					<div class="journeyPlanner-col right-col">
+						<form method="post" class="journeyPlanner-form">	
+							<fieldset class="create-route-fieldset">
+								<h3>Create your fleet route</h3>
+								<div class="journeyPlanner-form-field">
+									<label>Start Point <span class="field-strike-sign"></span></label>
+									<input class="jp-form-input" type="text" name="start_point" placeholder="Pathum Wan" required>
+								</div>
+								<div class="journeyPlanner-form-field">
+									<label>End Point <span class="field-strike-sign"></span></label>
+									<input class="jp-form-input" type="text" name="end_point" placeholder="Pattaya City" required>
+								</div>
+							</fieldset>
+							<fieldset class="route-details-fieldset">
+								<h3>Your fleet route details</h3>
+								<div class="journeyPlanner-form-field">
+									<p>
+										<strong>In an average </strong>
+										<select>
+											<option default>month</option>
+											<option>quarter</option>
+											<option>half year</option>
+											<option>year</option>
+										</select>
+										<strong>, </strong>
+										<input type="text" name="fleet_take_duration" class="fleet-take-duration" placeholder="24">
+										<strong>vehicles in my fleet take</strong>
+									</p>
+								</div>
+								<div class="journeyPlanner-form-field">
+									<p>
+										<strong>this route for</strong>
+										<input type="text" name="fleet_take_duration_repeat" class="fleet-take-duration" placeholder="30">
+										<strong>times.</strong>
+									</p>
+								</div>
+							</fieldset>
+							<input class="add-journeyRoute-btn" type="submit" name="add_route" value="Add Route">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.matchHeight.js"></script>
+	<script type="text/javascript">
+		$('.journeyPlanner-col').matchHeight({byRow: true});
+	</script>
+</body>
+</html>

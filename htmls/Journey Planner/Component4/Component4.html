@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Routes | Create another fleet route</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./css/app.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./font/Font-ITCFranklinGothicStd.css">
+</head>
+<body>
+
+	<div class="create-another-fleet-route-section">
+		<div class="page-center">
+			<div class="journeyPlanner-popup-container">
+				<span class="journeyPlanner-close-icon"><img src="./img/icons_close%20copy%202.svg" alt="Close"></span>
+				<div class="clearfix journeyPlanner-row">
+					<div class="journeyPlanner-col left-col">
+						<h3>Your Routes</h3>
+						<div class="journey-list">
+							<div class="journey-list-items-group">
+								<div class="clearfix journey-list-item">
+									<div class="journey-series">A</div>
+									<div class="journey-points">
+										<span class="journey-start-point">Pathum Wan</span>
+										<span class="journey-travel-icon"><img src="./img/icons_travel_arrow@1x.svg" alt="Travel"></span>
+										<span class="journey-end-point">Pattaya City</span>
+									</div>
+									<div class="journey-edit-remove">
+										<span class="journey-edit"><img src="./img/icons_red_edit@1x.svg" alt=""></span>
+										<span class="journey-remove"><img src="./img/icons_remove@1x.svg" alt=""></span>
+									</div>
+								</div>
+								<div class="clearfix journey-list-item">
+									<div class="journey-series">B</div>
+									<div class="journey-points">
+										<span class="journey-start-point">Pathum Wan</span>
+										<span class="journey-travel-icon"><img src="./img/icons_travel_arrow@1x.svg" alt="Travel"></span>
+										<span class="journey-end-point">Nong Khaem</span>
+									</div>
+									<div class="journey-edit-remove">
+										<span class="journey-edit"><img src="./img/icons_red_edit@1x.svg" alt=""></span>
+										<span class="journey-remove"><img src="./img/icons_remove@1x.svg" alt=""></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<input type="submit" name="journey_see_my_routes" value="See my routes" class="journey-see-routes-btn">
+					</div>
+					<div class="journeyPlanner-col right-col">
+						<form method="post" class="journeyPlanner-form">	
+							<fieldset class="create-route-fieldset">
+								<h3>Create another fleet route</h3>
+								<div class="journeyPlanner-form-field">
+									<label>Start Point <span class="field-strike-sign"></span></label>
+									<input class="jp-form-input" type="text" name="start_point" placeholder="Pathum Wan" required>
+								</div>
+								<div class="journeyPlanner-form-field">
+									<label>End Point <span class="field-strike-sign"></span></label>
+									<input class="jp-form-input" type="text" name="end_point" placeholder="Sai Mai" required>
+								</div>
+							</fieldset>
+							<fieldset class="route-details-fieldset">
+								<h3>Your fleet route details</h3>
+								<div class="journeyPlanner-form-field">
+									<p>
+										<strong>In an average </strong>
+										<select>
+											<option default>month</option>
+											<option>quarter</option>
+											<option>half year</option>
+											<option>year</option>
+										</select>
+										<strong>, </strong>
+										<input type="text" name="fleet_take_duration" class="fleet-take-duration" placeholder="24">
+										<strong>vehicles in my fleet take</strong>
+									</p>
+								</div>
+								<div class="journeyPlanner-form-field">
+									<p>
+										<strong>this route for</strong>
+										<input type="text" name="fleet_take_duration_repeat" class="fleet-take-duration" placeholder="30">
+										<strong>times.</strong>
+									</p>
+								</div>
+							</fieldset>
+							<input class="add-journeyRoute-btn" type="submit" name="add_route" value="Add Route">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.matchHeight.js"></script>
+	<script type="text/javascript">
+		$('.journeyPlanner-col').matchHeight({byRow: true});
+	</script>
+</body>
+</html>

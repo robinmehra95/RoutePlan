@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="16px" viewBox="0 0 12 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 55.2 (78181) - https://sketchapp.com -->
+    <title>7E4599A1-6147-47DD-BD9C-70A6ED731546@1.00x</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Journey-Planner" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.2.2---CaltexB2B---Journey-Planner---3-Routes" transform="translate(-279.000000, -765.000000)" fill="#19516C">
+            <g id="drawer" transform="translate(97.000000, 608.000000)">
+                <g id="JO" transform="translate(45.000000, 117.000000)">
+                    <g id="Route" transform="translate(106.000000, 0.000000)">
+                        <g id="icons/journey-planner/route" transform="translate(29.000000, 40.000000)">
+                            <path d="M8,7.6 C6.896,7.6 6,6.704 6,5.6 C6,4.496 6.896,3.6 8,3.6 C9.104,3.6 10,4.496 10,5.6 C10,6.704 9.104,7.6 8,7.6 M8,0 C4.904,0 2.4,2.504 2.4,5.6 C2.4,9.8 8,16 8,16 C8,16 13.6,9.8 13.6,5.6 C13.6,2.504 11.096,0 8,0" id="location"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

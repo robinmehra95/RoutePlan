@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'ITCFranklinGothicStd-BkCd';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCd.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCd.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCd.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCd.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-DemiIt';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DemiIt.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DemiIt.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DemiIt.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DemiIt.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DemiIt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-Book';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Book.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Book.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Book.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Book.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-BkCpIt';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCpIt.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCpIt.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCpIt.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCpIt.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCpIt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-DmCp';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCp.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCp.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCp.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCp.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCp.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-Med';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Med.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Med.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Med.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Med.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Med.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-MdCd';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MdCd.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MdCd.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MdCd.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MdCd.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MdCd.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-BookIt';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BookIt.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BookIt.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BookIt.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BookIt.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BookIt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-Hvy';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Hvy.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Hvy.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Hvy.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Hvy.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Hvy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-DmCpIt';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCpIt.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCpIt.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCpIt.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCpIt.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCpIt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-BkCdIt';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCdIt.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCdIt.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCdIt.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCdIt.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCdIt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-Demi';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Demi.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Demi.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Demi.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Demi.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-Demi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-MdCdIt';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MdCdIt.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MdCdIt.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MdCdIt.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MdCdIt.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MdCdIt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-DmXCp';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmXCp.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmXCp.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmXCp.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmXCp.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmXCp.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-BkCp';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCp.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCp.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCp.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCp.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkCp.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-DmCdIt';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCdIt.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCdIt.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCdIt.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCdIt.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCdIt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-MedIt';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MedIt.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MedIt.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MedIt.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MedIt.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-MedIt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-HvyIt';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-HvyIt.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-HvyIt.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-HvyIt.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-HvyIt.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-HvyIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-BkXCp';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkXCp.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkXCp.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkXCp.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkXCp.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-BkXCp.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITCFranklinGothicStd-DmCd';
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCd.eot');
+    src: url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCd.eot?#iefix') format('embedded-opentype'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCd.woff2') format('woff2'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCd.woff') format('woff'),
+        url('./ITCFranklinGothicStd/ITCFranklinGothicStd-DmCd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
