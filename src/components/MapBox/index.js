@@ -2,14 +2,9 @@
  * Created by intelligrape on 5/6/17.
  */
 import React from 'react';
-// import { Map, GoogleApiWrapper } from 'google-maps-react';
-import {withGoogleMap, GoogleMap, DirectionsRenderer} from 'react-google-maps';
+import {withGoogleMap, GoogleMap, DirectionsRenderer, Marker} from 'react-google-maps';
 import './style.css';
-
-const mapStyles = {
-    width: '100%',
-    height: '100%'
-};
+import Stations from "../../stations";
 
 class Map extends React.Component {
 
@@ -21,10 +16,11 @@ class Map extends React.Component {
     }
 
     componentDidMount() {
-        this.createDirections({lat: 40.756795, lng: -73.954298}, {lat: 41.756795, lng: -78.954298});
-        this.createDirections({lat: 42.756500, lng: -73.951298}, {lat: 41.126795, lng: -78.434298});
-        this.createDirections({lat: 40.753295, lng: -73.544298}, {lat: 41.756795, lng: -78.954298});
-        this.createDirections({lat: 40.752395, lng: -73.954398}, {lat: 41.751395, lng: -78.954138});
+        // this.createDirections({lat: 1.32145, lng: 104.807}, {lat: 1.456789, lng: 103.107});
+        // this.createDirections({lat: 1.45682, lng: 105.807}, {lat: 2.97856, lng: 103.207});
+        // this.createDirections({lat: 1.32677, lng: 103.807}, {lat: 1.52112, lng: 108.097});
+        this.createDirections({lat: 1.32677, lng: 103.807}, {lat: 1.32627, lng: 103.857});
+        this.createDirections({lat: 1.32677, lng: 103.887}, {lat: 1.32627, lng: 103.807});
     }
 
     createDirections = (origin, destination) => {
@@ -50,20 +46,27 @@ class Map extends React.Component {
     };
 
     render() {
-
+        console.log("Sfsd", Stations);
         const GoogleMapExample = withGoogleMap(props => (
             <GoogleMap
-                defaultCenter={{lat: 40.756795, lng: -73.954298}}
-                defaultZoom={13}
+                defaultCenter={{lat: 1.32677, lng: 103.807}}
+                defaultZoom={8}
             >
                 {this.state.directions.map((direction, key) => <DirectionsRenderer key={key} directions={direction}/>
                 )};
-                <DirectionsRenderer directions={this.state.directions}/>
-                <DirectionsRenderer directions={this.state.directions}/>
+                {Stations.results.map(marker => {
+                    return (
+                        <Marker
+                            key={marker.id}
+                            position={{ lat: parseFloat(marker.latitude), lng: parseFloat(marker.longitude) }}
+                        >
+                        </Marker>
+                    )
+                })}
             </GoogleMap>
         ));
         return (
-            <div className="map"> 
+            <div className="map">
                 <GoogleMapExample
                     containerElement={<div style={{height: `100vh`, width: 'auto'}}/>}
                     mapElement={<div style={{height: `100%`}}/>}
@@ -71,34 +74,5 @@ class Map extends React.Component {
             </div>
         );
     }
-};
+}
 export default Map;
-// const mapStyles = {
-//   width: '100%',
-//   height: '100%',
-// };
-//
-// class MapContainer extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//
-//
-//   render() {
-//     return (
-//       <div>
-//         <Map
-//           google={this.props.google}
-//           zoom={8}
-//           style={mapStyles}
-//           initialCenter={{ lat: 47.444, lng: -122.176}}
-//         />
-//
-//       </div>
-//       );
-//   }
-// }
-//
-// export default GoogleApiWrapper({
-//   apiKey: 'AIzaSyAgmtah4tami6GIlAtShxGX1BGYQLIICsM'
-// })(MapContainer);
