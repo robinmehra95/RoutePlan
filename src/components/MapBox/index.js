@@ -63,9 +63,9 @@ class Map extends React.Component {
             </GoogleMap>
         ));
         return (
-            <div>
+            <div className="map"> 
                 <GoogleMapExample
-                    containerElement={<div style={{height: `1500px`, width: '1500px'}}/>}
+                    containerElement={<div style={{height: `100vh`, width: 'auto'}}/>}
                     mapElement={<div style={{height: `100%`}}/>}
                 />
             </div>
