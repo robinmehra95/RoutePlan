@@ -5,6 +5,9 @@ import React from 'react';
 import {withGoogleMap, GoogleMap, DirectionsRenderer, Marker} from 'react-google-maps';
 import './style.css';
 import Stations from "../../stations";
+import CaltexIcon from "../../img/icon-caltex-circle.png";
+import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
 
 class Map extends React.Component {
 
@@ -16,11 +19,17 @@ class Map extends React.Component {
     }
 
     componentDidMount() {
-        // this.createDirections({lat: 1.32145, lng: 104.807}, {lat: 1.456789, lng: 103.107});
-        // this.createDirections({lat: 1.45682, lng: 105.807}, {lat: 2.97856, lng: 103.207});
-        // this.createDirections({lat: 1.32677, lng: 103.807}, {lat: 1.52112, lng: 108.097});
-        this.createDirections({lat: 1.32677, lng: 103.807}, {lat: 1.32627, lng: 103.857});
-        this.createDirections({lat: 1.32677, lng: 103.887}, {lat: 1.32627, lng: 103.807});
+        console.log("asdff");
+
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        const {routes} = nextProps;
+        if(routes && routes.length) {
+            routes.map(route => {
+                this.createDirections(route.startPointCoordinates, route.endPointCoordinates);
+            });
+        }
     }
 
     createDirections = (origin, destination) => {
@@ -46,7 +55,7 @@ class Map extends React.Component {
     };
 
     render() {
-        console.log("Sfsd", Stations);
+        // console.log("Sfsd", Stations);
         const GoogleMapExample = withGoogleMap(props => (
             <GoogleMap
                 defaultCenter={{lat: 1.32677, lng: 103.807}}
@@ -57,6 +66,7 @@ class Map extends React.Component {
                 {Stations.results.map(marker => {
                     return (
                         <Marker
+                            icon={CaltexIcon}
                             key={marker.id}
                             position={{ lat: parseFloat(marker.latitude), lng: parseFloat(marker.longitude) }}
                         >
@@ -65,6 +75,7 @@ class Map extends React.Component {
                 })}
             </GoogleMap>
         ));
+
         return (
             <div className="map">
                 <GoogleMapExample
@@ -75,4 +86,19 @@ class Map extends React.Component {
         );
     }
 }
-export default Map;
+function mapStateToProps(state) {
+    return {
+        routes: state.routesReducer.routes
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(
+        {
+
+        },
+        dispatch
+    );
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Map);

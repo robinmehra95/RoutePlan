@@ -1,5 +1,5 @@
 .create-another-fleet-route-section {
-   
+
     position: absolute;
     overflow: hidden;
     background-size: cover;
@@ -187,7 +187,7 @@
 .route-details-fieldset .journeyPlanner-form-field p > *:after {
     display: none;
 }
-.route-details-fieldset .journeyPlanner-form-field p select, 
+.route-details-fieldset .journeyPlanner-form-field p select,
 .route-details-fieldset .journeyPlanner-form-field input[type="text"] {
     width: auto;
     max-width: inherit;
@@ -263,6 +263,14 @@
     min-height: 100vh;
 }
 
+.journeyPlanner-col .journey-see-routes-btn.add-routes-btn {
+    position: relative;
+    top: 10px;
+    left: 0;
+    right: auto;
+    bottom: auto;
+}
+
 
 
 
@@ -291,7 +299,7 @@
 	    padding: 0 10px;
 	    margin: 0 0 10px;
 	}
-	.journey-start-point, 
+	.journey-start-point,
 	.journey-end-point {
 	    display: block !important;
 	}
