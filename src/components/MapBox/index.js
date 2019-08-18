@@ -19,13 +19,12 @@ class Map extends React.Component {
     }
 
     componentDidMount() {
-        console.log("asdff");
 
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
         const {routes} = nextProps;
-        if(routes && routes.length) {
+        if(routes && routes.length && this.props.routes.length !== routes.length) {
             routes.map(route => {
                 this.createDirections(route.startPointCoordinates, route.endPointCoordinates);
             });
@@ -44,6 +43,7 @@ class Map extends React.Component {
                 if (status === window.google.maps.DirectionsStatus.OK) {
                     const {directions} = this.state;
                     directions.push(result);
+                    console.log("directions", directions);
                     this.setState({
                         directions: directions
                     });
