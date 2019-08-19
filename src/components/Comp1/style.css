@@ -1,5 +1,5 @@
 .create-another-fleet-route-section {
-   
+
     position: absolute;
     overflow: hidden;
     background-size: cover;
@@ -35,7 +35,7 @@
 .journeyPlanner-popup-container {
     background-color: #fff;
     position: relative;
-    overflow: hidden;
+    /*overflow: hidden;*/
     padding: 45px 0;
 }
 .journeyPlanner-close-icon {
@@ -187,7 +187,7 @@
 .route-details-fieldset .journeyPlanner-form-field p > *:after {
     display: none;
 }
-.route-details-fieldset .journeyPlanner-form-field p select, 
+.route-details-fieldset .journeyPlanner-form-field p select,
 .route-details-fieldset .journeyPlanner-form-field input[type="text"] {
     width: auto;
     max-width: inherit;
@@ -214,7 +214,8 @@
     background-repeat: no-repeat;
     background-position: right center;
 }
-.route-details-fieldset .journeyPlanner-form-field input[type="text"] {
+.route-details-fieldset .journeyPlanner-form-field input[type="text"],
+.route-details-fieldset .journeyPlanner-form-field input[type="number"] {
     border: 0 none;
     border-bottom: 2px dotted rgb(102, 102, 102);
     background-color: transparent;
@@ -263,8 +264,18 @@
     min-height: 100vh;
 }
 
+.journeyPlanner-col .journey-see-routes-btn.add-routes-btn {
+    position: relative;
+    top: 10px;
+    left: 0;
+    right: auto;
+    bottom: auto;
+}
 
-
+.time-period-select {
+    display: inline-block;
+    width: 150px;
+}
 
 
 
@@ -291,7 +302,7 @@
 	    padding: 0 10px;
 	    margin: 0 0 10px;
 	}
-	.journey-start-point, 
+	.journey-start-point,
 	.journey-end-point {
 	    display: block !important;
 	}
