@@ -2,6 +2,10 @@
  * Created by intelligrape on 5/6/17.
  */
 import React from 'react';
+import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
+import {get} from "lodash";
+
 import './style.css';
 import img1 from './../../img/btns_carousel-arrow-red-white.svg'
 import img2 from './../../img/icons_edit_white.svg'
@@ -12,6 +16,8 @@ import img6 from './../../img/icon_journey planner_route(2).svg'
 import img7 from './../../img/icons_print.svg'
 import img8 from './../../img/icons_download.svg'
 import img9 from './../../img/icons_share.svg'
+import {setRoutes} from "../../actions/routes.actions";
+import Stations from "../../stations";
 
 class StartOver extends React.Component {
     constructor(props) {
@@ -35,14 +41,30 @@ class StartOver extends React.Component {
         this.props.showFunction()
     };
 
+    calculatevehicles = () => {
+        const {routes} = this.props;
+        let vehicles = 0;
+        routes.map(route => vehicles += parseInt(route.vehicles));
+        return vehicles;
+    };
+
+    calculateDailyFleetMileage = () => {
+        const {routes} = this.props;
+        let dailyFleetMileage = 0;
+        return dailyFleetMileage;
+    };
+
     render() {
+        const {routes} = this.props;
+        let vehicles = this.calculatevehicles();
+        let dailyFleetMileage = this.calculateDailyFleetMileage();
         return (
             <div>
                 <div className="displaying-routes-container">
                     <div className="clearfix displaying-route-topSection">
                         <div className="displayingRoute-topSec-row">
                             <div className="displayingRoute-topSec-col left-col">
-                                <h6>Displaying 3 Routes</h6>
+                                <h6>Displaying {routes && routes.length} Routes</h6>
                             </div>
                             <div className="displayingRoute-topSec-col center-col">
                                 <img src={img1} alt="Arrow" onClick={() => this.showHideInfo()}/>
@@ -66,25 +88,27 @@ class StartOver extends React.Component {
                                 <ul className="journey-option-list">
                                     <li>
                                         <p>Vehicles</p>
-                                        <h3>52 <img src={img4} alt=""/></h3>
+                                        <h3>{vehicles} <img src={img4} alt=""/></h3>
                                     </li>
                                     <li>
                                         <p>Routes</p>
-                                        <h3>3 <img src={img5} alt=""/></h3>
+                                        <h3>{routes && routes.length} <img src={img5} alt=""/></h3>
                                     </li>
                                     <li>
                                         <p>Caltex Stations</p>
-                                        <h3>32 <img src={img6} alt=""/></h3>
+                                        <h3>{Stations && Stations.results && Stations.results.length} <img src={img6} alt=""/></h3>
                                     </li>
                                 </ul>
-                                <p>52 of my vehicles take these 3 routes with a total of 32 Caltex stations at my
+                                <p>{vehicles} of my vehicles take these
+                                    {routes && routes.length} routes with a total of
+                                    {Stations && Stations.results && Stations.results.length} Caltex stations at my
                                     service.</p>
                                 <a href="#" className="see-fullList-link">See full list of stations
                                     <img src="" alt=""/></a>
                             </div>
                             <div className="displayingRoute-btSec-col center-col">
                                 <h5>Total Daily Fleet Mileage</h5>
-                                <h3>178,140km</h3>
+                                <h3>{dailyFleetMileage}km</h3>
                                 <ul className="fleet-mileage-list">
                                     <li>A Caltex station every 100km on average</li>
                                     <li>A 24-hour Caltex service station every 100km</li>
@@ -120,4 +144,18 @@ class StartOver extends React.Component {
     }
 }
 
-export default StartOver;
+function mapStateToProps(state) {
+    return {
+        routes: state.routesReducer.routes
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(
+        {
+        },
+        dispatch
+    );
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(StartOver);

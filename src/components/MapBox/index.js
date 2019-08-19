@@ -24,14 +24,19 @@ class Map extends React.Component {
 
     componentWillReceiveProps(nextProps, nextContext) {
         const {routes} = nextProps;
-        if(routes && routes.length && this.props.routes.length !== routes.length) {
+        let currentPropsRoutes = this.props.routes;
+        if(routes && routes.length && currentPropsRoutes.length !== routes.length) {
+            // if(currentPropsRoutes.length > routes.length) {
+            //
+            // }
+            let directions =[];
             routes.map(route => {
-                this.createDirections(route.startPointCoordinates, route.endPointCoordinates);
+                this.createDirections(route.startPointCoordinates, route.endPointCoordinates, directions);
             });
         }
     }
 
-    createDirections = (origin, destination) => {
+    createDirections = (origin, destination, directions) => {
         const directionsService = new window.google.maps.DirectionsService();
         directionsService.route(
             {
@@ -41,9 +46,8 @@ class Map extends React.Component {
             },
             (result, status) => {
                 if (status === window.google.maps.DirectionsStatus.OK) {
-                    const {directions} = this.state;
+
                     directions.push(result);
-                    console.log("directions", directions);
                     this.setState({
                         directions: directions
                     });
@@ -55,7 +59,6 @@ class Map extends React.Component {
     };
 
     render() {
-        // console.log("Sfsd", Stations);
         const GoogleMapExample = withGoogleMap(props => (
             <GoogleMap
                 defaultCenter={{lat: 1.32677, lng: 103.807}}

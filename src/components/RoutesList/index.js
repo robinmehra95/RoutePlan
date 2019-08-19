@@ -23,11 +23,13 @@ class RoutesList extends React.Component {
         this.state = {
             routes: false,
             showRoutes: false,
-            startPointAddress: '',
+            startPointAddress: "",
             endPointAddress: "",
             startPointCoordinates: {},
             endPointCoordinates: {},
-            routeNames: []
+            selectedTimePeriod: null,
+            duration: 0,
+            vehicles: 0
         }
     }
 
@@ -37,6 +39,14 @@ class RoutesList extends React.Component {
         } else {
             this.setState({endPointAddress: address});
         }
+    };
+
+    handleTextChange = e => {
+        this.setState({[e.target.name]: parseInt(e.target.value)})
+    };
+
+    handleSelectChange = selectedOption => {
+        this.setState({selectedTimePeriod: selectedOption});
     };
 
     handleSelect = (address, isStartPoint) => {
@@ -58,26 +68,71 @@ class RoutesList extends React.Component {
         }
     };
 
-    addRoute = () => {
-        const {
-            startPointCoordinates, endPointCoordinates,
-            startPointAddress, endPointAddress, routeNames
-        } = this.state;
-        let data = {startPointCoordinates, endPointCoordinates};
-        if(routeNames.length) {
-            incrementChar = this.nextChar(incrementChar);
+    validate = () => {
+        const {startPointAddress, endPointAddress} = this.state;
+        return (startPointAddress && endPointAddress)
+    };
+
+    addRoute = e => {
+        e.preventDefault();
+        let isValidated = this.validate();
+        if (isValidated) {
+            const {routesList} = this.props;
+            const routesData = [...routesList];
+            const {
+                startPointCoordinates, endPointCoordinates,
+                startPointAddress, endPointAddress,
+                selectedTimePeriod, duration, vehicles
+            } = this.state;
+            if (routesData.length) {
+                incrementChar = this.nextChar(incrementChar);
+            }
+
+            let data = {startPointCoordinates, endPointCoordinates,
+                selectedTimePeriod, duration, vehicles, incrementChar,
+                startPointAddress, endPointAddress
+            };
+
+            routesData.push(data);
+            this.props.setRoutes(routesData);
+
+            this.setState({
+                selectedTimePeriod: null,
+                duration: 0,
+                vehicles: 0,
+                startPointAddress: '',
+                endPointAddress: "",
+                startPointCoordinates: {},
+                endPointCoordinates: {},
+            })
+        } else {
+            alert("Please enter route correctly");
         }
-        this.props.setRoutes(data);
-        let routes = [...routeNames];
 
-        let route = {
-            startingRouteName: startPointAddress,
-            endingRouteName: endPointAddress,
-            displayChar: incrementChar
-        };
+    };
 
-        routes.push(route);
-        this.setState({routeNames: routes})
+    handleEdit = route => {
+        this.handleRemove(route);
+        this.setState({
+            selectedTimePeriod: route.selectedTimePeriod,
+            duration: route.duration,
+            vehicles: route.vehicles,
+            startPointAddress: route.startPointAddress,
+            endPointAddress: route.endPointAddress,
+            startPointCoordinates: route.startPointCoordinates,
+            endPointCoordinates: route.endPointCoordinates,
+        })
+    };
+
+    handleRemove = route => {
+        const {routesList} = this.props;
+        let routesData = [...routesList];
+        for(let i = 0; i < routesData.length; i++ ) {
+            if(route.incrementChar === routesData[i].incrementChar) {
+                routesData.splice(i, 1)
+            }
+        }
+        this.props.setRoutes(routesData);
     };
 
     nextChar = c => {
@@ -85,8 +140,15 @@ class RoutesList extends React.Component {
     };
 
     render() {
-        const {startPointAddress, endPointAddress, routeNames} = this.state;
-        console.log("routeNames", routeNames);
+        const {startPointAddress, endPointAddress, selectedTimePeriod, duration, vehicles} = this.state;
+        const {routesList} = this.props;
+        const timePeriodOptions = [
+            {value: 'Month', label: 'Month'},
+            {value: 'Quarter', label: 'Quarter'},
+            {value: 'Half Year', label: 'Half year'},
+            {value: 'Year', label: 'Year'},
+        ];
+
         return (
             <div className="journeyPlanner-popup-container">
           <span className="journeyPlanner-close-icon">
@@ -98,24 +160,25 @@ class RoutesList extends React.Component {
                         <div className="journey-list">
                             <div className="journey-list-items-group">
                                 {
-                                    routeNames.map((route, key) => {
+                                    routesList.map((route, key) => {
                                         return (
                                             <div key={key} className="clearfix journey-list-item">
-                                                <div className="journey-series">{route.displayChar}</div>
+                                                <div className="journey-series">{route.incrementChar}</div>
                                                 <div className="journey-points">
-                                                    <span className="journey-start-point">{route.startingRouteName}</span>
+                                                    <span
+                                                        className="journey-start-point">{route.startPointAddress}</span>
                                                     <span className="journey-travel-icon">
-                                            <img src={img4} alt="Travel"/>
-                                        </span>
-                                                    <span className="journey-end-point">{route.endingRouteName}</span>
+                                                        <img src={img4} alt="Travel"/>
+                                                    </span>
+                                                    <span className="journey-end-point">{route.endPointAddress}</span>
                                                 </div>
-                                                <div className="journey-edit-remove">
-										<span className="journey-edit">
-                                            <img src={img2} alt=""/>
-                                    </span>
-                                                    <span className="journey-remove">
-                                        <img src={img3} alt=""/>
-                                    </span>
+                                                <div className="journey-edit-remove" onClick={() => this.handleEdit(route)}>
+                                                    <span className="journey-edit">
+                                                        <img src={img2} alt=""/>
+                                                    </span>
+                                                    <span className="journey-remove" onClick={() => this.handleRemove(route)}>
+                                                        <img src={img3} alt=""/>
+                                                    </span>
                                                 </div>
                                             </div>
                                         )
@@ -222,9 +285,6 @@ class RoutesList extends React.Component {
                                             </div>
                                         )}
                                     </PlacesAutocomplete>
-                                    <input type="button" onClick={this.addRoute}
-                                           className="journey-see-routes-btn add-routes-btn" value="Add Route"/>
-
                                 </div>
                             </fieldset>
                             <fieldset className="route-details-fieldset">
@@ -232,29 +292,37 @@ class RoutesList extends React.Component {
                                 <div className="journeyPlanner-form-field">
                                     <p>
                                         <strong>In an average </strong>
-                                        <select>
-                                            <option default="">Select</option>
-                                            <option>month</option>
-                                            <option>quarter</option>
-                                            <option>half year</option>
-                                            <option>year</option>
-                                        </select>
+                                        <div className="time-period-select">
+                                            <Select
+                                                value={selectedTimePeriod}
+                                                onChange={this.handleSelectChange}
+                                                options={timePeriodOptions}
+                                            />
+                                        </div>
                                         <strong>, </strong>
-                                        <input type="text" name="fleet_take_duration" className="fleet-take-duration"
-                                               placeholder="0"/>
-                                        <strong>vehicles in my fleet take</strong>
-                                    </p>
-                                </div>
-                                <div className="journeyPlanner-form-field">
-                                    <p>
-                                        <strong>this route for</strong>
-                                        <input type="text" name="fleet_take_duration_repeat"
-                                               className="fleet-take-duration" placeholder="0"/>
+                                        <input type="number"
+                                               value={vehicles}
+                                               min={0}
+                                               onChange={this.handleTextChange}
+                                               name="vehicles"
+                                               className="fleet-take-duration"
+                                               placeholder="0"
+                                        />
+                                        <strong>vehicles in my fleet take this route for</strong>
+                                        <input type="number"
+                                               min={0}
+                                               className="fleet-take-duration"
+                                               value={duration}
+                                               onChange={this.handleTextChange}
+                                               name="duration" placeholder="0"
+                                        />
                                         <strong>times.</strong>
                                     </p>
                                 </div>
                             </fieldset>
-                            <input className="add-journeyRoute-btn" type="submit" name="add_route" value="Add Route"/>
+                            <input className="add-journeyRoute-btn" onClick={this.addRoute}
+                                   type="submit" name="add_route" value="Add Route"
+                            />
                         </form>
                     </div>
                 </div>
@@ -264,7 +332,9 @@ class RoutesList extends React.Component {
 }
 
 function mapStateToProps(state) {
-    return {};
+    return {
+        routesList: state.routesReducer.routes
+    };
 }
 
 function mapDispatchToProps(dispatch) {

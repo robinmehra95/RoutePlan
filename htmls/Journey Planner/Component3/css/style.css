@@ -128,7 +128,7 @@
 }
 .route-details-fieldset .journeyPlanner-form-field {
     margin-bottom: 19px;
-    margin-bottom: 6px;    
+    margin-bottom: 6px;
 }
 .journeyPlanner-form-field p {
     color: rgb(0, 0, 0);
@@ -142,7 +142,7 @@
 .route-details-fieldset .journeyPlanner-form-field p > *:after {
     display: none;
 }
-.route-details-fieldset .journeyPlanner-form-field p select, 
+.route-details-fieldset .journeyPlanner-form-field p select,
 .route-details-fieldset .journeyPlanner-form-field input[type="text"] {
     width: auto;
     max-width: inherit;
@@ -313,7 +313,7 @@
 	    padding: 0 10px;
 	    margin: 0 0 10px;
 	}
-	.journey-start-point, 
+	.journey-start-point,
 	.journey-end-point {
 	    display: block !important;
 	}
@@ -381,5 +381,5 @@
     .journey-points > span.journey-travel-icon {
         display: block;
     }
-    
+
 }

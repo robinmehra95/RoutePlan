@@ -35,7 +35,7 @@
 .journeyPlanner-popup-container {
     background-color: #fff;
     position: relative;
-    overflow: hidden;
+    /*overflow: hidden;*/
     padding: 45px 0;
 }
 .journeyPlanner-close-icon {
@@ -214,7 +214,8 @@
     background-repeat: no-repeat;
     background-position: right center;
 }
-.route-details-fieldset .journeyPlanner-form-field input[type="text"] {
+.route-details-fieldset .journeyPlanner-form-field input[type="text"],
+.route-details-fieldset .journeyPlanner-form-field input[type="number"] {
     border: 0 none;
     border-bottom: 2px dotted rgb(102, 102, 102);
     background-color: transparent;
@@ -271,8 +272,10 @@
     bottom: auto;
 }
 
-
-
+.time-period-select {
+    display: inline-block;
+    width: 150px;
+}
 
 
 
