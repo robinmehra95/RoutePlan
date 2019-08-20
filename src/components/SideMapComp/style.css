@@ -1,0 +1,154 @@
+.sidemap-overlay-outer-wrap{
+    background: rgb(255, 255, 255);
+    border-radius: 0px;
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.25);
+    max-width: 1035px;
+    width: 100%;
+    padding: 54px 45px 50px 45px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate( -50%, -50%);
+}
+.sidemap-overlay-outer-wrap a.close-btn {
+    position: absolute;
+    right: 23px;
+    top: 16px;
+}
+.sidemap-overlay-outer-wrap .cs-top-row{
+    margin:  0 0 30px;
+}
+.sidemap-overlay-outer-wrap .top-back-link{
+    color: rgb(230, 47, 70);
+    font-family: ITCFranklinGothicStd-Med;
+    font-size: 15px;
+    letter-spacing: 0px;
+    line-height: 22px;
+    position: relative;
+    margin-left: 13px;
+}
+.sidemap-overlay-outer-wrap .top-back-link:before{
+    content: '<';
+    position: absolute;
+    left:  -15px;
+    top: 1px;
+}
+.sidemap-overlay-outer-wrap .tel-time-wrap {
+    margin: 0 0 26px;
+}
+.sidemap-overlay-outer-wrap .tel-time-wrap .icon-row{
+    display: inline-block;
+    padding-left: 0;
+    padding-right: 35px;
+}
+.sidemap-overlay-outer-wrap .tel-time-wrap span{
+    font-family: ITCFranklinGothicStd-Med;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    display: inline-block;
+}
+.sidemap-overlay-outer-wrap .tel-time-wrap img{
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+}
+.sidemap-overlay-outer-wrap .tel-time-wrap .icon{
+    display: inline-block;
+}
+
+.sidemap-overlay-outer-wrap .tel-time-wrap .text-tel{
+    display: inline-block;
+    padding-left: 11px;
+}
+
+
+.cs-main-heading{
+    color: rgb(0, 0, 0);
+    font-family: ITCFranklinGothicStd-DmCd;
+    font-size: 39px;
+    letter-spacing: 0.5px;
+    line-height: 38px;
+    margin: 0 0 9px;
+}
+.cs-sub-heading{
+    color: rgb(0, 0, 0);
+    font-family: ITCFranklinGothicStd-Book;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 30px;
+    margin: 0 0 13px;
+}
+.two-col-wrap{
+
+}
+.two-col-wrap p{
+    color: rgb(0, 0, 0);
+    font-family: ITCFranklinGothicStd-Demi;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.64px;
+    line-height: 37.44px;
+}
+.two-col-wrap ul {
+    list-style-type: disc;
+    padding-left: 22px;
+}
+.two-col-wrap ul.with-icon {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+.two-col-wrap li{
+    color: rgb(0, 0, 0);
+    font-family: ITCFranklinGothicStd-Book;
+    letter-spacing: -1px;
+    line-height: 26px;
+    padding-left: 9px;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    line-height: 25.43px;
+    margin: 0 0 ;
+}
+.two-col-wrap ul.with-icon li {
+    padding-left: 0;
+    margin: 0 0 4px;
+}
+.two-col-wrap ul.with-icon li img{
+    display: inline-block;
+    margin-right: 16px;
+}
+.two-col-wrap .with-icon li{
+
+}
+.two-col-left-wrap {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+
+.two-col-right-wrap {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    padding-left: 13px;
+
+}
+
+.sidemap-overlay-outer-wrap .col-right{
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+    vertical-align: top;
+}
+.sidemap-overlay-outer-wrap .col-left{
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+.sidemap-overlay-outer-wrap .col-left .cs-main-img{
+    max-height: 450px;
+    max-width: 451px;
+}

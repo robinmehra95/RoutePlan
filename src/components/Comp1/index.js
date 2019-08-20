@@ -6,6 +6,7 @@ import './style.css';
 import RoutesList from './../RoutesList'
 import StartOver from './../StartOver'
 import MapContainer from './../MapBox'
+import SideMapComp from './../SideMapComp'
 
 
 class Component1 extends React.Component {
@@ -47,12 +48,13 @@ class Component1 extends React.Component {
     return (
       <div className={`${(!this.state.routeList && !this.state.startOver) ? '' : 'dark-layor'}`}>
          <MapContainer/>
-         <div className="create-another-fleet-route-section">
+         {/* <div className="create-another-fleet-route-section">
             <div className="page-center full-height">
              {this.state.routeList && <RoutesList  hideRouteList={() => this.hideRouteList()} routesArray={this.state.routesArray}/>}
              <StartOver show={this.state.startOver} showFunction={() => this.showRouteList()} hideRouteList={() => this.hideRouteList()}/>
             </div>
-         </div>
+         </div> */}
+         <SideMapComp/>
       </div>
       );
   }
