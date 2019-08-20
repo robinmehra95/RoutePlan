@@ -164,6 +164,7 @@
     }
     .sidemap-overlay-outer-wrap .col-right img{
         max-height: 166px;
+        width: 100%;
     }
     .two-col-left-wrap {
         display: block;
