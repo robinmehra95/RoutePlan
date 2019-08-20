@@ -75,7 +75,7 @@ class SideMapComp extends React.Component {
           
           
           <div className="col-right">
-            <img src={img2}/>
+            <img src={img2} className="cs-main-img"/>
           </div>           
       </div>
 
