@@ -13,7 +13,7 @@ class Component1 extends React.Component {
   constructor(props) {
     super(props);
     this.state ={
-      routeList :false,
+      routeList :true,
       startOver : false,
       routesArray : {
         "A": ["Torquay", "Exeter"],
@@ -48,13 +48,13 @@ class Component1 extends React.Component {
     return (
       <div className={`${(!this.state.routeList && !this.state.startOver) ? '' : 'dark-layor'}`}>
          <MapContainer/>
-         {/* <div className="create-another-fleet-route-section">
-            <div className="page-center full-height">
+          <div className="create-another-fleet-route-section">
+            <div className="page-center">
              {this.state.routeList && <RoutesList  hideRouteList={() => this.hideRouteList()} routesArray={this.state.routesArray}/>}
              <StartOver show={this.state.startOver} showFunction={() => this.showRouteList()} hideRouteList={() => this.hideRouteList()}/>
             </div>
-         </div> */}
-         <SideMapComp/>
+         </div>
+         {/*<SideMapComp/>*/}
       </div>
       );
   }

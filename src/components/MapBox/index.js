@@ -65,7 +65,7 @@ class Map extends React.Component {
                 defaultZoom={8}
             >
                 {this.state.directions.map((direction, key) => <DirectionsRenderer key={key} directions={direction}/>
-                )};
+                )}
                 {Stations.results.map(marker => {
                     return (
                         <Marker
