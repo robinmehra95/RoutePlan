@@ -142,6 +142,7 @@
     width: 50%;
     text-align: right;
     vertical-align: top;
+    float: right;
 }
 .sidemap-overlay-outer-wrap .col-left{
     display: inline-block;
@@ -151,4 +152,52 @@
 .sidemap-overlay-outer-wrap .col-left .cs-main-img{
     max-height: 450px;
     max-width: 451px;
+}
+
+@media (max-width: 767px) {
+    .sidemap-overlay-outer-wrap .col-right,
+    .sidemap-overlay-outer-wrap .col-left {
+        display: block;
+        width: 100%;
+        float: none;
+        text-align: left;
+    }
+    .sidemap-overlay-outer-wrap .col-right img{
+        max-height: 166px;
+    }
+    .two-col-left-wrap {
+        display: block;
+        width: 100%;
+        margin: 0 0 20px;
+    }
+    .two-col-right-wrap {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0 0 20px;
+    }
+    .cs-main-heading{
+        font-size: 21px;
+    }
+    .cs-sub-heading{
+        font-size: 15px;
+    }
+    .sidemap-overlay-outer-wrap{
+        padding: 107px 25px 40px;
+    }
+    .sidemap-overlay-outer-wrap .col-right{
+        margin: 0 0 30px;
+    }
+    .sidemap-overlay-outer-wrap{
+        left: 0;
+        top: 0;
+        transform: inherit;
+    }
+    .sidemap-overlay-outer-wrap .top-back-link{
+        display: none;
+    }
+    .sidemap-overlay-outer-wrap a.close-btn {
+        right: 24px;
+        top: 47px;
+    }
 }
