@@ -40,6 +40,7 @@
     margin: 0 auto;
     left: 0;
     right: 0;
+    top: 10%;
     position: fixed;
 }
 .journeyPlanner-close-icon {
@@ -281,6 +282,9 @@
     width: 150px;
 }
 
+h3.your-routes {
+    color: #1A516B;
+}
 
 
 
