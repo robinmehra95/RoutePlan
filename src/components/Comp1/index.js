@@ -6,6 +6,7 @@ import MapContainer from './../MapBox'
 import TruckComp from './../TruckComp'
 
 import MapStations from './../MapStations'
+import SideMapComp from './../SideMapComp'
 
 
 class Component1 extends React.Component {
@@ -15,6 +16,7 @@ class Component1 extends React.Component {
       showModal :true,
       showTruckComp: true,
       allStations: false,
+      showSideMap: false,
       routesArray : {
         "A": ["Torquay", "Exeter"],
         "B": ["Exmouth", "Okehampton"],
@@ -62,12 +64,26 @@ class Component1 extends React.Component {
     })
   };
 
+  showSidemapComp = () => {
+    if(this.state.showSideMap){
+      this.setState({
+        showSideMap: false
+      })
+    }
+    else{
+      this.setState({
+        showSideMap: true
+      })
+    }
+  }
+
   render() {
     return (
       //<div className={`${(!this.state.showModal && !this.state.startOver) ? '' : 'dark-layor'}`}>
         <div className={this.state.showModal ?  "dark-layor" : ""}>
            {this.state.showTruckComp && <TruckComp closeTruckComp={() => this.closeTruckComp()}/>}
-           <MapContainer/>
+            <MapContainer showSidemapComp={this.showSidemapComp} />
+            {this.state.showSideMap && <SideMapComp  showSidemapComp={this.showSidemapComp}/>}
             {this.state.allStations && <MapStations  onClose={this.toggleAllStations} />}
             {!this.state.showTruckComp && <div className="create-another-fleet-route-section">
             <div className="page-center">

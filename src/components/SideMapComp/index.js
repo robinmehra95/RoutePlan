@@ -14,8 +14,8 @@ class SideMapComp extends React.Component {
     return (
       <div className="sidemap-overlay-outer-wrap">
           <div className="cs-top-row">
-            <a href="#" className="close-btn"><img src={img1}/></a>
-            <a href="#" className="top-back-link">
+            <a className="close-btn cursor-pointer"><img src={img1}/></a>
+            <a className="top-back-link cursor-pointer" onClick={() => this.props.showSidemapComp()}>
                 Back to Stations Listing
             </a>
           </div>
