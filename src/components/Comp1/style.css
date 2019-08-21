@@ -318,7 +318,9 @@ h3.your-routes {
     position: relative;
     bottom: -100%;
 }
-
+.journey-list {
+    height: 410px;
+}
 @media (max-width: 1024px) and (min-width: 768px) {
 
 	.create-another-fleet-route-section .page-center {
@@ -349,6 +351,9 @@ h3.your-routes {
 
 
 @media (max-width: 767px) {
+    .journey-list {
+        height: auto;
+    }
     .journeyPlanner-popup-container{}
     .create-another-fleet-route-section .page-center {
         padding: 0;
