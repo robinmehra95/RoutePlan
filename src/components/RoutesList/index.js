@@ -219,12 +219,12 @@ class RoutesList extends React.Component {
                                                         className: 'location-search-input',
                                                     })}
                                                 />
-                                                <div className="autocomplete-dropdown-container">
+                                                <div className="autocomplete-dropdown-container pac-container">
                                                     {loading && <div>Loading...</div>}
                                                     {suggestions.map(suggestion => {
                                                         const className = suggestion.active
-                                                            ? 'suggestion-item--active'
-                                                            : 'suggestion-item';
+                                                            ? 'suggestion-item--active pac-item pac-item-selected'
+                                                            : 'suggestion-item pac-item';
                                                         // inline style for demonstration purpose
                                                         const style = suggestion.active
                                                             ? {backgroundColor: '#fafafa', cursor: 'pointer'}
@@ -260,12 +260,12 @@ class RoutesList extends React.Component {
                                                         className: 'location-search-input',
                                                     })}
                                                 />
-                                                <div className="autocomplete-dropdown-container">
+                                                <div className="autocomplete-dropdown-container pac-container">
                                                     {loading && <div>Loading...</div>}
                                                     {suggestions.map(suggestion => {
                                                         const className = suggestion.active
-                                                            ? 'suggestion-item--active'
-                                                            : 'suggestion-item';
+                                                            ? 'suggestion-item--active pac-item pac-item-selected'
+                                                            : 'suggestion-item pac-item';
                                                         // inline style for demonstration purpose
                                                         const style = suggestion.active
                                                             ? {backgroundColor: '#fafafa', cursor: 'pointer'}
@@ -277,6 +277,7 @@ class RoutesList extends React.Component {
                                                                     style,
                                                                 })}
                                                             >
+                                                                <span className="pac-icon"></span>
                                                                 <span>{suggestion.description}</span>
                                                             </div>
                                                         );

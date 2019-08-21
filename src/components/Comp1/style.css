@@ -308,6 +308,11 @@ h3.your-routes {
 .time-period-select .css-1hwfws3{
     line-height: 1;
 }
+.time-period-select .css-2613qy-menu{
+    background: red;
+    position: relative;
+    bottom: -100%;
+}
 
 @media (max-width: 1024px) and (min-width: 768px) {
 
