@@ -6,7 +6,7 @@ import './style.css';
 import RoutesList from './../RoutesList'
 import StartOver from './../StartOver'
 import MapContainer from './../MapBox'
-import SideMapComp from './../SideMapComp'
+import TruckComp from './../TruckComp'
 
 
 class Component1 extends React.Component {
@@ -14,6 +14,7 @@ class Component1 extends React.Component {
     super(props);
     this.state ={
       showModal :true,
+      showTruckComp: true,
       routesArray : {
         "A": ["Torquay", "Exeter"],
         "B": ["Exmouth", "Okehampton"],
@@ -42,18 +43,25 @@ class Component1 extends React.Component {
     })
   };
 
+  closeTruckComp = () => {
+    this.setState({
+      showTruckComp: false
+    })
+  };
+
   render() {
     return (
       //<div className={`${(!this.state.showModal && !this.state.startOver) ? '' : 'dark-layor'}`}>
         <div className={this.state.showModal ?  "dark-layor" : ""}>
-         <MapContainer/>
-          <div className="create-another-fleet-route-section">
+           {this.state.showTruckComp && <TruckComp closeTruckComp={() => this.closeTruckComp()}/>}
+           <MapContainer/>
+          
+          {!this.state.showTruckComp && <div className="create-another-fleet-route-section">
             <div className="page-center">
              {this.state.showModal && <RoutesList  hideRouteList={() => this.hideRouteList()} routesArray={this.state.routesArray}/>}
              <StartOver showFunction={() => this.showRouteList()} hideRouteList={() => this.hideRouteList()}/>
             </div>
-         </div>
-         {/*<SideMapComp/>*/}
+          </div>}
       </div>
       );
   }

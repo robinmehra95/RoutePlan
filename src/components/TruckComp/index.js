@@ -24,7 +24,7 @@ class TruckComp extends React.Component {
                   <div className="caltex-journeyPlanner-content-group">
                     <h1>Journey planner</h1>
                     <p>At Caltex, we know that managing a fleet can be challenging. The Journey planner manifesto lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <button className="caltex-journeyPlanner-btn">Begin your journey</button>
+                    <button className="caltex-journeyPlanner-btn" onClick={this.props.closeTruckComp} >Begin your journey</button>
                   </div>
                 </div>
               </div>

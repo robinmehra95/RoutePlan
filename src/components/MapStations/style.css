@@ -1,0 +1,26 @@
+.mapstations-comp-wrap{
+    background: rgb(255, 255, 255);
+    border-radius: 0px;
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.25);
+    max-width: 1035px;
+    width: 100%;
+    padding: 54px 45px 50px 45px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate( -50%, -50%);
+}
+.mapstations-comp-wrap .comp-heading{
+    color: rgb(230, 47, 70);
+    font-family: ITCFranklinGothicStd-DmCd;
+    font-size: 39px;
+    letter-spacing: 0.5px;
+    line-height: 38px;
+    margin:  0 0 30px;
+}
+.mapstations-comp-wrap a.close-btn {
+    position: absolute;
+    right: 23px;
+    top: 16px;
+}
+
