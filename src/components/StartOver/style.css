@@ -206,7 +206,7 @@ ul.print-download-share-list > li {
     font-weight: med;
     letter-spacing: 0px;
     line-height: 22px;
-    padding: 5px 15px;
+    padding: 5px 13px;
     border-left: 1px solid rgb(240, 240, 240);
 }
 ul.print-download-share-list > li:first-child {

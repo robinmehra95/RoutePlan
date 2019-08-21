@@ -46,6 +46,7 @@ body .journeyPlanner-form-field input {
     top: 10%;
     position: fixed;
     z-index: 9;
+    max-width: 1245px;
 }
 .journeyPlanner-close-icon {
     display: block;
