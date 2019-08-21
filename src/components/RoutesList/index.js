@@ -219,27 +219,30 @@ class RoutesList extends React.Component {
                                                         className: 'location-search-input',
                                                     })}
                                                 />
-                                                <div className="autocomplete-dropdown-container pac-container pac-logo">
+                                                <div className="autocomplete-dropdown-container ">
                                                     {loading && <div>Loading...</div>}
-                                                    {suggestions.map(suggestion => {
-                                                        const className = suggestion.active
-                                                            ? 'suggestion-item--active pac-item pac-item-selected'
-                                                            : 'suggestion-item pac-item';
-                                                        // inline style for demonstration purpose
-                                                        const style = suggestion.active
-                                                            ? {backgroundColor: '#fafafa', cursor: 'pointer'}
-                                                            : {backgroundColor: '#ffffff', cursor: 'pointer'};
-                                                        return (
-                                                            <div
-                                                                {...getSuggestionItemProps(suggestion, {
-                                                                    className,
-                                                                    style,
-                                                                })}
-                                                            >
-                                                                <span>{suggestion.description}</span>
-                                                            </div>
-                                                        );
-                                                    })}
+                                                    <div className={`${suggestions.length > 1  && 'pac-container pac-logo'}`}>
+                                                        {suggestions.map(suggestion => {
+                                                            const className = suggestion.active
+                                                                ? 'suggestion-item--active pac-item pac-item-selected'
+                                                                : 'suggestion-item pac-item';
+                                                            // inline style for demonstration purpose
+                                                            const style = suggestion.active
+                                                                ? {backgroundColor: '#fafafa', cursor: 'pointer'}
+                                                                : {backgroundColor: '#ffffff', cursor: 'pointer'};
+                                                            return (
+                                                                <div
+                                                                    {...getSuggestionItemProps(suggestion, {
+                                                                        className,
+                                                                        style,
+                                                                    })}
+                                                                >
+                                                                    <span class="pac-icon pac-icon-marker"></span>
+                                                                    <span>{suggestion.description}</span>
+                                                                </div>
+                                                            );
+                                                        })}
+                                                     </div>
                                                 </div>
                                             </div>
                                         )}
@@ -260,16 +263,19 @@ class RoutesList extends React.Component {
                                                         className: 'location-search-input',
                                                     })}
                                                 />
-                                                <div className="autocomplete-dropdown-container pac-container pac-logo">
+                                                <div className="autocomplete-dropdown-container ">
                                                     {loading && <div>Loading...</div>}
+                                                    {console.log('**************** suggestions',suggestions)}
+                                                    <div className={`${suggestions.length > 1 && 'pac-container pac-logo'}`}>
                                                     {suggestions.map(suggestion => {
                                                         const className = suggestion.active
-                                                            ? 'suggestion-item--active pac-item'
+                                                            ? 'suggestion-item--active pac-item pac-item-selected'
                                                             : 'suggestion-item pac-item';
                                                         // inline style for demonstration purpose
                                                         const style = suggestion.active
                                                             ? {backgroundColor: '#fafafa', cursor: 'pointer'}
                                                             : {backgroundColor: '#ffffff', cursor: 'pointer'};
+                                                       
                                                         return (
                                                             <div
                                                                 {...getSuggestionItemProps(suggestion, {
@@ -278,10 +284,11 @@ class RoutesList extends React.Component {
                                                                 })}
                                                             >
                                                                 <span class="pac-icon pac-icon-marker"></span>
-                                                                <span class="pac-item-query">{suggestion.description}</span>
+                                                                <span>{suggestion.description}</span>
                                                             </div>
                                                         );
                                                     })}
+                                                    </div>
                                                 </div>
                                             </div>
                                         )}

@@ -36,7 +36,10 @@
     text-align: left;
     border-top: 1px solid #e6e6e6;
     font-size: 11px;
-    color: #999
+    color: #959595;
+}
+.pac-item.pac-item-selected{
+    color: #000;
 }
 .pac-item:hover {
     background-color: #fafafa
@@ -63,7 +66,6 @@
     vertical-align: top;
     background-image: url('https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons.png');
     background-size: 34px;
-    background-color: red;
 }
 .hdpi .pac-icon {
     background-image: url('https://maps.gstatic.com/mapfiles/api-3/images/autocomplete-icons_hdpi.png')
