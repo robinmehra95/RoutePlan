@@ -23,7 +23,7 @@ class StartOver extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showInfo: this.props.show
+            showInfo: this.props.show,
         }
     }
 
@@ -63,6 +63,8 @@ class StartOver extends React.Component {
         let dailyFleetMileage = 0;
         return dailyFleetMileage;
     };
+
+   
 
     render() {
         const {routes} = this.props;
@@ -113,7 +115,7 @@ class StartOver extends React.Component {
                                     {routes && routes.length} routes with a total of
                                     {Stations && Stations.results && Stations.results.length} Caltex stations at my
                                     service.</p>
-                                <a href="#" className="see-fullList-link">See full list of stations
+                                <a className="see-fullList-link cursor-pointer" onClick={() => this.props.onShowAllStations()}>See full list of stations
                                     <img src="" alt=""/></a>
                             </div>
                             <div className="displayingRoute-btSec-col center-col">

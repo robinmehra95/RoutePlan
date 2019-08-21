@@ -17,7 +17,7 @@ class MapStations extends React.Component {
     return (
       <div className="mapstations-comp-wrap">
         <div className="cs-top-row">
-            <a href="#" className="close-btn"><img src={img1}/></a>
+            <a className="close-btn cursor-pointer" onClick={() => this.props.onClose()}><img src={img1}/></a>
         </div>
         <div className="comp-heading">
           Displaying 4 of 45 Stations along your 3 routes

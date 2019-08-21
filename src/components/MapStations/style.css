@@ -42,11 +42,7 @@
     border-left: 1px solid rgb(204, 204, 204);
     position: relative;
 }
-.mapstations-comp-wrap .drop-down-list ul li span.arrow-icon {
-    position: absolute;
-    right : 20px;
-    top: 25px;
-}
+
 .mapstations-comp-wrap .drop-down-list ul li span{
     color: rgb(25, 81, 108);
     font-family: ITCFranklinGothicStd-Book;
@@ -55,6 +51,14 @@
     letter-spacing: 0.5px;
     line-height: 15px;
     vertical-align: middle;
+    display: inline-block;
+    margin-top: 4px;
+}
+.mapstations-comp-wrap .drop-down-list ul li span.arrow-icon {
+    position: absolute;
+    right : 20px;
+    top: 25px;
+    margin: 0;
 }
 .mapstations-comp-wrap .mapstations-comp-wrap .drop-down-list ul li:first-child{
     border-left: none;
