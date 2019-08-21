@@ -119,6 +119,10 @@ body .journeyPlanner-form-field input {
     display: inline-block;
     vertical-align: top;
     padding: 0 10px;
+    text-overflow: ellipsis;
+    max-width: 139px;
+    height: 18px;
+    overflow: hidden;
 }
 .journey-edit-remove {
     width: 70px;
@@ -223,6 +227,7 @@ body .journeyPlanner-form-field input {
     background-image: url('./../../img/icons_select_arrow@1x.svg');
     background-repeat: no-repeat;
     background-position: right center;
+    vertical-align: baseline;
 }
 .route-details-fieldset .journeyPlanner-form-field input[type="text"],
 .route-details-fieldset .journeyPlanner-form-field input[type="number"] {
@@ -344,7 +349,7 @@ h3.your-routes {
 
 
 @media (max-width: 767px) {
-
+    .journeyPlanner-popup-container{}
     .create-another-fleet-route-section .page-center {
         padding: 0;
     }

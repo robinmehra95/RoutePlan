@@ -265,7 +265,6 @@ class RoutesList extends React.Component {
                                                 />
                                                 <div className="autocomplete-dropdown-container ">
                                                     {loading && <div>Loading...</div>}
-                                                    {console.log('**************** suggestions',suggestions)}
                                                     <div className={`${suggestions.length > 1 && 'pac-container pac-logo'}`}>
                                                     {suggestions.map(suggestion => {
                                                         const className = suggestion.active

@@ -85,3 +85,26 @@
 .pac-placeholder {
     color: gray
 }
+
+
+.Select-control {
+    height: 20px;
+    font-size: 15px;
+}
+.Select-control .Select-placeholder {
+    line-height: 1;
+    font-size: 15px;
+}
+
+.Select-control .Select-value {
+    line-height: 1 !important;  
+    font-size: 15px;  
+}
+.Select-control .Select-value .Select-value-label {
+    line-height: 1;
+    font-size: 15px;
+}
+.Select-control .Select-input {
+    height: 1;
+    font-size: 15px;
+}
