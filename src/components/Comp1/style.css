@@ -1,7 +1,6 @@
 .create-another-fleet-route-section {
-
-    position: absolute;
-    overflow: hidden;
+    /*position: absolute;*/
+    /*overflow: hidden;*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -34,9 +33,15 @@
 }
 .journeyPlanner-popup-container {
     background-color: #fff;
-    position: relative;
+    /*position: relative;*/
     /*overflow: hidden;*/
     padding: 45px 0;
+    width: 90%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    position: fixed;
 }
 .journeyPlanner-close-icon {
     display: block;
@@ -277,6 +282,9 @@
     width: 150px;
 }
 
+h3.your-routes {
+    color: #1A516B;
+}
 
 
 

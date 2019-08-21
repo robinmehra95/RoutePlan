@@ -54,6 +54,8 @@ ul.user-route-change-list {
 }
 ul.user-route-change-list > li {
     display: inline-block;
+    cursor: pointer;
+    margin: 0 10px;
     vertical-align: top;
     /*width: 49%;*/
     color: rgb(255, 255, 255);
@@ -70,7 +72,8 @@ ul.user-route-change-list > li img {
     margin-right: 10px;
 }
 .displayingRoute-topSec-col.right-col {
-    padding-top: 16px;
+    /*padding-top: 16px;*/
+    padding: 14px 0;
 }
 
 /**/

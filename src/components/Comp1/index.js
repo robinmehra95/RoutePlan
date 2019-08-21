@@ -13,8 +13,7 @@ class Component1 extends React.Component {
   constructor(props) {
     super(props);
     this.state ={
-      routeList :false,
-      startOver : false,
+      showModal :true,
       routesArray : {
         "A": ["Torquay", "Exeter"],
         "B": ["Exmouth", "Okehampton"],
@@ -24,36 +23,37 @@ class Component1 extends React.Component {
   }
 
   showRouteList = () => {
-    if(this.state.routeList){
-      this.setState({
-        startOver: true,
-        routeList: false
-      })
-    }
-    else{
-      this.setState({
-        startOver: false,
-        routeList: true
-      })
-    }
+    this.setState({ showModal: true })
+    // if(this.state.showModal){
+    //   this.setState({
+    //     showModal: true
+    //   })
+    // }
+    // else{
+    //   this.setState({
+    //     showModal: true
+    //   })
+    // }
   };
 
   hideRouteList = () => {
     this.setState({
-      routeList: false
+      showModal: false
     })
   };
 
   render() {
     return (
-      <div className={`${(!this.state.routeList && !this.state.startOver) ? '' : 'dark-layor'}`}>
+      //<div className={`${(!this.state.showModal && !this.state.startOver) ? '' : 'dark-layor'}`}>
+        <div className={this.state.showModal ?  "dark-layor" : ""}>
          <MapContainer/>
-         <div className="create-another-fleet-route-section">
-            <div className="page-center full-height">
-             {this.state.routeList && <RoutesList  hideRouteList={() => this.hideRouteList()} routesArray={this.state.routesArray}/>}
-             <StartOver show={this.state.startOver} showFunction={() => this.showRouteList()} hideRouteList={() => this.hideRouteList()}/>
+          <div className="create-another-fleet-route-section">
+            <div className="page-center">
+             {this.state.showModal && <RoutesList  hideRouteList={() => this.hideRouteList()} routesArray={this.state.routesArray}/>}
+             <StartOver showFunction={() => this.showRouteList()} hideRouteList={() => this.hideRouteList()}/>
             </div>
          </div>
+         {/*<SideMapComp/>*/}
       </div>
       );
   }

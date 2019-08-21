@@ -4,7 +4,8 @@
 import React from 'react';
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
-import {get} from "lodash";
+import {setRoutes} from "../../actions/routes.actions";
+
 
 import './style.css';
 import img1 from './../../img/btns_carousel-arrow-red-white.svg'
@@ -16,7 +17,6 @@ import img6 from './../../img/icon_journey planner_route(2).svg'
 import img7 from './../../img/icons_print.svg'
 import img8 from './../../img/icons_download.svg'
 import img9 from './../../img/icons_share.svg'
-import {setRoutes} from "../../actions/routes.actions";
 import Stations from "../../stations";
 
 class StartOver extends React.Component {
@@ -35,6 +35,14 @@ class StartOver extends React.Component {
     };
 
     showFunctionWrap = () => {
+        this.setState({
+            showInfo: false
+        });
+        this.props.showFunction()
+    };
+
+    startOver = () => {
+        this.props.setRoutes([]);
         this.setState({
             showInfo: false
         });
@@ -72,9 +80,9 @@ class StartOver extends React.Component {
                             <div className="displayingRoute-topSec-col right-col">
                                 <ul className="user-route-change-list">
                                     <li onClick={() => this.showFunctionWrap()}>
-                                        <img src={img2} alt="Add and Edit Route"/> <span>Add / Edit Route</span>
+                                        <img src={img2} alt="Add and Edit Route"/> <span>Add/Edit Route</span>
                                     </li>
-                                    <li onClick={() => this.showFunctionWrap()}>
+                                    <li onClick={() => this.startOver()}>
                                         <img src={img3} alt="Start Over"/> <span>Start Over</span>
                                     </li>
                                 </ul>
@@ -153,6 +161,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(
         {
+            setRoutes
         },
         dispatch
     );

@@ -155,7 +155,7 @@ class RoutesList extends React.Component {
             <img src={img1} alt="Close" onClick={() => this.props.hideRouteList()}/>
           </span>
                 <div className="clearfix journeyPlanner-row">
-                    {!this.state.showRoutes && <div className="journeyPlanner-col left-col">
+                    {routesList.length ? <div className="journeyPlanner-col left-col">
                         <h3>Your Routes</h3>
                         <div className="journey-list">
                             <div className="journey-list-items-group">
@@ -186,14 +186,14 @@ class RoutesList extends React.Component {
                                 }
                             </div>
                         </div>
-                        <input type="submit" name="journey_see_my_routes" value="See my routes"
+                        <input onClick={() => this.props.hideRouteList()} type="button" name="journey_see_my_routes" value="See my routes"
                                className="journey-see-routes-btn"/>
-                    </div>}
+                    </div>: null}
 
-                    {this.state.showRoutes && <div className="journeyPlanner-col left-col">
+                    {!routesList.length && <div className="journeyPlanner-col left-col">
                         <h3>Your Routes</h3>
                         <div className="giveItGo-group">
-                            <h3>Give it a go.</h3>
+                            <h3 className="your-routes">Give it a go.</h3>
                             <p>You don’t have any routes, begin by adding in your first fleet route.</p>
                             <img src={img5} width="365" height="285" alt="Give It Go | Route" className="map-markers"/>
                         </div>
