@@ -6,7 +6,7 @@ import PlacesAutocomplete, {
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import Select from 'react-select';
-import {setRoutes} from "../../actions/routes.actions";
+import {setRoutes, setModalRoutesData} from "../../actions/routes.actions";
 
 import './style.css';
 import img1 from './../../img/icons_close00.svg'
@@ -29,7 +29,14 @@ class RoutesList extends React.Component {
             endPointCoordinates: {},
             selectedTimePeriod: null,
             duration: 0,
-            vehicles: 0
+            vehicles: 0,
+            routesList: []
+        }
+    }
+
+    componentDidMount() {
+        if(this.props.modalRoutes.length) {
+            this.setState({ routesList: this.props.modalRoutes })
         }
     }
 
@@ -77,7 +84,7 @@ class RoutesList extends React.Component {
         e.preventDefault();
         let isValidated = this.validate();
         if (isValidated) {
-            const {routesList} = this.props;
+            const {routesList} = this.state;
             const routesData = [...routesList];
             const {
                 startPointCoordinates, endPointCoordinates,
@@ -94,7 +101,8 @@ class RoutesList extends React.Component {
             };
 
             routesData.push(data);
-            this.props.setRoutes(routesData);
+            this.props.setModalRoutesData(routesData);
+
 
             this.setState({
                 selectedTimePeriod: null,
@@ -104,6 +112,7 @@ class RoutesList extends React.Component {
                 endPointAddress: "",
                 startPointCoordinates: {},
                 endPointCoordinates: {},
+                routesList: routesData
             })
         } else {
             alert("Please enter route correctly");
@@ -124,24 +133,42 @@ class RoutesList extends React.Component {
         })
     };
 
-    handleRemove = route => {
-        const {routesList} = this.props;
+    handleRemove = async(route) => {
+        const {routesList} = this.state;
         let routesData = [...routesList];
         for(let i = 0; i < routesData.length; i++ ) {
             if(route.incrementChar === routesData[i].incrementChar) {
                 routesData.splice(i, 1)
             }
         }
-        this.props.setRoutes(routesData);
+        await this.props.setModalRoutesData(routesData);
+        this.setState({routesList: routesData})
     };
 
     nextChar = c => {
         return String.fromCharCode(c.charCodeAt(0) + 1);
     };
 
+    seeMyRoutes = async() => {
+        const {routesList} = this.state;
+        await this.props.setRoutes(routesList);
+        this.props.viewRoutes();
+    };
+
+    viewSingleRoute = async route => {
+        await this.props.setRoutes([route]);
+        this.props.viewRoutes();
+    };
+
+    handleClose = async() => {
+        await this.props.setRoutes([]);
+        await this.props.setModalRoutesData([]);
+        this.props.hideRouteList();
+    };
+
     render() {
-        const {startPointAddress, endPointAddress, selectedTimePeriod, duration, vehicles} = this.state;
-        const {routesList} = this.props;
+        const {startPointAddress, endPointAddress, selectedTimePeriod, duration, vehicles, routesList} = this.state;
+        // const {routesList} = this.props;
         const timePeriodOptions = [
             {value: 'Month', label: 'Month'},
             {value: 'Quarter', label: 'Quarter'},
@@ -152,7 +179,7 @@ class RoutesList extends React.Component {
         return (
             <div className="journeyPlanner-popup-container">
           <span className="journeyPlanner-close-icon">
-            <img src={img1} alt="Close" onClick={() => this.props.hideRouteList()}/>
+            <img src={img1} alt="Close" onClick={this.handleClose}/>
           </span>
                 <div className="clearfix journeyPlanner-row">
                     {routesList.length ? <div className="journeyPlanner-col left-col">
@@ -163,8 +190,8 @@ class RoutesList extends React.Component {
                                     routesList.map((route, key) => {
                                         return (
                                             <div key={key} className="clearfix journey-list-item">
-                                                <div className="journey-series">{route.incrementChar}</div>
-                                                <div className="journey-points">
+                                                <div onClick={() => this.viewSingleRoute(route)} className="journey-series">{route.incrementChar}</div>
+                                                <div onClick={() => this.viewSingleRoute(route)} className="journey-points">
                                                     <span
                                                         className="journey-start-point">{route.startPointAddress}</span>
                                                     <span className="journey-travel-icon">
@@ -186,7 +213,7 @@ class RoutesList extends React.Component {
                                 }
                             </div>
                         </div>
-                        <input onClick={() => this.props.hideRouteList()} type="button" name="journey_see_my_routes" value="See my routes"
+                        <input onClick={() => this.seeMyRoutes()} type="button" name="journey_see_my_routes" value="See my routes"
                                className="journey-see-routes-btn"/>
                     </div>: null}
 
@@ -274,7 +301,7 @@ class RoutesList extends React.Component {
                                                         const style = suggestion.active
                                                             ? {backgroundColor: '#fafafa', cursor: 'pointer'}
                                                             : {backgroundColor: '#ffffff', cursor: 'pointer'};
-                                                       
+
                                                         return (
                                                             <div
                                                                 {...getSuggestionItemProps(suggestion, {
@@ -340,14 +367,16 @@ class RoutesList extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        routesList: state.routesReducer.routes
+        routesList: state.routesReducer.routes,
+        modalRoutes: state.routesReducer.modalRoutes
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(
         {
-            setRoutes
+            setRoutes,
+            setModalRoutesData
         },
         dispatch
     );

@@ -1,12 +1,10 @@
-/**
- * Created by intelligrape on 5/6/17.
- */
 import React from 'react';
 import './style.css';
 import RoutesList from './../RoutesList'
 import StartOver from './../StartOver'
 import MapContainer from './../MapBox'
 import TruckComp from './../TruckComp'
+
 import MapStations from './../MapStations'
 
 
@@ -25,22 +23,6 @@ class Component1 extends React.Component {
     }
   }
 
-
-  toggleAllStationsComp = ()=> {
-    console.log('************************')
-    if(this.state.allStations){
-        this.setState({
-            allStations: false
-        });
-    }
-    else{
-        this.setState({
-            allStations: true
-        });
-    }
-}
-
-
   showRouteList = () => {
     this.setState({ showModal: true })
     // if(this.state.showModal){
@@ -53,6 +35,19 @@ class Component1 extends React.Component {
     //     showModal: true
     //   })
     // }
+  };
+
+  toggleAllStations = () => {
+    if(this.state.allStations){
+      this.setState({
+        allStations: false
+      })
+    }
+    else{
+      this.setState({
+        allStations: true
+      })
+    }
   };
 
   hideRouteList = () => {
@@ -73,12 +68,11 @@ class Component1 extends React.Component {
         <div className={this.state.showModal ?  "dark-layor" : ""}>
            {this.state.showTruckComp && <TruckComp closeTruckComp={() => this.closeTruckComp()}/>}
            <MapContainer/>
-           {this.state.allStations && <MapStations onClose={this.toggleAllStationsComp} />}
-          {!this.state.showTruckComp && <div className="create-another-fleet-route-section">
+            {this.state.allStations && <MapStations  onClose={this.toggleAllStations} />}
+            {!this.state.showTruckComp && <div className="create-another-fleet-route-section">
             <div className="page-center">
-             
              {this.state.showModal && <RoutesList  hideRouteList={() => this.hideRouteList()} routesArray={this.state.routesArray}/>}
-             {!this.state.allStations && <StartOver onShowAllStations={this.toggleAllStationsComp}
+             {!this.state.allStations && <StartOver onShowAllStations={this.toggleAllStations}
              showFunction={() => this.showRouteList()} hideRouteList={() => this.hideRouteList()}/>}
             </div>
           </div>}

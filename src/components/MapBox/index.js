@@ -27,12 +27,12 @@ class Map extends React.Component {
     componentWillReceiveProps(nextProps, nextContext) {
         const {routes} = nextProps;
         let currentPropsRoutes = this.props.routes;
-        if(currentPropsRoutes.length !== routes.length) {
+        // if(currentPropsRoutes.length !== routes.length) {
             let directions =[];
             routes.map(route => {
                 this.createDirections(route.startPointCoordinates, route.endPointCoordinates, directions);
             });
-        }
+        // }
         if(routes.length === 0) {
             this.setState({ directions: [] })
         }
@@ -88,9 +88,9 @@ class Map extends React.Component {
                                     <div className="map-overlay-comp-wrap">
                                         <a href="#" className="close-btn"><img src={img1}/></a>
                                         <div className="cs-overlay-heading">
-                                            
+
                                         {marker.shelter}
-                                        
+
                                         </div>
                                         <p>Quirino Ave, San Dionisio, Philippines</p>
                                         <div className="tel-time-wrap row">
@@ -104,7 +104,7 @@ class Map extends React.Component {
                                             </div>
                                             <div className="col-sm-6 col-xs-6 icon-row">
                                                 <span className="icon">
-                                                    <img src={img1}/> 
+                                                    <img src={img1}/>
                                                 </span>
                                                 <span className="text-tel">
                                                     24-Hour
@@ -120,7 +120,7 @@ class Map extends React.Component {
                                     </div>
                                     </div>
                             </InfoWindow>}
-                            
+
                         </Marker>
                     )
                 })}
