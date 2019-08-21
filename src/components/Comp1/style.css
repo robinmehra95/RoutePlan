@@ -290,9 +290,24 @@ body .journeyPlanner-form-field input {
 h3.your-routes {
     color: #1A516B;
 }
-
-
-
+.time-period-select .css-yk16xz-control,
+.time-period-select .css-yk16xz-control:hover {
+    border-color: transparent;   
+    background-image: url('./../../img/icons_select_arrow@1x.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-position: 81% 46%;
+    border-bottom: 2px dotted rgb(102, 102, 102);
+}
+.time-period-select .css-tj5bde-Svg {
+    display: none;
+}
+.time-period-select .css-1okebmr-indicatorSeparator{
+    background-color: transparent;
+}
+.time-period-select .css-1hwfws3{
+    line-height: 1;
+}
 
 @media (max-width: 1024px) and (min-width: 768px) {
 
