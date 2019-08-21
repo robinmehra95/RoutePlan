@@ -1,16 +1,21 @@
 const initState = {
     loader: false,
-    routes: []
+    routes: [],
+    modalRoutes: []
 };
 
 export default function common(state = initState, action) {
     switch (action.type) {
         case "SET_ROUTES_SUCCESS": {
-            // let routes = [...state.routes];
-            // routes.push(action.data);
             return {
                 ...state,
                 routes: action.data,
+            };
+        }
+        case "SET_MODAL_ROUTES_SUCCESS": {
+            return {
+                ...state,
+                modalRoutes: action.data,
             };
         }
         default:

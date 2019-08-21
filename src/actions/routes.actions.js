@@ -6,3 +6,12 @@ export const setRoutes = (data = null) => {
             });
         };
 };
+
+export const setModalRoutesData = (data = null) => {
+    return function(dispatch) {
+        dispatch({
+            type: "SET_MODAL_ROUTES_SUCCESS",
+            data
+        });
+    };
+};

@@ -11,61 +11,73 @@ import MapStations from './../MapStations'
 
 
 class Component1 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state ={
-      showModal :true,
-      showTruckComp: true,
-      routesArray : {
-        "A": ["Torquay", "Exeter"],
-        "B": ["Exmouth", "Okehampton"],
-        "C": ["Penzance", "Falmouth"]
+    constructor(props) {
+        super(props);
+        this.state = {
+            showModal: true,
+            showTruckComp: true,
+            routesArray: {
+                "A": ["Torquay", "Exeter"],
+                "B": ["Exmouth", "Okehampton"],
+                "C": ["Penzance", "Falmouth"]
+            }
+        }
     }
-    }
-  }
 
-  showRouteList = () => {
-    this.setState({ showModal: true })
-    // if(this.state.showModal){
-    //   this.setState({
-    //     showModal: true
-    //   })
-    // }
-    // else{
-    //   this.setState({
-    //     showModal: true
-    //   })
-    // }
-  };
+    showRouteList = () => {
+        this.setState({showModal: true})
+        // if(this.state.showModal){
+        //   this.setState({
+        //     showModal: true
+        //   })
+        // }
+        // else{
+        //   this.setState({
+        //     showModal: true
+        //   })
+        // }
+    };
 
-  hideRouteList = () => {
-    this.setState({
-      showModal: false
-    })
-  };
+    hideRouteList = () => {
+        this.setState({
+            showModal: false,
+            showTruckComp: true
+        })
+    };
 
-  closeTruckComp = () => {
-    this.setState({
-      showTruckComp: false
-    })
-  };
+    closeTruckComp = () => {
+        this.setState({
+            showTruckComp: false,
+            showModal: true
+        })
+    };
 
-  render() {
-    return (
-      //<div className={`${(!this.state.showModal && !this.state.startOver) ? '' : 'dark-layor'}`}>
-        <div className={this.state.showModal ?  "dark-layor" : ""}>
-           {this.state.showTruckComp && <TruckComp closeTruckComp={() => this.closeTruckComp()}/>}
-           <MapContainer/>
-          
-          {!this.state.showTruckComp && <div className="create-another-fleet-route-section">
-            <div className="page-center">
-             {this.state.showModal && <RoutesList  hideRouteList={() => this.hideRouteList()} routesArray={this.state.routesArray}/>}
-             <StartOver showFunction={() => this.showRouteList()} hideRouteList={() => this.hideRouteList()}/>
+    hideAllModals = () => {
+        this.setState({
+            showTruckComp: false,
+            showModal: false
+        })
+    };
+
+    render() {
+        return (
+            //<div className={`${(!this.state.showModal && !this.state.startOver) ? '' : 'dark-layor'}`}>
+            <div className={this.state.showModal ? "dark-layor" : ""}>
+                {this.state.showTruckComp && <TruckComp closeTruckComp={() => this.closeTruckComp()}/>}
+                <MapContainer/>
+
+                {!this.state.showTruckComp && <div className="create-another-fleet-route-section">
+                    <div className="page-center">
+                        {this.state.showModal &&
+                        <RoutesList viewRoutes={this.hideAllModals} hideRouteList={() => this.hideRouteList()}
+                                    routesArray={this.state.routesArray}/>}
+                        <StartOver showFunction={() => this.showRouteList()}
+                                   hideRouteList={() => this.hideRouteList()}/>
+                    </div>
+                </div>}
             </div>
-          </div>}
-      </div>
-      );
-  }
+        );
+    }
 }
 
 export default Component1;

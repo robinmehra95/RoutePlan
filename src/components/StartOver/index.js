@@ -31,7 +31,7 @@ class StartOver extends React.Component {
         this.setState({
             showInfo: !this.state.showInfo
         });
-        this.props.hideRouteList()
+        // this.props.hideRouteList()
     };
 
     showFunctionWrap = (e) => {
