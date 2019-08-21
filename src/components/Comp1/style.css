@@ -14,7 +14,7 @@
 .dark-layor .create-another-fleet-route-section:after {
     content: "";
     width: 100%;
-    height: 100%;
+    height: calc(100vh  + 85px);
     position: absolute;
     top: 0;
     left: 0;
@@ -23,6 +23,9 @@
     z-index: 0;
     background-color: rgb(19, 20, 36);
     opacity: 0.4;
+}
+body .journeyPlanner-form-field input {
+    padding: 17px 32px;
 }
 .create-another-fleet-route-section .page-center {
     position: relative;
@@ -42,6 +45,7 @@
     right: 0;
     top: 10%;
     position: fixed;
+    z-index: 9;
 }
 .journeyPlanner-close-icon {
     display: block;
