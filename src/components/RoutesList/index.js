@@ -219,7 +219,7 @@ class RoutesList extends React.Component {
                                                         className: 'location-search-input',
                                                     })}
                                                 />
-                                                <div className="autocomplete-dropdown-container pac-container">
+                                                <div className="autocomplete-dropdown-container pac-container pac-logo">
                                                     {loading && <div>Loading...</div>}
                                                     {suggestions.map(suggestion => {
                                                         const className = suggestion.active
@@ -260,11 +260,11 @@ class RoutesList extends React.Component {
                                                         className: 'location-search-input',
                                                     })}
                                                 />
-                                                <div className="autocomplete-dropdown-container pac-container">
+                                                <div className="autocomplete-dropdown-container pac-container pac-logo">
                                                     {loading && <div>Loading...</div>}
                                                     {suggestions.map(suggestion => {
                                                         const className = suggestion.active
-                                                            ? 'suggestion-item--active pac-item pac-item-selected'
+                                                            ? 'suggestion-item--active pac-item'
                                                             : 'suggestion-item pac-item';
                                                         // inline style for demonstration purpose
                                                         const style = suggestion.active
@@ -277,8 +277,8 @@ class RoutesList extends React.Component {
                                                                     style,
                                                                 })}
                                                             >
-                                                                <span className="pac-icon"></span>
-                                                                <span>{suggestion.description}</span>
+                                                                <span class="pac-icon pac-icon-marker"></span>
+                                                                <span class="pac-item-query">{suggestion.description}</span>
                                                             </div>
                                                         );
                                                     })}
