@@ -54,16 +54,15 @@ class Component1 extends React.Component {
     return (
       //<div className={`${(!this.state.showModal && !this.state.startOver) ? '' : 'dark-layor'}`}>
         <div className={this.state.showModal ?  "dark-layor" : ""}>
-           {/* {this.state.showTruckComp && <TruckComp closeTruckComp={() => this.closeTruckComp()}/>} */}
+           {this.state.showTruckComp && <TruckComp closeTruckComp={() => this.closeTruckComp()}/>}
            <MapContainer/>
           
-          {/* {!this.state.showTruckComp && <div className="create-another-fleet-route-section">
+          {!this.state.showTruckComp && <div className="create-another-fleet-route-section">
             <div className="page-center">
              {this.state.showModal && <RoutesList  hideRouteList={() => this.hideRouteList()} routesArray={this.state.routesArray}/>}
              <StartOver showFunction={() => this.showRouteList()} hideRouteList={() => this.hideRouteList()}/>
             </div>
-          </div>} */}
-          <MapStations/>
+          </div>}
       </div>
       );
   }
