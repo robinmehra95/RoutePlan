@@ -83,7 +83,17 @@ class MapStations extends React.Component {
               </div>
            </div>
 
-          
+          <div className="cs-pagination">
+                <div className="left-arrow">
+                  <img src={img3}/>
+                </div>
+                <div className="page-no-wrap">
+                  Page  2  of 15
+                </div>
+                <div className="right-arrow">
+                  <img src={img3}/>
+                </div>
+          </div>
         </div>
       </div>
       );
