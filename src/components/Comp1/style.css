@@ -27,6 +27,9 @@
 body .journeyPlanner-form-field input {
     padding: 17px 32px;
 }
+.cursor-pointer{
+    cursor: pointer;
+}
 .create-another-fleet-route-section .page-center {
     position: relative;
     z-index: 1;

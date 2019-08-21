@@ -4,7 +4,7 @@
     box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.25);
     max-width: 1035px;
     width: 100%;
-    padding: 55px 0;
+    padding: 55px 0 24px;
     left: 50%;
     position: absolute;
     top: 50%;
@@ -26,7 +26,7 @@
 }
 
 .mapstations-comp-wrap .drop-down-list{
-    margin:  0 0 45px;
+    margin:  0 0 0;
     border-top: 1px solid rgb(204, 204, 204);
     border-bottom: 1px solid rgb(204, 204, 204);
 }
@@ -42,11 +42,7 @@
     border-left: 1px solid rgb(204, 204, 204);
     position: relative;
 }
-.mapstations-comp-wrap .drop-down-list ul li span.arrow-icon {
-    position: absolute;
-    right : 20px;
-    top: 25px;
-}
+
 .mapstations-comp-wrap .drop-down-list ul li span{
     color: rgb(25, 81, 108);
     font-family: ITCFranklinGothicStd-Book;
@@ -55,6 +51,14 @@
     letter-spacing: 0.5px;
     line-height: 15px;
     vertical-align: middle;
+    display: inline-block;
+    margin-top: 4px;
+}
+.mapstations-comp-wrap .drop-down-list ul li span.arrow-icon {
+    position: absolute;
+    right : 20px;
+    top: 25px;
+    margin: 0;
 }
 .mapstations-comp-wrap .mapstations-comp-wrap .drop-down-list ul li:first-child{
     border-left: none;
@@ -114,4 +118,40 @@
     padding-right: 49px;
 
 }
+.mapstations-comp-wrap .cs-pagination{
+    text-align: center;
+    margin-top: 25px;
+}
+.mapstations-comp-wrap .cs-pagination .page-no-wrap{
+    color: rgb(0, 0, 0);
+    font-family: ITCFranklinGothicStd-DmCd;
+    font-size: 15px;
+    height: 15px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    display: inline-block;
+}
+.mapstations-comp-wrap .cs-pagination .left-arrow {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    padding-right: 25px;
+}
+.mapstations-comp-wrap .cs-pagination .left-arrow  img{
+    max-width: 10px;
+    transform: rotate(90deg);
+}
 
+.mapstations-comp-wrap .cs-pagination .right-arrow {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    padding-left: 17px;
+}
+.mapstations-comp-wrap .cs-pagination .right-arrow  img{
+    max-width: 10px;
+    transform: rotate(270deg);
+}
+.map-overlay-comp-wrap:after{
+    display: none;
+}
