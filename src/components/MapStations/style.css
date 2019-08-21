@@ -1,0 +1,117 @@
+.mapstations-comp-wrap{
+    background: rgb(255, 255, 255);
+    border-radius: 0px;
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.25);
+    max-width: 1035px;
+    width: 100%;
+    padding: 55px 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate( -50%, -50%);
+}
+.mapstations-comp-wrap .comp-heading{
+    color: rgb(230, 47, 70);
+    font-family: ITCFranklinGothicStd-DmCd;
+    font-size: 39px;
+    letter-spacing: 0.5px;
+    line-height: 38px;
+    margin: 0 0 23px;
+    padding:  0 44px;
+}
+.mapstations-comp-wrap a.close-btn {
+    position: absolute;
+    right: 23px;
+    top: 16px;
+}
+
+.mapstations-comp-wrap .drop-down-list{
+    margin:  0 0 45px;
+    border-top: 1px solid rgb(204, 204, 204);
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+.mapstations-comp-wrap .drop-down-list ul li{
+    color: rgb(0, 0, 0);
+    font-family: ITCFranklinGothicStd-DmCd;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    text-transform: uppercase;
+    padding: 22px 10px 16px;
+    display: inline-block;
+    border-left: 1px solid rgb(204, 204, 204);
+    position: relative;
+}
+.mapstations-comp-wrap .drop-down-list ul li span.arrow-icon {
+    position: absolute;
+    right : 20px;
+    top: 25px;
+}
+.mapstations-comp-wrap .drop-down-list ul li span{
+    color: rgb(25, 81, 108);
+    font-family: ITCFranklinGothicStd-Book;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 15px;
+    vertical-align: middle;
+}
+.mapstations-comp-wrap .mapstations-comp-wrap .drop-down-list ul li:first-child{
+    border-left: none;
+} 
+.mapstations-comp-wrap .drop-down-list ul li p{
+    color: rgb(0, 0, 0);
+    font-family: ITCFranklinGothicStd-Med;
+    font-size: 15px;
+    letter-spacing: 0px;
+    text-align: right;
+    text-decoration: underline;
+}
+.mapstations-comp-wrap .station-wrap{
+    padding: 22.5px;
+}
+.mapstations-comp-wrap .col-wrap{
+    border: 1px solid rgb(204, 204, 204);
+    max-height: 152px;
+    max-width: 555px;
+    padding: 20px;
+}
+.mapstations-comp-wrap .col-wrap .left-col {
+    width: 125px;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 14px;
+    padding-top: 3px;
+    padding-right: 10px;
+}
+.mapstations-comp-wrap .col-wrap .right-col {
+    width: calc(100% - 125px);
+    display: inline-block;
+    vertical-align: top;
+    padding: 3px 12px 0 15px;
+}
+.mapstations-comp-wrap .station-inner-wrap {
+    width: 50%;
+    display: inline-block;
+    padding: 20px 7px;
+}
+.mapstations-comp-wrap .drop-down-list ul li.filter-station {
+    padding-left: 46px;
+    padding-right: 163px;
+}
+.mapstations-comp-wrap .drop-down-list ul li.routes {
+    padding-left: 20px;
+    padding-right: 57px;
+
+}
+.mapstations-comp-wrap .drop-down-list ul li.amenties {
+    padding-left: 20px;
+    padding-right: 49px;
+
+}
+.mapstations-comp-wrap .drop-down-list ul li.fuels {
+    padding-left: 20px;
+    padding-right: 49px;
+
+}
+

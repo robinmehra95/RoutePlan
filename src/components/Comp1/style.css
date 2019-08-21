@@ -14,7 +14,7 @@
 .dark-layor .create-another-fleet-route-section:after {
     content: "";
     width: 100%;
-    height: 100%;
+    height: calc(100vh  + 85px);
     position: absolute;
     top: 0;
     left: 0;
@@ -23,6 +23,9 @@
     z-index: 0;
     background-color: rgb(19, 20, 36);
     opacity: 0.4;
+}
+body .journeyPlanner-form-field input {
+    padding: 17px 32px;
 }
 .create-another-fleet-route-section .page-center {
     position: relative;
@@ -42,6 +45,8 @@
     right: 0;
     top: 10%;
     position: fixed;
+    z-index: 9;
+    max-width: 1245px;
 }
 .journeyPlanner-close-icon {
     display: block;
@@ -114,6 +119,10 @@
     display: inline-block;
     vertical-align: top;
     padding: 0 10px;
+    text-overflow: ellipsis;
+    max-width: 139px;
+    height: 18px;
+    overflow: hidden;
 }
 .journey-edit-remove {
     width: 70px;
@@ -218,6 +227,7 @@
     background-image: url('./../../img/icons_select_arrow@1x.svg');
     background-repeat: no-repeat;
     background-position: right center;
+    vertical-align: baseline;
 }
 .route-details-fieldset .journeyPlanner-form-field input[type="text"],
 .route-details-fieldset .journeyPlanner-form-field input[type="number"] {
@@ -285,10 +295,32 @@
 h3.your-routes {
     color: #1A516B;
 }
-
-
-
-
+.time-period-select .css-yk16xz-control,
+.time-period-select .css-yk16xz-control:hover {
+    border-color: transparent;   
+    background-image: url('./../../img/icons_select_arrow@1x.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-position: 81% 46%;
+    border-bottom: 2px dotted rgb(102, 102, 102);
+}
+.time-period-select .css-tj5bde-Svg {
+    display: none;
+}
+.time-period-select .css-1okebmr-indicatorSeparator{
+    background-color: transparent;
+}
+.time-period-select .css-1hwfws3{
+    line-height: 1;
+}
+.time-period-select .css-2613qy-menu{
+    background: red;
+    position: relative;
+    bottom: -100%;
+}
+.journey-list {
+    height: 410px;
+}
 @media (max-width: 1024px) and (min-width: 768px) {
 
 	.create-another-fleet-route-section .page-center {
@@ -319,7 +351,10 @@ h3.your-routes {
 
 
 @media (max-width: 767px) {
-
+    .journey-list {
+        height: auto;
+    }
+    .journeyPlanner-popup-container{}
     .create-another-fleet-route-section .page-center {
         padding: 0;
     }
@@ -364,6 +399,12 @@ h3.your-routes {
         width: 100% !important;
         max-width: 195px !important;
         float: none !important;
+    }
+    .create-another-fleet-route-section .page-center {
+        position: static;
+    }
+    .journeyPlanner-popup-container{
+        position: absolute;
     }
 
 }

@@ -19,6 +19,9 @@ class SideMapComp extends React.Component {
                 Back to Stations Listing
             </a>
           </div>
+          <div className="col-right">
+            <img src={img2} className="cs-main-img"/>
+          </div> 
           <div className="col-left">
               <div className="cs-main-heading">
                   Caltex Tikay
@@ -74,9 +77,7 @@ class SideMapComp extends React.Component {
           
           
           
-          <div className="col-right">
-            <img src={img2} className="cs-main-img"/>
-          </div>           
+                  
       </div>
 
       );

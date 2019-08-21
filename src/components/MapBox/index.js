@@ -4,6 +4,7 @@
 import React from 'react';
 import {withGoogleMap, GoogleMap, DirectionsRenderer, Marker, InfoWindow} from 'react-google-maps';
 import './style.css';
+import img1 from './../../img/icons_close00.svg';
 import Stations from "../../stations";
 import CaltexIcon from "../../img/icon-caltex-circle.png";
 import {bindActionCreators} from "redux";
@@ -83,11 +84,43 @@ class Map extends React.Component {
                         >
                             {that.state.selectedMarker === marker &&
                             <InfoWindow>
-                                <div>
-                                    {marker.shelter}
-                                </div>
+                                <div className="map-overlay-outer-wrap">
+                                    <div className="map-overlay-comp-wrap">
+                                        <a href="#" className="close-btn"><img src={img1}/></a>
+                                        <div className="cs-overlay-heading">
+                                            
+                                        {marker.shelter}
+                                        
+                                        </div>
+                                        <p>Quirino Ave, San Dionisio, Philippines</p>
+                                        <div className="tel-time-wrap row">
+                                            <div className="col-sm-6 col-xs-6 icon-row">
+                                                <span className="icon">
+                                                    <img src={img1}/>
+                                                </span>
+                                                <span className="text-tel">
+                                                    +66 2 279 7966
+                                                </span>
+                                            </div>
+                                            <div className="col-sm-6 col-xs-6 icon-row">
+                                                <span className="icon">
+                                                    <img src={img1}/> 
+                                                </span>
+                                                <span className="text-tel">
+                                                    24-Hour
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div className="bottom-text-wrap">
+                                            <p>
+                                            5 Fuel Options • 6 Amenities
+                                            </p>
+                                            <a href="#">More details</a>
+                                        </div>
+                                    </div>
+                                    </div>
                             </InfoWindow>}
-                            }
+                            
                         </Marker>
                     )
                 })}
@@ -97,7 +130,7 @@ class Map extends React.Component {
         return (
             <div className="map">
                 <GoogleMapExample
-                    containerElement={<div style={{height: `100vh`, width: 'auto'}}/>}
+                    containerElement={<div style={{height: `calc(100vh + 86px)`, width: 'auto'}}/>}
                     mapElement={<div style={{height: `100%`}}/>}
                 />
             </div>
