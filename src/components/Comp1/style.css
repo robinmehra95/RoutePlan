@@ -400,6 +400,12 @@ h3.your-routes {
         max-width: 195px !important;
         float: none !important;
     }
+    .create-another-fleet-route-section .page-center {
+        position: static;
+    }
+    .journeyPlanner-popup-container{
+        position: absolute;
+    }
 
 }
 

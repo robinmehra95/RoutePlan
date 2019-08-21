@@ -34,14 +34,16 @@ class StartOver extends React.Component {
         this.props.hideRouteList()
     };
 
-    showFunctionWrap = () => {
+    showFunctionWrap = (e) => {
+        e.stopPropagation();
         this.setState({
             showInfo: false
         });
         this.props.showFunction()
     };
 
-    startOver = () => {
+    startOver = (e) => {
+        e.stopPropagation();
         this.props.setRoutes([]);
         this.setState({
             showInfo: false
@@ -70,7 +72,7 @@ class StartOver extends React.Component {
             <div>
                 <div className="displaying-routes-container">
                     <div className="clearfix displaying-route-topSection">
-                        <div className="displayingRoute-topSec-row">
+                        <div className="displayingRoute-topSec-row" onClick={() => this.showHideInfo()}>
                             <div className="displayingRoute-topSec-col left-col">
                                 <h6>Displaying {routes && routes.length} Routes</h6>
                             </div>
@@ -79,10 +81,10 @@ class StartOver extends React.Component {
                             </div>
                             <div className="displayingRoute-topSec-col right-col">
                                 <ul className="user-route-change-list">
-                                    <li onClick={() => this.showFunctionWrap()}>
+                                    <li onClick={(e) => this.showFunctionWrap(e)}>
                                         <img src={img2} alt="Add and Edit Route"/> <span>Add/Edit Route</span>
                                     </li>
-                                    <li onClick={() => this.startOver()}>
+                                    <li onClick={(e) => this.startOver(e)}>
                                         <img src={img3} alt="Start Over"/> <span>Start Over</span>
                                     </li>
                                 </ul>
