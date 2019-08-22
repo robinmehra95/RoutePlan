@@ -1,0 +1,1 @@
+export const maxDistanceOfRadius = 5000;
