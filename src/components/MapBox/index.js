@@ -81,7 +81,7 @@ class Map extends React.Component {
                             onClick={props.onMarkerClustererClick}
                             averageCenter
                             enableRetinaIcons
-                            gridSize={60}
+                            gridSize={12}
                         //     styles={[
                         //         {
                         //             url: {CaltexIcon},
@@ -135,17 +135,18 @@ class Map extends React.Component {
                                                 <a href="#" className="close-btn"><img src={img1}/></a>
                                                 <div className="cs-overlay-heading">
 
-                                                    {marker.shelter}
+                                                    {marker.name}
 
                                                 </div>
-                                                <p>Quirino Ave, San Dionisio, Philippines</p>
+                                                <p>{marker.street+" "+ marker.city +" "+ marker.state+", "+marker.country +" "+ marker.postalCode}</p>
+
                                                 <div className="tel-time-wrap row">
                                                     <div className="col-sm-6 col-xs-6 icon-row">
                                                 <span className="icon">
                                                     <img src={img1}/>
                                                 </span>
                                                         <span className="text-tel">
-                                                    +66 2 279 7966
+                                                            {marker.phoneNumber}
                                                 </span>
                                                     </div>
                                                     <div className="col-sm-6 col-xs-6 icon-row">
@@ -159,10 +160,10 @@ class Map extends React.Component {
                                                 </div>
                                                 <div className="bottom-text-wrap">
                                                     <p>
-                                                        5 Fuel Options • 6 Amenities
+                                                        {marker.fuelsName && marker.fuelsName.length} Fuel Options • {marker.amenitiesName && marker.amenitiesName.length} Amenities
                                                     </p>
                                                     <a className="cursor-pointer"
-                                                       onClick={() => this.props.showSidemapComp()}>More details</a>
+                                                       onClick={() => this.props.showSidemapComp(marker)}>More details</a>
                                                 </div>
                                             </div>
                                         </div>
