@@ -7,6 +7,7 @@ import './style.css';
 import img1 from './../../img/icons_close00.svg';
 import Stations from "../../stations";
 import CaltexIcon from "../../img/icon-caltex-circle.png";
+import MarkerIcon from "../../img/marker_icon.png";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 
@@ -75,65 +76,102 @@ class Map extends React.Component {
             >
                 {this.state.directions.map((direction, key) => <DirectionsRenderer key={key} directions={direction}/>
                 )}
-                {Stations.results.map(marker => {
-                    console.log("marker", marker)
                     return (
                         <MarkerClusterer
                             onClick={props.onMarkerClustererClick}
                             averageCenter
                             enableRetinaIcons
                             gridSize={60}
-                        >
-                            <Marker
-                                icon={CaltexIcon}
-                                key={marker.id}
-                                onClick={() => this.handleMarkerClick(marker)}
-                                position={{lat: parseFloat(marker.latitude), lng: parseFloat(marker.longitude)}}
+                        //     styles={[
+                        //         {
+                        //             url: {CaltexIcon},
+                        //             height: 26,
+                        //             width: 26,
+                        //             fontFamily:"Lato",
+                        //             textColor:"#FFF",
+                        //         },
+                        //         {
+                        //             url: {CaltexIcon},
+                        //             height: 29,
+                        //             width: 29,
+                        //             fontFamily:"Lato",
+                        //             textColor:"#FFF",
+                        //         },
+                        //         {
+                        //             url: {CaltexIcon},
+                        //             height: 34,
+                        //             width: 34,
+                        //             fontFamily:"Lato",
+                        //             textColor:"#FFF",
+                        //         },
+                        //         {
+                        //             url: {CaltexIcon},
+                        //             height: 40,
+                        //             width: 40,
+                        //             fontFamily:"Lato",
+                        //             textColor:"#FFF",
+                        //         },
+                        //         {
+                        //             url: {CaltexIcon},
+                        //             height: 46,
+                        //             width: 46,
+                        //             fontFamily:"Lato",
+                        //             textColor:"#FFF",
+                        //         }
+                        //     ]}
+                        //
                             >
-                                {that.state.selectedMarker === marker &&
-                                <InfoWindow>
-                                    <div className="map-overlay-outer-wrap">
-                                        <div className="map-overlay-comp-wrap">
-                                            <a href="#" className="close-btn"><img src={img1}/></a>
-                                            <div className="cs-overlay-heading">
+                            {Stations.results.map(marker => (
+                                <Marker
+                                    icon={MarkerIcon}
+                                    key={marker.id}
+                                    onClick={() => this.handleMarkerClick(marker)}
+                                    position={{lat: parseFloat(marker.latitude), lng: parseFloat(marker.longitude)}}
+                                >
+                                    {that.state.selectedMarker === marker &&
+                                    <InfoWindow>
+                                        <div className="map-overlay-outer-wrap">
+                                            <div className="map-overlay-comp-wrap">
+                                                <a href="#" className="close-btn"><img src={img1}/></a>
+                                                <div className="cs-overlay-heading">
 
-                                                {marker.shelter}
+                                                    {marker.shelter}
 
-                                            </div>
-                                            <p>Quirino Ave, San Dionisio, Philippines</p>
-                                            <div className="tel-time-wrap row">
-                                                <div className="col-sm-6 col-xs-6 icon-row">
+                                                </div>
+                                                <p>Quirino Ave, San Dionisio, Philippines</p>
+                                                <div className="tel-time-wrap row">
+                                                    <div className="col-sm-6 col-xs-6 icon-row">
                                                 <span className="icon">
                                                     <img src={img1}/>
                                                 </span>
-                                                    <span className="text-tel">
+                                                        <span className="text-tel">
                                                     +66 2 279 7966
                                                 </span>
-                                                </div>
-                                                <div className="col-sm-6 col-xs-6 icon-row">
+                                                    </div>
+                                                    <div className="col-sm-6 col-xs-6 icon-row">
                                                 <span className="icon">
                                                     <img src={img1}/>
                                                 </span>
-                                                    <span className="text-tel">
+                                                        <span className="text-tel">
                                                     24-Hour
                                                 </span>
+                                                    </div>
+                                                </div>
+                                                <div className="bottom-text-wrap">
+                                                    <p>
+                                                        5 Fuel Options • 6 Amenities
+                                                    </p>
+                                                    <a className="cursor-pointer"
+                                                       onClick={() => this.props.showSidemapComp()}>More details</a>
                                                 </div>
                                             </div>
-                                            <div className="bottom-text-wrap">
-                                                <p>
-                                                    5 Fuel Options • 6 Amenities
-                                                </p>
-                                                <a className="cursor-pointer"
-                                                   onClick={() => this.props.showSidemapComp()}>More details</a>
-                                            </div>
                                         </div>
-                                    </div>
-                                </InfoWindow>}
+                                    </InfoWindow>}
 
-                            </Marker>
+                                </Marker>
+                            ))}
                         </MarkerClusterer>
                     )
-                })}
             </GoogleMap>
         ));
 
