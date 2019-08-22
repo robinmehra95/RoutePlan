@@ -23,12 +23,75 @@ class MapStations extends React.Component {
             <li className="filter-station">Filter stations by</li>
             <li className="routes cursor-pointer">
               Routes <span> 2</span> <span className="arrow-icon"><img src={img3}/></span>
+
+              <div className="filter-wrap filter-colp-box">
+                <ul>
+                  <li class="form-field">
+                    <input type="checkbox" id="checkbox-1" checked=""/>
+                    <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
+                  
+                  </li>
+                  
+                  <li class="form-field">
+                  <input type="checkbox" id="checkbox-1" checked=""/>
+                  <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
+                  
+                  </li>
+                  <li class="form-field">
+                  <input type="checkbox" id="checkbox-1" checked=""/>
+                  <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
+                  
+                  </li>
+                </ul>
+              </div>
             </li>
             <li className="fuels cursor-pointer">
               Fuels available <span> 2</span> <span className="arrow-icon"><img src={img3}/></span>
+             
+              <div className="filter-wrap filter-colp-box">
+                <ul>
+                  <li class="form-field">
+                    <input type="checkbox" id="checkbox-1" checked=""/>
+                    <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
+                  
+                  </li>
+                  
+                  <li class="form-field">
+                  <input type="checkbox" id="checkbox-1" checked=""/>
+                  <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
+                  
+                  </li>
+                  <li class="form-field">
+                  <input type="checkbox" id="checkbox-1" checked=""/>
+                  <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
+                  
+                  </li>
+                </ul>
+              </div>
             </li>
             <li className="amenties cursor-pointer">
               amenities <span> 2</span><span className="arrow-icon"><img src={img3}/></span>
+              
+              <div className="filter-wrap filter-colp-box">
+                <ul>
+                  <li class="form-field">
+                    <input type="checkbox" id="checkbox-1" checked=""/>
+                    <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
+                  
+                  </li>
+                  
+                  <li class="form-field">
+                  <input type="checkbox" id="checkbox-1" checked=""/>
+                  <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
+                  
+                  </li>
+                  <li class="form-field">
+                  <input type="checkbox" id="checkbox-1" checked=""/>
+                  <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
+                  
+                  </li>
+                </ul>
+              </div>
             </li>
             <li>
               <p className="cursor-pointer">
