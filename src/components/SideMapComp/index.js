@@ -6,7 +6,6 @@ import img2 from './../../img/4444444.png';
 class SideMapComp extends React.Component {
   constructor(props) {
     super(props);
-    console.log("Pprp........")
       this.state = {
           markerData:props.markerData
       }

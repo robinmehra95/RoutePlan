@@ -3,6 +3,7 @@ import './style.css';
 import img1 from './../../img/icons_close00.svg';
 import img2 from './../../img/4444444.png';
 import CaltexStationComp from './../CaltexStationComp';
+import Stations from "../../stations";
 
 import img3 from './../../img/icons_select_arrow@1x.svg';
 
@@ -42,46 +43,59 @@ class MapStations extends React.Component {
           </ul>
         </div>
         <div className="station-wrap">
-           <div className="station-inner-wrap">
-              <div className="col-wrap">
-                <div className="left-col">
-                    <img src={img2} />
+            {Stations.results.map((item, index) => (
+                <div className="station-inner-wrap">
+                    <div className="col-wrap">
+                        <div className="left-col">
+                            <img src={img2} />
+                        </div>
+                        <div className="right-col">
+                            <CaltexStationComp markerData={item}/>
+                        </div>
+                    </div>
                 </div>
-                <div className="right-col">
-                    <CaltexStationComp/>
-                </div>
-              </div>
-           </div>
-           <div className="station-inner-wrap">
-              <div className="col-wrap">
-                <div className="left-col">
-                    <img src={img2} />
-                </div>
-                <div className="right-col">
-                    <CaltexStationComp/>
-                </div>
-              </div>
-           </div>
-           <div className="station-inner-wrap">
-              <div className="col-wrap">
-                <div className="left-col">
-                    <img src={img2} />
-                </div>
-                <div className="right-col">
-                    <CaltexStationComp/>
-                </div>
-              </div>
-           </div>
-           <div className="station-inner-wrap">
-              <div className="col-wrap">
-                <div className="left-col">
-                    <img src={img2} />
-                </div>
-                <div className="right-col">
-                    <CaltexStationComp/>
-                </div>
-              </div>
-           </div>
+            ))}
+
+           {/*<div className="station-inner-wrap">*/}
+              {/*<div className="col-wrap">*/}
+                {/*<div className="left-col">*/}
+                    {/*<img src={img2} />*/}
+                {/*</div>*/}
+                {/*<div className="right-col">*/}
+                    {/*<CaltexStationComp/>*/}
+                {/*</div>*/}
+              {/*</div>*/}
+           {/*</div>*/}
+           {/*<div className="station-inner-wrap">*/}
+              {/*<div className="col-wrap">*/}
+                {/*<div className="left-col">*/}
+                    {/*<img src={img2} />*/}
+                {/*</div>*/}
+                {/*<div className="right-col">*/}
+                    {/*<CaltexStationComp/>*/}
+                {/*</div>*/}
+              {/*</div>*/}
+           {/*</div>*/}
+           {/*<div className="station-inner-wrap">*/}
+              {/*<div className="col-wrap">*/}
+                {/*<div className="left-col">*/}
+                    {/*<img src={img2} />*/}
+                {/*</div>*/}
+                {/*<div className="right-col">*/}
+                    {/*<CaltexStationComp/>*/}
+                {/*</div>*/}
+              {/*</div>*/}
+           {/*</div>*/}
+           {/*<div className="station-inner-wrap">*/}
+              {/*<div className="col-wrap">*/}
+                {/*<div className="left-col">*/}
+                    {/*<img src={img2} />*/}
+                {/*</div>*/}
+                {/*<div className="right-col">*/}
+                    {/*<CaltexStationComp/>*/}
+                {/*</div>*/}
+              {/*</div>*/}
+           {/*</div>*/}
 
           <div className="cs-pagination">
                 <div className="left-arrow">

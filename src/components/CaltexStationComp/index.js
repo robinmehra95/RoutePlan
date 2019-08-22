@@ -6,7 +6,25 @@ import img2 from './../../img/4444444.png';
 class CaltexStationComp extends React.Component {
   constructor(props) {
     super(props);
+      this.state = {
+          markerData : props.markerData
+      }
   }
+
+  showSidemapComp = (markerData) => {
+        if(this.state.showSideMap){
+            this.setState({
+                showSideMap: false,
+                markerData:markerData
+            })
+        }
+        else{
+            this.setState({
+                showSideMap: true,
+                markerData:markerData
+            })
+        }
+    };
 
 
 
@@ -17,17 +35,17 @@ class CaltexStationComp extends React.Component {
                     <div className="map-overlay-comp-wrap">
                         <div className="cs-overlay-heading">
                             
-                        Caltex Tikay
+                            {this.state.markerData.name}
                         
                         </div>
-                        <p>Quirino Ave, San Dionisio, Philippines</p>
+                        <p>{this.state.markerData.street+" "+ this.state.markerData.city +" "+ this.state.markerData.state+", "+this.state.markerData.country +" "+ this.state.markerData.postalCode}</p>
                         <div className="tel-time-wrap row">
                             <div className="col-sm-6 col-xs-6 icon-row">
                                 <span className="icon">
                                     <img src={img1}/>
                                 </span>
                                 <span className="text-tel">
-                                    +66 2 279 7966
+                                    {this.state.markerData.phoneNumber}
                                 </span>
                             </div>
                             <div className="col-sm-6 col-xs-6 icon-row">
@@ -41,9 +59,9 @@ class CaltexStationComp extends React.Component {
                         </div>
                         <div className="bottom-text-wrap">
                             <p>
-                            5 Fuel Options • 6 Amenities
+                                {this.state.markerData.fuelsName && this.state.markerData.fuelsName.length} Fuel Options • {this.state.markerData.amenitiesName && this.state.markerData.amenitiesName.length} Amenities
                             </p>
-                            <a href="#">More details</a>
+                            <a onClick={() => this.showSidemapComp(this.state.markerData)}>More details</a>
                         </div>
                     </div>
                   </div>
