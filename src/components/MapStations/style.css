@@ -2,7 +2,7 @@
     background: rgb(255, 255, 255);
     border-radius: 0px;
     box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.25);
-    max-width: 1035px;
+    max-width: 1245px;
     width: 100%;
     padding: 55px 0 24px;
     left: 50%;
@@ -30,7 +30,11 @@
     border-top: 1px solid rgb(204, 204, 204);
     border-bottom: 1px solid rgb(204, 204, 204);
 }
+.mapstations-comp-wrap .drop-down-list ul{
+    text-align: right;
+}
 .mapstations-comp-wrap .drop-down-list ul li{
+    text-align: left;
     color: rgb(0, 0, 0);
     font-family: ITCFranklinGothicStd-DmCd;
     font-size: 20px;
@@ -97,11 +101,12 @@
 .mapstations-comp-wrap .station-inner-wrap {
     width: 50%;
     display: inline-block;
-    padding: 20px 7px;
+    padding: 20px;
 }
 .mapstations-comp-wrap .drop-down-list ul li.filter-station {
     padding-left: 46px;
     padding-right: 163px;
+    float: left;
 }
 .mapstations-comp-wrap .drop-down-list ul li.routes {
     padding-left: 20px;
@@ -140,6 +145,11 @@
 .mapstations-comp-wrap .cs-pagination .left-arrow  img{
     max-width: 10px;
     transform: rotate(90deg);
+}
+.mapstations-comp-wrap .cs-pagination .left-arrow.disable-btn,
+.mapstations-comp-wrap .cs-pagination .right-arrow.disable-btn{
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 .mapstations-comp-wrap .cs-pagination .right-arrow {
