@@ -17,7 +17,8 @@ class Component1 extends React.Component {
       showTruckComp: true,
       allStations: false,
       showSideMap: false,
-      routesArray : {
+        markerData:undefined,
+        routesArray : {
         "A": ["Torquay", "Exeter"],
         "B": ["Exmouth", "Okehampton"],
         "C": ["Penzance", "Falmouth"]
@@ -68,15 +69,17 @@ class Component1 extends React.Component {
     })
   };
 
-  showSidemapComp = () => {
+  showSidemapComp = (markerData) => {
     if(this.state.showSideMap){
       this.setState({
-        showSideMap: false
+        showSideMap: false,
+          markerData:markerData
       })
     }
     else{
       this.setState({
-        showSideMap: true
+        showSideMap: true,
+          markerData:markerData
       })
     }
   };
@@ -93,7 +96,7 @@ class Component1 extends React.Component {
         <div className={this.state.showModal ?  "dark-layor" : ""}>
            {this.state.showTruckComp && <TruckComp closeTruckComp={() => this.closeTruckComp()}/>}
             <MapContainer showSidemapComp={this.showSidemapComp} />
-            {this.state.showSideMap && <SideMapComp  showSidemapComp={this.showSidemapComp}/>}
+            {this.state.showSideMap && <SideMapComp markerData={this.state.markerData}  showSidemapComp={this.showSidemapComp}/>}
             {this.state.allStations && <MapStations  onClose={this.toggleAllStations} />}
             {!this.state.showTruckComp && <div className="create-another-fleet-route-section">
             <div className="page-center">
