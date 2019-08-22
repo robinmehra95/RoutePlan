@@ -9,6 +9,7 @@ import Stations from "../../stations";
 import CaltexIcon from "../../img/icon-caltex-circle.png";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
+import {maxDistanceOfRadius} from "../../constants";
 
 const {MarkerClusterer} = require("react-google-maps/lib/components/addons/MarkerClusterer");
 
@@ -18,7 +19,8 @@ class Map extends React.Component {
         super(props);
         this.state = {
             directions: [],
-            selectedMarker: {}
+            selectedMarker: {},
+            stations: [],
         }
     }
 
@@ -28,13 +30,10 @@ class Map extends React.Component {
 
     componentWillReceiveProps(nextProps, nextContext) {
         const {routes} = nextProps;
-        let currentPropsRoutes = this.props.routes;
-        // if(currentPropsRoutes.length !== routes.length) {
         let directions = [];
         routes.map(route => {
             this.createDirections(route.startPointCoordinates, route.endPointCoordinates, directions);
         });
-        // }
         if (routes.length === 0) {
             this.setState({directions: []})
         }
@@ -56,6 +55,8 @@ class Map extends React.Component {
                 }
                 this.setState({
                     directions: directions
+                }, () => {
+                    this.calculateStationsToShow();
                 });
             }
         );
@@ -66,8 +67,38 @@ class Map extends React.Component {
         this.setState({selectedMarker: marker})
     };
 
+    calculateStationsToShow = () => {
+        // DONOT DELETE THIS BELOW CODE
+
+        // var myRoute = this.state.directions && this.state.directions.length && this.state.directions[0].routes[0].legs[0];
+        // console.log("sdf", myRoute);
+        // console.log("gfdd", myRoute.steps)
+        // for (var i = 0; i < myRoute && myRoute.steps.length; i++) {
+        // debugger
+        //
+        //     console.log("myRoute.steps[i].start_point", myRoute.steps[i].start_point)
+        // }
+
+        const {directions} = this.state;
+        let stations = [];
+        Stations.results.map(station => {
+            directions.map((direction) => {
+                let originLocation = direction.request.origin.location;
+                let destinationLocation = direction.request.destination.location;
+                let stationLatLngObj = new window.google.maps.LatLng(station.latitude, station.longitude);
+                let distanceFromOrigin = window.google.maps.geometry.spherical.computeDistanceBetween(originLocation, stationLatLngObj);
+                let distanceFromDestination = window.google.maps.geometry.spherical.computeDistanceBetween(destinationLocation, stationLatLngObj);
+                if(distanceFromDestination < maxDistanceOfRadius || distanceFromOrigin < maxDistanceOfRadius) {
+                    stations.push(station);
+                }
+            });
+        });
+        this.setState({ stations: stations });
+    };
+
     render() {
         const that = this;
+        const {stations} = this.state;
         const GoogleMapExample = withGoogleMap(props => (
             <GoogleMap
                 defaultCenter={{lat: 1.32677, lng: 103.807}}
@@ -75,8 +106,7 @@ class Map extends React.Component {
             >
                 {this.state.directions.map((direction, key) => <DirectionsRenderer key={key} directions={direction}/>
                 )}
-                {Stations.results.map(marker => {
-                    console.log("marker", marker)
+                {stations.map(marker => {
                     return (
                         <MarkerClusterer
                             onClick={props.onMarkerClustererClick}
