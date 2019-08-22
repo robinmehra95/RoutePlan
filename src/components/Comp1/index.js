@@ -26,7 +26,9 @@ class Component1 extends React.Component {
   }
 
   showRouteList = () => {
-    this.setState({ showModal: true })
+    this.setState({
+      showModal: true,
+    })
     // if(this.state.showModal){
     //   this.setState({
     //     showModal: true
@@ -54,13 +56,15 @@ class Component1 extends React.Component {
 
   hideRouteList = () => {
     this.setState({
-      showModal: false
+      showModal: false,
+      showTruckComp: true
     })
   };
 
   closeTruckComp = () => {
     this.setState({
-      showTruckComp: false
+      showTruckComp: false,
+      showModal: true
     })
   };
 
@@ -75,11 +79,17 @@ class Component1 extends React.Component {
         showSideMap: true
       })
     }
-  }
+  };
+
+  showNoModal = () => {
+    this.setState({
+      showTruckComp: false,
+      showModal: false
+    })
+  };
 
   render() {
     return (
-      //<div className={`${(!this.state.showModal && !this.state.startOver) ? '' : 'dark-layor'}`}>
         <div className={this.state.showModal ?  "dark-layor" : ""}>
            {this.state.showTruckComp && <TruckComp closeTruckComp={() => this.closeTruckComp()}/>}
             <MapContainer showSidemapComp={this.showSidemapComp} />
@@ -87,7 +97,7 @@ class Component1 extends React.Component {
             {this.state.allStations && <MapStations  onClose={this.toggleAllStations} />}
             {!this.state.showTruckComp && <div className="create-another-fleet-route-section">
             <div className="page-center">
-             {this.state.showModal && <RoutesList  hideRouteList={() => this.hideRouteList()} routesArray={this.state.routesArray}/>}
+             {this.state.showModal && <RoutesList viewRoutes={this.showNoModal}  hideRouteList={() => this.hideRouteList()} routesArray={this.state.routesArray}/>}
              {!this.state.allStations && <StartOver onShowAllStations={this.toggleAllStations}
              showFunction={() => this.showRouteList()} hideRouteList={() => this.hideRouteList()}/>}
             </div>

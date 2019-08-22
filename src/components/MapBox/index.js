@@ -10,6 +10,8 @@ import CaltexIcon from "../../img/icon-caltex-circle.png";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 
+const {MarkerClusterer} = require("react-google-maps/lib/components/addons/MarkerClusterer");
+
 class Map extends React.Component {
 
     constructor(props) {
@@ -28,13 +30,13 @@ class Map extends React.Component {
         const {routes} = nextProps;
         let currentPropsRoutes = this.props.routes;
         // if(currentPropsRoutes.length !== routes.length) {
-            let directions =[];
-            routes.map(route => {
-                this.createDirections(route.startPointCoordinates, route.endPointCoordinates, directions);
-            });
+        let directions = [];
+        routes.map(route => {
+            this.createDirections(route.startPointCoordinates, route.endPointCoordinates, directions);
+        });
         // }
-        if(routes.length === 0) {
-            this.setState({ directions: [] })
+        if (routes.length === 0) {
+            this.setState({directions: []})
         }
     }
 
@@ -61,7 +63,7 @@ class Map extends React.Component {
     };
 
     handleMarkerClick = (marker) => {
-        this.setState({ selectedMarker: marker })
+        this.setState({selectedMarker: marker})
     };
 
     render() {
@@ -69,59 +71,67 @@ class Map extends React.Component {
         const GoogleMapExample = withGoogleMap(props => (
             <GoogleMap
                 defaultCenter={{lat: 1.32677, lng: 103.807}}
-                defaultZoom={8}
+                defaultZoom={12}
             >
                 {this.state.directions.map((direction, key) => <DirectionsRenderer key={key} directions={direction}/>
                 )}
                 {Stations.results.map(marker => {
                     console.log("marker", marker)
                     return (
-                        <Marker
-                            icon={CaltexIcon}
-                            key={marker.id}
-                            onClick={() => this.handleMarkerClick(marker)}
-                            position={{ lat: parseFloat(marker.latitude), lng: parseFloat(marker.longitude) }}
+                        <MarkerClusterer
+                            onClick={props.onMarkerClustererClick}
+                            averageCenter
+                            enableRetinaIcons
+                            gridSize={60}
                         >
-                            {that.state.selectedMarker === marker &&
-                            <InfoWindow>
-                                <div className="map-overlay-outer-wrap">
-                                    <div className="map-overlay-comp-wrap">
-                                        <a href="#" className="close-btn"><img src={img1}/></a>
-                                        <div className="cs-overlay-heading">
+                            <Marker
+                                icon={CaltexIcon}
+                                key={marker.id}
+                                onClick={() => this.handleMarkerClick(marker)}
+                                position={{lat: parseFloat(marker.latitude), lng: parseFloat(marker.longitude)}}
+                            >
+                                {that.state.selectedMarker === marker &&
+                                <InfoWindow>
+                                    <div className="map-overlay-outer-wrap">
+                                        <div className="map-overlay-comp-wrap">
+                                            <a href="#" className="close-btn"><img src={img1}/></a>
+                                            <div className="cs-overlay-heading">
 
-                                        {marker.shelter}
+                                                {marker.shelter}
 
-                                        </div>
-                                        <p>Quirino Ave, San Dionisio, Philippines</p>
-                                        <div className="tel-time-wrap row">
-                                            <div className="col-sm-6 col-xs-6 icon-row">
+                                            </div>
+                                            <p>Quirino Ave, San Dionisio, Philippines</p>
+                                            <div className="tel-time-wrap row">
+                                                <div className="col-sm-6 col-xs-6 icon-row">
                                                 <span className="icon">
                                                     <img src={img1}/>
                                                 </span>
-                                                <span className="text-tel">
+                                                    <span className="text-tel">
                                                     +66 2 279 7966
                                                 </span>
-                                            </div>
-                                            <div className="col-sm-6 col-xs-6 icon-row">
+                                                </div>
+                                                <div className="col-sm-6 col-xs-6 icon-row">
                                                 <span className="icon">
                                                     <img src={img1}/>
                                                 </span>
-                                                <span className="text-tel">
+                                                    <span className="text-tel">
                                                     24-Hour
                                                 </span>
+                                                </div>
+                                            </div>
+                                            <div className="bottom-text-wrap">
+                                                <p>
+                                                    5 Fuel Options • 6 Amenities
+                                                </p>
+                                                <a className="cursor-pointer"
+                                                   onClick={() => this.props.showSidemapComp()}>More details</a>
                                             </div>
                                         </div>
-                                        <div className="bottom-text-wrap">
-                                            <p>
-                                            5 Fuel Options • 6 Amenities
-                                            </p>
-                                            <a className="cursor-pointer" onClick={() => this.props.showSidemapComp()}>More details</a>
-                                        </div>
                                     </div>
-                                    </div>
-                            </InfoWindow>}
+                                </InfoWindow>}
 
-                        </Marker>
+                            </Marker>
+                        </MarkerClusterer>
                     )
                 })}
             </GoogleMap>
@@ -137,6 +147,7 @@ class Map extends React.Component {
         );
     }
 }
+
 function mapStateToProps(state) {
     return {
         routes: state.routesReducer.routes
@@ -145,9 +156,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(
-        {
-
-        },
+        {},
         dispatch
     );
 }
