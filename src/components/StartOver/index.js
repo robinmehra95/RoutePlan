@@ -18,6 +18,8 @@ import img7 from './../../img/icons_print.svg'
 import img8 from './../../img/icons_download.svg'
 import img9 from './../../img/icons_share.svg'
 import Stations from "../../stations";
+import Config from "../../config";
+
 
 class StartOver extends React.Component {
     constructor(props) {
@@ -76,7 +78,7 @@ class StartOver extends React.Component {
                     <div className="clearfix displaying-route-topSection">
                         <div className="displayingRoute-topSec-row" onClick={() => this.showHideInfo()}>
                             <div className="displayingRoute-topSec-col left-col">
-                                <h6>Displaying {routes && routes.length} Routes</h6>
+                                <h6>{Config.displayRoute.multipleRouteLabel.replace("{count}",routes && routes.length)}</h6>
                             </div>
                             <div className="displayingRoute-topSec-col center-col">
                                 <img src={img1} alt="Arrow" onClick={() => this.showHideInfo()}/>
@@ -84,10 +86,10 @@ class StartOver extends React.Component {
                             <div className="displayingRoute-topSec-col right-col">
                                 <ul className="user-route-change-list">
                                     <li onClick={(e) => this.showFunctionWrap(e)}>
-                                        <img src={img2} alt="Add and Edit Route"/> <span>Add/Edit Route</span>
+                                        <img src={img2} alt="Add and Edit Route"/> <span>{Config.displayRoute.editRouteLabel}</span>
                                     </li>
                                     <li onClick={(e) => this.startOver(e)}>
-                                        <img src={img3} alt="Start Over"/> <span>Start Over</span>
+                                        <img src={img3} alt="Start Over"/> <span>{Config.displayRoute.resetLabel}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -96,30 +98,27 @@ class StartOver extends React.Component {
                     {this.state.showInfo && <div className="clearfix displaying-route-bottomSection">
                         <div className="displayingRoute-btSec-row">
                             <div className="displayingRoute-btSec-col left-col">
-                                <h5>Journey Overview</h5>
+                                <h5>{Config.displayRoute.journeyOverviewHeading}</h5>
                                 <ul className="journey-option-list">
                                     <li>
-                                        <p>Vehicles</p>
+                                        <p>{Config.displayRoute.vehicleLabel}</p>
                                         <h3>{vehicles} <img src={img4} alt=""/></h3>
                                     </li>
                                     <li>
-                                        <p>Routes</p>
+                                        <p>{Config.displayRoute.routesLabel}</p>
                                         <h3>{routes && routes.length} <img src={img5} alt=""/></h3>
                                     </li>
                                     <li>
-                                        <p>Caltex Stations</p>
+                                        <p>{Config.displayRoute.stationLabel}</p>
                                         <h3>{Stations && Stations.results && Stations.results.length} <img src={img6} alt=""/></h3>
                                     </li>
                                 </ul>
-                                <p>{vehicles} of my vehicles take these
-                                    {routes && routes.length} routes with a total of
-                                    {Stations && Stations.results && Stations.results.length} Caltex stations at my
-                                    service.</p>
+                                <p>{Config.displayRoute.multipleRouteJourneyDesc.replace("{vehicle}",vehicles).replace("{station}", Stations && Stations.results && Stations.results.length).replace("{route}",routes && routes.length)}</p>
                                 <a className="see-fullList-link cursor-pointer" onClick={() => this.props.onShowAllStations()}>See full list of stations
                                     <img src="" alt=""/></a>
                             </div>
                             <div className="displayingRoute-btSec-col center-col">
-                                <h5>Total Daily Fleet Mileage</h5>
+                                <h5>{Config.displayRoute.dailyFleetHeading}</h5>
                                 <h3>{dailyFleetMileage}km</h3>
                                 <ul className="fleet-mileage-list">
                                     <li>A Caltex station every 100km on average</li>
@@ -130,13 +129,13 @@ class StartOver extends React.Component {
                                 </ul>
                                 <ul className="print-download-share-list">
                                     <li className="print-li">
-                                        <img src={img7} alt=""/> Print
+                                        <img src={img7} alt=""/> {Config.displayRoute.printLabel}
                                     </li>
                                     <li className="download-li">
-                                        <img src={img8} alt=""/> Download Journey Overview
+                                        <img src={img8} alt=""/> {Config.displayRoute.downloadLabel}
                                     </li>
                                     <li className="share-li">
-                                        <img src={img9} alt=""/> Share
+                                        <img src={img9} alt=""/> {Config.displayRoute.shareLabel}
                                     </li>
                                 </ul>
                             </div>

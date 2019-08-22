@@ -14,6 +14,8 @@ import img2 from './../../img/icons_red_edit@1x.svg'
 import img3 from './../../img/icons_remove@1x.svg'
 import img4 from './../../img/icons_travel_arrow@1x.svg'
 import img5 from './../../img/routegraphic@3x.png'
+import Config from "../../config";
+
 
 let incrementChar = "A";
 
@@ -213,7 +215,7 @@ class RoutesList extends React.Component {
                                 }
                             </div>
                         </div>
-                        <input onClick={() => this.seeMyRoutes()} type="button" name="journey_see_my_routes" value="See my routes"
+                        <input onClick={() => this.seeMyRoutes()} type="button" name="journey_see_my_routes" value={Config.createRoute.seeRouteButtonLabel}
                                className="journey-see-routes-btn"/>
                     </div>: null}
 
@@ -230,9 +232,9 @@ class RoutesList extends React.Component {
                     <div className="journeyPlanner-col right-col">
                         <form method="post" className="journeyPlanner-form">
                             <fieldset className="create-route-fieldset">
-                                <h3>Create another fleet route</h3>
+                                <h3>{Config.createRoute.createRouteHeading}</h3>
                                 <div className="journeyPlanner-form-field">
-                                    <label>Start Point <span className="field-strike-sign"/></label>
+                                    <label>{Config.createRoute.startPointLabel} <span className="field-strike-sign"/></label>
                                     <PlacesAutocomplete
                                         value={startPointAddress}
                                         onChange={(e) => this.handleChange(e, true)}
@@ -276,7 +278,7 @@ class RoutesList extends React.Component {
                                     </PlacesAutocomplete>
                                 </div>
                                 <div className="journeyPlanner-form-field">
-                                    <label>End Point <span className="field-strike-sign"></span></label>
+                                    <label>{Config.createRoute.endPointLabel} <span className="field-strike-sign"></span></label>
                                     <PlacesAutocomplete
                                         value={endPointAddress}
                                         onChange={(e) => this.handleChange(e, false)}
@@ -322,7 +324,7 @@ class RoutesList extends React.Component {
                                 </div>
                             </fieldset>
                             <fieldset className="route-details-fieldset">
-                                <h3>Your fleet route details</h3>
+                                <h3>{Config.createRoute.routeDetailHeading}</h3>
                                 <div className="journeyPlanner-form-field">
                                     <p>
                                         <strong>In an average </strong>
@@ -355,7 +357,7 @@ class RoutesList extends React.Component {
                                 </div>
                             </fieldset>
                             <input className="add-journeyRoute-btn" onClick={this.addRoute}
-                                   type="submit" name="add_route" value="Add Route"
+                                   type="submit" name="add_route" value={Config.createRoute.addRouteButtonLabel}
                             />
                         </form>
                     </div>
