@@ -152,6 +152,7 @@
 .sidemap-overlay-outer-wrap .col-left .cs-main-img{
     max-height: 450px;
     max-width: 451px;
+    overflow: hidden;
 }
 
 @media (max-width: 767px) {

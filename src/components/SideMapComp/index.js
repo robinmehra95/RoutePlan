@@ -2,6 +2,8 @@ import React from 'react';
 import './style.css';
 import img1 from './../../img/icons_close00.svg';
 import img2 from './../../img/4444444.png';
+import SmallMapComp from './../SmallMapComp'
+
 
 class SideMapComp extends React.Component {
   constructor(props) {
@@ -23,8 +25,7 @@ class SideMapComp extends React.Component {
             </a>
           </div>
           <div className="col-right">
-              {/*<iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q={this.state.markerData.latitude},{this.state.markerData.longitude}&amp;key=AIzaSyAgmtah4tami6GIlAtShxGX1BGYQLIICsM"></iframe>*/}
-              <img src={img2} className="cs-main-img"/>
+            <SmallMapComp className="cs-main-img"/>
           </div> 
           <div className="col-left">
               <div className="cs-main-heading">

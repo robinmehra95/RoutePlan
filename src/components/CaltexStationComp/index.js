@@ -61,7 +61,7 @@ class CaltexStationComp extends React.Component {
                             <p>
                                 {this.state.markerData.fuelsName && this.state.markerData.fuelsName.length} Fuel Options • {this.state.markerData.amenitiesName && this.state.markerData.amenitiesName.length} Amenities
                             </p>
-                            <a onClick={() => this.showSidemapComp(this.state.markerData)}>More details</a>
+                            <a className="cursor-pointer" onClick={() => this.showSidemapComp(this.state.markerData)}>More details</a>
                         </div>
                     </div>
                   </div>
