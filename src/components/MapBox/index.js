@@ -6,7 +6,7 @@ import {withGoogleMap, GoogleMap, DirectionsRenderer, Marker, InfoWindow} from '
 import './style.css';
 import img1 from './../../img/icons_close00.svg';
 import Stations from "../../stations";
-import CaltexIcon from "../../img/icon-caltex-circle.png";
+import CaltexIcon from "./../../img/icon-caltex-circle.png";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import {maxDistanceOfRadius} from "../../constants";

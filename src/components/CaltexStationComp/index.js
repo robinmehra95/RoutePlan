@@ -43,7 +43,7 @@ class CaltexStationComp extends React.Component {
                             <p>
                             5 Fuel Options • 6 Amenities
                             </p>
-                            <a href="#">More details</a>
+                            <a  className="cursor-pointer">More details</a>
                         </div>
                     </div>
                   </div>
