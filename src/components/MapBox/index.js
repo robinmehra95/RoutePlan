@@ -210,7 +210,7 @@ class Map extends React.Component {
         return (
             <div className="map">
                 <GoogleMapExample
-                    containerElement={<div style={{height: `calc(100vh + 86px)`, width: 'auto'}}/>}
+                    containerElement={<div style={{height: `100vh `, width: 'auto'}}/>}
                     mapElement={<div style={{height: `100%`}}/>}
                 />
             </div>
