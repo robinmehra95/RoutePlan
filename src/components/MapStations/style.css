@@ -81,7 +81,7 @@
 }
 .mapstations-comp-wrap .col-wrap{
     border: 1px solid rgb(204, 204, 204);
-    max-height: 152px;
+    
     max-width: 555px;
     padding: 20px;
 }
@@ -210,28 +210,31 @@
     background-repeat: no-repeat;
 }
 .filter-colp-box ul input[type="checkbox"]:focus  {
-    background-image: url('./../../img/Checkbox_active.png');
+    /* background-image: url('./../../img/Checkbox_active.png'); */
+}
+.filter-colp-box ul input[type="checkbox"]:checked ~ span{
+    background-color: #19516c;
 }
 .filter-colp-box ul input[type="checkbox"]:checked ~ span::after {
     display: block;
 }
 .filter-colp-box ul span {
-    height: 14px;
-    width: 14px;
-    margin: 4px;
-    border-radius: 3px;
+    height: 18px;
+    width: 17px;
+    margin: 0 0 3px 1px;
+    border-radius: 0px;
     cursor: pointer;
     position: relative;
     pointer-events: none;
 }
 .filter-colp-box ul span::after {
     content: "";
-    position: absolute;
-    top: 0px;
-    left: 4px;
+    position: absolute;    
+    top: 1px;
+    left: 6px;
     height: 10px;
     width: 4px;
-    border: solid #e7685d;
+    border: solid #fff;
     border-width: 0px 2px 2px 0px;
     transform: rotate(45deg);
     display: none;
@@ -247,12 +250,17 @@
     font-weight: 300;
     letter-spacing: 0.5px;
     line-height: 22px;
+    display: inline-block;
+    width: calc(100% - 22px);
+    vertical-align: middle;
+    margin-top: 4px;
+    padding-left: 4px;
 }
 .filter-wrap.filter-colp-box {
     position: absolute;
     padding: 15px;
     background: #fff;
-    width: 250px;
+    width: 300px;
     box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.25);
     text-align: left;
     z-index: 9;   
@@ -279,6 +287,7 @@
 .mapstations-comp-wrap .drop-down-list ul .filter-wrap.filter-colp-box li{
     border: none;
     padding: 10px 10px 0px;
+    display: block;
 }
 .mapstations-comp-wrap .drop-down-list .filter-wrap.filter-colp-box ul {
     text-align: left;
