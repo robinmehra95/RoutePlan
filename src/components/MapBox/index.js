@@ -101,13 +101,13 @@ class Map extends React.Component {
         const that = this;
         const {stations} = this.state;
         const GoogleMapExample = withGoogleMap(props => (
-            <GoogleMap
-                defaultCenter={{lat: 1.32677, lng: 103.807}}
-                defaultZoom={12}
-            >
+                <GoogleMap
+                    defaultCenter={{lat: 1.32677, lng: 103.807}}
+                    defaultZoom={12}
+                >
                 {this.state.directions.map((direction, key) => <DirectionsRenderer key={key} directions={direction}/>
                 )}
-                    return (
+                
                         <MarkerClusterer
                             onClick={props.onMarkerClustererClick}
                             averageCenter
@@ -203,7 +203,7 @@ class Map extends React.Component {
                                 </Marker>
                             ))}
                         </MarkerClusterer>
-                    )
+                    
             </GoogleMap>
         ));
 
