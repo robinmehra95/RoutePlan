@@ -8,6 +8,9 @@ import SmallMapComp from './../SmallMapComp'
 class SideMapComp extends React.Component {
   constructor(props) {
     super(props);
+      this.state = {
+          markerData:props.markerData
+      }
   }
 
 
@@ -26,10 +29,10 @@ class SideMapComp extends React.Component {
           </div> 
           <div className="col-left">
               <div className="cs-main-heading">
-                  Caltex Tikay
+                  {this.state.markerData.name}
               </div>
               <div className="cs-sub-heading">
-                  McArthur H-way, Tikay, Malolos, Philippines
+                  {this.state.markerData.street+" "+ this.state.markerData.city +" "+ this.state.markerData.state+", "+this.state.markerData.country +" "+ this.state.markerData.postalCode}
               </div>
               <div className="tel-time-wrap row">
                 <div className="col-sm-6 col-xs-6 icon-row">
@@ -37,7 +40,7 @@ class SideMapComp extends React.Component {
                       <img src={img1}/>
                   </span>
                   <span className="text-tel">
-                      +66 2 279 7966
+                      {this.state.markerData.phoneNumber}
                   </span>
                 </div>
                 <div className="col-sm-6 col-xs-6 icon-row">
@@ -53,25 +56,19 @@ class SideMapComp extends React.Component {
                 <div className="two-col-left-wrap">
                   <p>Fuels Available:</p>
                   <ul>
-                    <li>Gold with Techron®</li>
-                    <li>Silver with Techron®</li>
-                    <li>Diesel with Techron® D</li>
-                    <li>Lubricants (Delo & Havoline)</li>
-                    <li>Platinum 98 with Techron®</li>
-                    <li>Premium 95 with Techron®</li>
+                      {this.state.markerData.fuelsName.map((item, index) => (
+                          <li>{item}</li>
+                      ))}
                   </ul>
                 </div>
 
                 <div className="two-col-right-wrap">
-                  <p>Fuels Available:</p>
-                  <ul className="with-icon">
-                    <li><img src={img1}/>5-Star Refreshrooms</li>
-                    <li><img src={img1}/>Workshop</li>
-                    <li><img src={img1}/>Convenience Store</li>
-                    <li><img src={img1}/>Air / Water Stations</li>
-                    <li><img src={img1}/>Accept StarCards</li>
-                    <li><img src={img1}/>Accept Credit Cards</li>
-                  </ul>
+                  <p>Key Amentities:</p>
+                    <ul className="with-icon">
+                        {this.state.markerData.amenitiesName.map((item, index) => (
+                            <li>{item}</li>
+                        ))}
+                    </ul>
                 </div>
 
               </div>

@@ -6,6 +6,9 @@ import CaltexStationComp from './../CaltexStationComp';
 class ClatexStationRow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+        markerData:props.info
+    }
   }
 
 
@@ -18,7 +21,7 @@ class ClatexStationRow extends React.Component {
                 <img src={img2} />
             </div>
             <div className="right-col">
-                <CaltexStationComp/>
+                <CaltexStationComp markerData={this.state.markerData}/>
             </div>
           </div>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import img1 from './../../img/truck-jp.png';
+import Config from "../../config";
 
 
 class TruckComp extends React.Component {
@@ -22,9 +23,9 @@ class TruckComp extends React.Component {
                     <img src={img1} alt="Caltex Journey Planner"/>
                   </div>
                   <div className="caltex-journeyPlanner-content-group">
-                    <h1>Journey planner</h1>
-                    <p>At Caltex, we know that managing a fleet can be challenging. The Journey planner manifesto lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <button className="caltex-journeyPlanner-btn" onClick={this.props.closeTruckComp} >Begin your journey</button>
+                    <h1>{Config.general.heading}</h1>
+                    <p>{Config.general.description}</p>
+                    <button className="caltex-journeyPlanner-btn" onClick={this.props.closeTruckComp} >{Config.general.ctaLabel}</button>
                   </div>
                 </div>
               </div>

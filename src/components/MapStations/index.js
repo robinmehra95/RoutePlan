@@ -1,12 +1,16 @@
 import React from 'react';
 import './style.css';
 import img1 from './../../img/icons_close00.svg';
+import img2 from './../../img/4444444.png';
+import CaltexStationComp from './../CaltexStationComp';
+import Stations from "../../stations";
 import WithPagination from '../WithPagination';
+
 import img3 from './../../img/icons_select_arrow@1x.svg';
 
 class MapStations extends React.Component {
   constructor(props) {
-    super(props);     
+    super(props);
   }
 
   render() {
@@ -29,66 +33,66 @@ class MapStations extends React.Component {
                   <li class="form-field">
                     <input type="checkbox" id="checkbox-1" checked=""/>
                     <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
-                  
+
                   </li>
-                  
+
                   <li class="form-field">
                   <input type="checkbox" id="checkbox-1" checked=""/>
                   <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
-                  
+
                   </li>
                   <li class="form-field">
                   <input type="checkbox" id="checkbox-1" checked=""/>
                   <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
-                  
+
                   </li>
                 </ul>
               </div>
             </li>
             <li className="fuels cursor-pointer">
               Fuels available <span> 2</span> <span className="arrow-icon"><img src={img3}/></span>
-             
+
               <div className="filter-wrap filter-colp-box">
                 <ul>
                   <li class="form-field">
                     <input type="checkbox" id="checkbox-1" checked=""/>
                     <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
-                  
+
                   </li>
-                  
+
                   <li class="form-field">
                   <input type="checkbox" id="checkbox-1" checked=""/>
                   <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
-                  
+
                   </li>
                   <li class="form-field">
                   <input type="checkbox" id="checkbox-1" checked=""/>
                   <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
-                  
+
                   </li>
                 </ul>
               </div>
             </li>
             <li className="amenties cursor-pointer">
               amenities <span> 2</span><span className="arrow-icon"><img src={img3}/></span>
-              
+
               <div className="filter-wrap filter-colp-box">
                 <ul>
                   <li class="form-field">
                     <input type="checkbox" id="checkbox-1" checked=""/>
                     <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
-                  
+
                   </li>
-                  
+
                   <li class="form-field">
                   <input type="checkbox" id="checkbox-1" checked=""/>
                   <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
-                  
+
                   </li>
                   <li class="form-field">
                   <input type="checkbox" id="checkbox-1" checked=""/>
                   <span></span><label for="checkbox-2" class="filter-item">Automotive</label>
-                  
+
                   </li>
                 </ul>
               </div>
@@ -100,7 +104,7 @@ class MapStations extends React.Component {
             </li>
           </ul>
         </div>
-        <WithPagination allStations={null}/>
+        <WithPagination allStations={Stations.results}/>
       </div>
       );
   }
