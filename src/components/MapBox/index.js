@@ -49,11 +49,25 @@ class Map extends React.Component {
                 destination: destination,
                 travelMode: window.google.maps.TravelMode.DRIVING
             },
-            (result, status) => {
+            (response, status) => {
                 if (status === window.google.maps.DirectionsStatus.OK) {
-                    directions.push(result);
+
+                    var my_route = response.routes[0];
+                    for (var i = 0; i < my_route.legs.length; i++) {
+                        var startLocationMarker = new window.google.maps.Marker({
+                            position: my_route.legs[i].start_location,
+                            label: ""+(i+1),
+                        });
+                    }
+                    var endLocationMarker = new window.google.maps.Marker({
+                        position: my_route.legs[i-1].end_location,
+                        label: ""+(i+1),
+                    });
+                    console.log("markers", response)
+
+                    directions.push(response);
                 } else {
-                    console.error(`error fetching directions ${result}`);
+                    console.error(`error fetching directions ${response}`);
                 }
                 this.setState({
                     directions: directions
