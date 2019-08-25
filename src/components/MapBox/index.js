@@ -51,23 +51,23 @@ class Map extends React.Component {
             },
             (response, status) => {
                 if (status === window.google.maps.DirectionsStatus.OK) {
-                    const {markerIndex} = this.props;
-                    console.log("marker index =====>", markerIndex);
-                    var my_route = response.routes[0];
-                    for (var i = 0; i < my_route.legs.length; i++) {
-                        var startLocationMarker = new window.google.maps.Marker({
-                            position: my_route.legs[i].start_location,
-                            label: ""+(i+1),
-                        });
-                    }
-                    this.props.setMarkerIndex(i+1);
-                    console.log("marker index after origin ====>", markerIndex);
-                    var endLocationMarker = new window.google.maps.Marker({
-                        position: my_route.legs[i-1].end_location,
-                        label: ""+(i+1),
-                    });
-                    console.log("markers", response);
-                    this.props.setMarkerIndex(i+2);
+                    // const {markerIndex} = this.props;
+                    // console.log("marker index =====>", markerIndex);
+                    // var my_route = response.routes[0];
+                    // for (var i = 0; i < my_route.legs.length; i++) {
+                    //     var startLocationMarker = new window.google.maps.Marker({
+                    //         position: my_route.legs[i].start_location,
+                    //         label: ""+(i+1),
+                    //     });
+                    // }
+                    // this.props.setMarkerIndex(i+1);
+                    // console.log("marker index after origin ====>", markerIndex);
+                    // var endLocationMarker = new window.google.maps.Marker({
+                    //     position: my_route.legs[i-1].end_location,
+                    //     label: ""+(i+1),
+                    // });
+                    // console.log("markers", response);
+                    // this.props.setMarkerIndex(i+2);
                     directions.push(response);
                 } else {
                     console.error(`error fetching directions ${response}`);
@@ -124,8 +124,11 @@ class Map extends React.Component {
                     defaultCenter={{lat: 1.32677, lng: 103.807}}
                     defaultZoom={12}
                 >
-                {this.state.directions.map((direction, key) => <DirectionsRenderer options={{suppressMarkers: true}} key={key} directions={direction}/>
-                )}
+                {this.state.directions.map((direction, key) =>{
+                    let origin = direction.routes[0].legs[0].start_location;
+                    let destination = direction.routes[0].legs[0].end_location;
+                    return <DirectionsRenderer options={{suppressMarkers: true}} key={key} directions={direction}/>
+                })}
                         <MarkerClusterer
                             onClick={props.onMarkerClustererClick}
                             averageCenter
