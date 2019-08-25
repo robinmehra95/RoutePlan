@@ -125,9 +125,27 @@ class Map extends React.Component {
                     defaultZoom={12}
                 >
                 {this.state.directions.map((direction, key) =>{
-                    let origin = direction.routes[0].legs[0].start_location;
-                    let destination = direction.routes[0].legs[0].end_location;
                     return <DirectionsRenderer options={{suppressMarkers: true}} key={key} directions={direction}/>
+                })}
+                {this.state.directions.map((direction, key) =>{
+                    let origin = direction.routes[0].legs[0].start_location;
+                    let letter = String.fromCharCode("A".charCodeAt(0) + key*2 +0)
+                    let path = "http://maps.google.com/mapfiles/marker" + letter + ".png"
+                    return <Marker
+                        icon={path}
+                        key={key}
+                        position={origin}
+                    />
+                })}
+                {this.state.directions.map((direction, key) =>{
+                    let destination = direction.routes[0].legs[0].end_location;
+                    let letter = String.fromCharCode("A".charCodeAt(0) + key*2 +1)
+                    let path = "http://maps.google.com/mapfiles/marker" + letter + ".png"
+                    return <Marker
+                        icon={path}
+                        key={key}
+                        position={destination}
+                    />
                 })}
                         <MarkerClusterer
                             onClick={props.onMarkerClustererClick}
