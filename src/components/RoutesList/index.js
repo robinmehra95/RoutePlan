@@ -266,7 +266,7 @@ class RoutesList extends React.Component {
                                                                         style,
                                                                     })}
                                                                 >
-                                                                    <span class="pac-icon pac-icon-marker"></span>
+                                                                    <span className="pac-icon pac-icon-marker"></span>
                                                                     <span>{suggestion.description}</span>
                                                                 </div>
                                                             );
@@ -311,7 +311,7 @@ class RoutesList extends React.Component {
                                                                     style,
                                                                 })}
                                                             >
-                                                                <span class="pac-icon pac-icon-marker"></span>
+                                                                <span className="pac-icon pac-icon-marker"></span>
                                                                 <span>{suggestion.description}</span>
                                                             </div>
                                                         );
@@ -326,7 +326,7 @@ class RoutesList extends React.Component {
                             <fieldset className="route-details-fieldset">
                                 <h3>{Config.createRoute.routeDetailHeading}</h3>
                                 <div className="journeyPlanner-form-field">
-                                    <p>
+                                    <div>
                                         <strong>In an average </strong>
                                         <div className="time-period-select">
                                             <Select
@@ -353,7 +353,7 @@ class RoutesList extends React.Component {
                                                name="duration" placeholder="0"
                                         />
                                         <strong>times.</strong>
-                                    </p>
+                                    </div>
                                 </div>
                             </fieldset>
                             <input className="add-journeyRoute-btn" onClick={this.addRoute}
