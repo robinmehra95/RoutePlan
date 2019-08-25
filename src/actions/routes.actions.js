@@ -15,3 +15,12 @@ export const setModalRoutesData = (data = null) => {
         });
     };
 };
+
+export const setStations = (data = null) => {
+    return function(dispatch) {
+        dispatch({
+            type: "SET_STATIONS_SUCCESS",
+            data
+        });
+    };
+};

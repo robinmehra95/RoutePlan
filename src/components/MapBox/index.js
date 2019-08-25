@@ -8,6 +8,7 @@ import img1 from './../../img/icons_close00.svg';
 import Stations from "../../stations";
 import CaltexIcon from "../../img/icon-caltex-circle.png";
 import MarkerIcon from "../../img/marker_icon.png";
+import {setStations} from "../../actions/routes.actions";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import {maxDistanceOfRadius} from "../../constants";
@@ -94,6 +95,7 @@ class Map extends React.Component {
                 }
             });
         });
+        this.props.setStations(stations.length);
         this.setState({ stations: stations });
     };
 
@@ -107,7 +109,7 @@ class Map extends React.Component {
                 >
                 {this.state.directions.map((direction, key) => <DirectionsRenderer key={key} directions={direction}/>
                 )}
-                
+
                         <MarkerClusterer
                             onClick={props.onMarkerClustererClick}
                             averageCenter
@@ -203,7 +205,7 @@ class Map extends React.Component {
                                 </Marker>
                             ))}
                         </MarkerClusterer>
-                    
+
             </GoogleMap>
         ));
 
@@ -226,7 +228,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(
-        {},
+        {
+            setStations
+        },
         dispatch
     );
 }

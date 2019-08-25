@@ -25,7 +25,13 @@ class StartOver extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showInfo: this.props.show,
+            showInfo: false,
+        }
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        if(nextProps.showInfo !== this.props.showInfo) {
+            this.setState({ showInfo: nextProps.showInfo })
         }
     }
 
@@ -33,7 +39,6 @@ class StartOver extends React.Component {
         this.setState({
             showInfo: !this.state.showInfo
         });
-        // this.props.hideRouteList()
     };
 
     showFunctionWrap = (e) => {
@@ -66,10 +71,10 @@ class StartOver extends React.Component {
         return dailyFleetMileage;
     };
 
-   
+
 
     render() {
-        const {routes} = this.props;
+        const {routes, stations} = this.props;
         let vehicles = this.calculatevehicles();
         let dailyFleetMileage = this.calculateDailyFleetMileage();
         return (
@@ -110,7 +115,7 @@ class StartOver extends React.Component {
                                     </li>
                                     <li>
                                         <p>{Config.displayRoute.stationLabel}</p>
-                                        <h3>{Stations && Stations.results && Stations.results.length} <img src={img6} alt=""/></h3>
+                                        <h3>{stations} <img src={img6} alt=""/></h3>
                                     </li>
                                 </ul>
                                 <p>{Config.displayRoute.multipleRouteJourneyDesc.replace("{vehicle}",vehicles).replace("{station}", Stations && Stations.results && Stations.results.length).replace("{route}",routes && routes.length)}</p>
@@ -157,7 +162,9 @@ class StartOver extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        routes: state.routesReducer.routes
+        routes: state.routesReducer.routes,
+        showInfo: state.routesReducer.showInfo,
+        stations: state.routesReducer.stationsData
     };
 }
 
