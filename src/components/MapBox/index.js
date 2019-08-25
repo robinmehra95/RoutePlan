@@ -107,9 +107,8 @@ class Map extends React.Component {
                     defaultCenter={{lat: 1.32677, lng: 103.807}}
                     defaultZoom={12}
                 >
-                {this.state.directions.map((direction, key) => <DirectionsRenderer key={key} directions={direction}/>
+                {this.state.directions.map((direction, key) => <DirectionsRenderer options={{suppressMarkers: true}} key={key} directions={direction}/>
                 )}
-
                         <MarkerClusterer
                             onClick={props.onMarkerClustererClick}
                             averageCenter
