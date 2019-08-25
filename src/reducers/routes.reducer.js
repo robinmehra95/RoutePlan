@@ -3,7 +3,8 @@ const initState = {
     routes: [],
     modalRoutes: [],
     showInfo: false,
-    stationsData: 0
+    stationsData: 0,
+    markerIndex: 1
 };
 
 export default function common(state = initState, action) {
@@ -25,6 +26,12 @@ export default function common(state = initState, action) {
             return {
                 ...state,
                 stationsData: action.data
+            }
+        }
+        case "SET_MARKER_INDEX_SUCCESS": {
+            return {
+                ...state,
+                markerIndex: action.data
             }
         }
         default:

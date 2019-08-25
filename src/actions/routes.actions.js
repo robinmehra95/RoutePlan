@@ -24,3 +24,12 @@ export const setStations = (data = null) => {
         });
     };
 };
+
+export const setMarkerIndex = (data = null) => {
+    return function(dispatch) {
+        dispatch({
+            type: "SET_MARKER_INDEX_SUCCESS",
+            data
+        });
+    };
+};

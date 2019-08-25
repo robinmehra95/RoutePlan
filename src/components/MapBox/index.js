@@ -8,7 +8,7 @@ import img1 from './../../img/icons_close00.svg';
 import Stations from "../../stations";
 import CaltexIcon from "../../img/icon-caltex-circle.png";
 import MarkerIcon from "../../img/marker_icon.png";
-import {setStations} from "../../actions/routes.actions";
+import {setStations, setMarkerIndex} from "../../actions/routes.actions";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import {maxDistanceOfRadius} from "../../constants";
@@ -51,7 +51,8 @@ class Map extends React.Component {
             },
             (response, status) => {
                 if (status === window.google.maps.DirectionsStatus.OK) {
-
+                    const {markerIndex} = this.props;
+                    console.log("marker index =====>", markerIndex);
                     var my_route = response.routes[0];
                     for (var i = 0; i < my_route.legs.length; i++) {
                         var startLocationMarker = new window.google.maps.Marker({
@@ -59,12 +60,14 @@ class Map extends React.Component {
                             label: ""+(i+1),
                         });
                     }
+                    this.props.setMarkerIndex(i+1);
+                    console.log("marker index after origin ====>", markerIndex);
                     var endLocationMarker = new window.google.maps.Marker({
                         position: my_route.legs[i-1].end_location,
                         label: ""+(i+1),
                     });
-                    console.log("markers", response)
-
+                    console.log("markers", response);
+                    this.props.setMarkerIndex(i+2);
                     directions.push(response);
                 } else {
                     console.error(`error fetching directions ${response}`);
@@ -235,14 +238,16 @@ class Map extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        routes: state.routesReducer.routes
+        routes: state.routesReducer.routes,
+        markerIndex: state.routesReducer.markerIndex
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(
         {
-            setStations
+            setStations,
+            setMarkerIndex
         },
         dispatch
     );
