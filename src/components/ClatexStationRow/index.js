@@ -14,6 +14,7 @@ class ClatexStationRow extends React.Component {
 
 
   render() {
+    const { info }  = this.props;
     return (
       <div className="station-inner-wrap">
           <div className="col-wrap">
@@ -21,7 +22,7 @@ class ClatexStationRow extends React.Component {
                 <img src={img2} />
             </div>
             <div className="right-col">
-                <CaltexStationComp markerData={this.state.markerData}/>
+                <CaltexStationComp markerData={info}/>
             </div>
           </div>
       </div>

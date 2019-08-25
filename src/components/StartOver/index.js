@@ -143,7 +143,7 @@ class StartOver extends React.Component {
                                 <div className="think-make-good-fit-group">
                                     <h3>Think we make a good fit?</h3>
                                     <p>Personalise a Caltex fleet program for your business.</p>
-                                    <button className="displayingRoute-btn">Speak to us</button>
+                                    <button className="displayingRoute-btn" onClick={() => this.props.onSpeakToUs()}>Speak to us</button>
                                 </div>
                             </div>
                         </div>
