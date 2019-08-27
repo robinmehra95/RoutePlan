@@ -1,0 +1,294 @@
+.mapstations-comp-wrap{
+    background: rgb(255, 255, 255);
+    border-radius: 0px;
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.25);
+    max-width: 1245px;
+    width: 100%;
+    padding: 55px 0 24px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate( -50%, -50%);
+}
+.mapstations-comp-wrap .comp-heading{
+    color: rgb(230, 47, 70);
+    font-family: ITCFranklinGothicStd-DmCd;
+    font-size: 39px;
+    letter-spacing: 0.5px;
+    line-height: 38px;
+    margin: 0 0 23px;
+    padding:  0 44px;
+}
+.mapstations-comp-wrap a.close-btn {
+    position: absolute;
+    right: 23px;
+    top: 16px;
+}
+
+.mapstations-comp-wrap .drop-down-list{
+    margin:  0 0 0;
+    border-top: 1px solid rgb(204, 204, 204);
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+.mapstations-comp-wrap .drop-down-list ul{
+    text-align: right;
+}
+.mapstations-comp-wrap .drop-down-list ul li{
+    text-align: left;
+    color: rgb(0, 0, 0);
+    font-family: ITCFranklinGothicStd-DmCd;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    text-transform: uppercase;
+    padding: 22px 10px 16px;
+    display: inline-block;
+    border-left: 1px solid rgb(204, 204, 204);
+    position: relative;
+}
+
+.mapstations-comp-wrap .drop-down-list ul li span{
+    color: rgb(25, 81, 108);
+    font-family: ITCFranklinGothicStd-Book;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 15px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: 4px;
+}
+.mapstations-comp-wrap .drop-down-list ul li span.arrow-icon {
+    position: absolute;
+    right : 20px;
+    top: 25px;
+    margin: 0;
+}
+.mapstations-comp-wrap .mapstations-comp-wrap .drop-down-list ul li:first-child{
+    border-left: none;
+} 
+.mapstations-comp-wrap .drop-down-list ul li p{
+    color: rgb(0, 0, 0);
+    font-family: ITCFranklinGothicStd-Med;
+    font-size: 15px;
+    letter-spacing: 0px;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: capitalize;
+}
+.mapstations-comp-wrap .station-wrap{
+    padding: 22.5px;
+}
+.mapstations-comp-wrap .col-wrap{
+    border: 1px solid rgb(204, 204, 204);
+    
+    max-width: 555px;
+    padding: 20px;
+}
+.mapstations-comp-wrap .col-wrap .left-col {
+    width: 125px;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 14px;
+    padding-top: 3px;
+    padding-right: 10px;
+}
+.mapstations-comp-wrap .col-wrap .right-col {
+    width: calc(100% - 125px);
+    display: inline-block;
+    vertical-align: top;
+    padding: 3px 12px 0 15px;
+}
+.mapstations-comp-wrap .station-inner-wrap {
+    width: 50%;
+    display: inline-block;
+    padding: 20px;
+}
+.mapstations-comp-wrap .drop-down-list ul li.filter-station {
+    padding-left: 46px;
+    padding-right: 163px;
+    float: left;
+}
+.mapstations-comp-wrap .drop-down-list ul li.routes {
+    padding-left: 20px;
+    padding-right: 57px;
+
+}
+.mapstations-comp-wrap .drop-down-list ul li.amenties {
+    padding-left: 20px;
+    padding-right: 49px;
+
+}
+.mapstations-comp-wrap .drop-down-list ul li.fuels {
+    padding-left: 20px;
+    padding-right: 49px;
+
+}
+.mapstations-comp-wrap .cs-pagination{
+    text-align: center;
+    margin-top: 25px;
+}
+.mapstations-comp-wrap .cs-pagination .page-no-wrap{
+    color: rgb(0, 0, 0);
+    font-family: ITCFranklinGothicStd-DmCd;
+    font-size: 15px;
+    height: 15px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    display: inline-block;
+}
+.mapstations-comp-wrap .cs-pagination .left-arrow {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    padding-right: 25px;
+}
+.mapstations-comp-wrap .cs-pagination .left-arrow  img{
+    max-width: 10px;
+    transform: rotate(90deg);
+}
+.mapstations-comp-wrap .cs-pagination .left-arrow.disable-btn,
+.mapstations-comp-wrap .cs-pagination .right-arrow.disable-btn{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.mapstations-comp-wrap .cs-pagination .right-arrow {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    padding-left: 17px;
+}
+.mapstations-comp-wrap .cs-pagination .right-arrow  img{
+    max-width: 10px;
+    transform: rotate(270deg);
+}
+.map-overlay-comp-wrap:after{
+    display: none;
+}
+
+
+
+
+
+.filter-colp-box .filter-selection-item {
+    color: #000;
+    font-size: 15px;
+    font-family: ITCFranklinGothicStd-Book;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    background: #f0f1f1;
+    padding: 8px 40px 10px 10px;
+    margin: 0 5px 10px;
+    display: inline-block;
+    position: relative;
+}
+.filter-colp-box .filter-selection-item .cross-icon {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+}
+.filter-colp-box ul li {
+    margin: 0 0 20px;
+    display: block;
+}
+.filter-colp-box ul .form-field {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.filter-colp-box ul input[type="checkbox"] {
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    top: 9px;
+    opacity: 1;
+    background-image: url('./../../img/Checkbox_normal.png');
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.filter-colp-box ul input[type="checkbox"]:focus  {
+    /* background-image: url('./../../img/Checkbox_active.png'); */
+}
+.filter-colp-box ul input[type="checkbox"]:checked ~ span{
+    background-color: #19516c;
+}
+.filter-colp-box ul input[type="checkbox"]:checked ~ span::after {
+    display: block;
+}
+.filter-colp-box ul span {
+    height: 18px;
+    width: 17px;
+    margin: 0 0 3px 1px;
+    border-radius: 0px;
+    cursor: pointer;
+    position: relative;
+    pointer-events: none;
+}
+.filter-colp-box ul span::after {
+    content: "";
+    position: absolute;    
+    top: 1px;
+    left: 6px;
+    height: 10px;
+    width: 4px;
+    border: solid #fff;
+    border-width: 0px 2px 2px 0px;
+    transform: rotate(45deg);
+    display: none;
+}
+.filter-colp-box ul label {
+    color: #122226;
+    font-family: 'Merriweather', serif;
+}
+.filter-colp-box ul .filter-item {
+    color: #000;
+    font-family: ITCFranklinGothicStd-Book;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 22px;
+    display: inline-block;
+    width: calc(100% - 22px);
+    vertical-align: middle;
+    margin-top: 4px;
+    padding-left: 4px;
+}
+.filter-wrap.filter-colp-box {
+    position: absolute;
+    padding: 15px;
+    background: #fff;
+    width: 300px;
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    z-index: 9;   
+    top: 63px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+}
+.filter-wrap.filter-colp-box.show{
+    display: block;
+}
+.filter-wrap.filter-colp-box::after{
+    content: '';
+    position: absolute;
+    left: 42%;
+    top: -7px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #ffffff;
+    clear: both;
+}
+.mapstations-comp-wrap .drop-down-list ul .filter-wrap.filter-colp-box li{
+    border: none;
+    padding: 10px 10px 0px;
+    display: block;
+}
+.mapstations-comp-wrap .drop-down-list .filter-wrap.filter-colp-box ul {
+    text-align: left;
+}

@@ -1,0 +1,101 @@
+
+@font-face {
+	font-family: 'ITCFranklinGothicStd-BkCd';
+	font-weight: normal;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-BkCd.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-BkCdIt';
+	font-weight: italic;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-BkCdIt.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-BkCp';
+	font-weight: normal;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-BkCp.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-BkCpIt';
+	font-weight: italic;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-BkCpIt.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-BkXCp';
+	font-weight: normal;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-BkXCp.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-Book';
+	font-weight: normal;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-Book.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-BookIt';
+	font-weight: italic;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-BookIt.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-Demi';
+	font-weight: normal;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-Demi.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-DemiIt';
+	font-weight: italic;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-DemiIt.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-DmCd';
+	font-weight: normal;
+	src: url("/ITCFranklinGothicStd/ITCFranklinGothicStd-DmCd.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-DmCdIt';
+	font-weight: italic;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-DmCdIt.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-DmCp';
+	font-weight: normal;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-DmCp.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-DmCpIt';
+	font-weight: italic;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-DmCpIt.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-DmXCp';
+	font-weight: normal;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-DmXCp.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-Hvy';
+	font-weight: normal;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-Hvy.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-HvyIt';
+	font-weight: italic;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-HvyIt.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-MdCd';
+	font-weight: normal;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-MdCd.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-MdCdIt';
+	font-weight: italic;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-MdCdIt.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-Med';
+	font-weight: normal;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-Med.otf") format('otf');
+}
+@font-face {
+	font-family: 'ITCFranklinGothicStd-MedIt';
+	font-weight: italic;
+	src: url("font/ITCFranklinGothicStd/ITCFranklinGothicStd-MedIt.otf") format('otf');
+}

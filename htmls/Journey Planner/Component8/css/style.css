@@ -1,0 +1,139 @@
+.caltex-journeyPlanner-section {
+    background-image: url(../img/Create_another_fleet_route-Map.png);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    overflow: hidden;
+    padding: 70px 15px;
+}
+.caltex-journeyPlanner-section:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: rgb(19, 20, 36);
+    opacity: 0.4;
+}
+.caltex-journeyPlanner-section .page-center {
+    position: relative;
+    z-index: 1;
+}
+
+.caltex-journeyPlanner-content-group h1 {
+    color: rgb(255, 255, 255);
+    font-size: 75px;
+    font-family: ITCFranklinGothicStd-DmCd;
+    font-weight: dmcd;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 80px;
+}
+.caltex-journeyPlanner-content-group p {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: ITCFranklinGothicStd-Book;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 30px;
+    margin: 0 0 20px;
+}
+.caltex-journeyPlanner-btn {
+    background: rgb(230, 47, 70);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-family: ITCFranklinGothicStd-DmCd;
+    font-weight: dmcd;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 15px 28px;
+    border: 0 none;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 6px 0 20px;
+}
+.caltex-journeyPlanner-btn:hover {
+    background: rgb(230, 47, 70);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+
+.caltex-journeyPlanner-image {
+    padding: 0 0 0 135px;
+    margin-bottom: -199px;
+}
+.caltex-journeyPlanner-content-group {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 90px;
+    padding-left: 563px;
+}
+
+
+
+
+@media (max-width: 1130px) and (min-width: 768px) {
+
+    .caltex-journeyPlanner-content-group {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 2vw;
+        padding-left: 50vw;
+    }
+    .caltex-journeyPlanner-image {
+        margin-bottom: -17vw;
+    }
+    .caltex-journeyPlanner-content-group h1 {
+        font-size: 5.7vw;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .caltex-journeyPlanner-section {
+        padding: 100px 15px;
+    }
+    .caltex-journeyPlanner-image {
+        padding: 0;
+        margin: 0;
+    }
+    .caltex-journeyPlanner-content-group {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+    .caltex-journeyPlanner-content-group h1 {
+        color: rgb(255, 255, 255);
+        font-size: 40px;
+        font-family: ITCFranklinGothicStd-DmCd;
+        font-weight: dmcd;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        line-height: 42px;
+    }
+    .caltex-journeyPlanner-content-group p {
+        color: rgb(255, 255, 255);
+        font-size: 17px;
+        font-family: ITCFranklinGothicStd-Book;
+        font-weight: 300;
+        text-align: center;
+        letter-spacing: 0.5px;
+        line-height: 22px;
+    }
+    .caltex-journeyPlanner-image {
+        padding: 0;
+        margin: 57px 0 -30px;
+        margin: 0 0 -8vw;
+    }
+
+}

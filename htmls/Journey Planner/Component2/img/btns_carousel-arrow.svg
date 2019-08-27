@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 55.2 (78181) - https://sketchapp.com -->
+    <title>86668C60-93E8-4EE9-844B-C9538BFF0D96@1.00x</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="btns/CTA/add-route" fill="#E62F46">
+            <g id="btns/add" transform="translate(20.000000, 20.000000) scale(-1, 1) translate(-20.000000, -20.000000) ">
+                <rect id="Rectangle" transform="translate(20.000000, 20.000000) rotate(-180.000000) translate(-20.000000, -20.000000) " x="0" y="0" width="40" height="40" rx="20"></rect>
+                <path d="M21,20 L28.8,20 C29.0209139,20 29.2,20.2238576 29.2,20.5 C29.2,20.7761424 29.0209139,21 28.8,21 L21,21 L21,28.8 C21,29.0209139 20.7761424,29.2 20.5,29.2 C20.2238576,29.2 20,29.0209139 20,28.8 L20,21 L12,21 C11.7790861,21 11.6,20.7761424 11.6,20.5 C11.6,20.2238576 11.7790861,20 12,20 L20,20 L20,12 C20,11.7790861 20.2238576,11.6 20.5,11.6 C20.7761424,11.6 21,11.7790861 21,12 L21,20 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
