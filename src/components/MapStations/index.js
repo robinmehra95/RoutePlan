@@ -1,20 +1,19 @@
 import React from 'react';
 import './style.css';
 import img1 from './../../img/icons_close00.svg';
-import img2 from './../../img/4444444.png';
-import CaltexStationComp from './../CaltexStationComp';
 import Stations from "../../stations";
-import WithPagination from '../WithPagination';
-
-
-
+import ClatexStationRow from '../ClatexStationRow';
 import img3 from './../../img/icons_select_arrow@1x.svg';
 
 class MapStations extends React.Component {
   constructor(props) {
     super(props);
+    let slicedData = Stations.results.slice(0, 4);
     this.state = {
       filterOpen: false,
+      dataToBeRender: slicedData,
+      activePage: 1,
+      totalPages: Math.ceil(Stations.results.length / 4),
       filterToShow: {
         routes : [
           {name: 'San Isidro II to Sumapang', value: 'val1',id: '1001'},
@@ -50,7 +49,8 @@ class MapStations extends React.Component {
         routes : [],
         amenities : [],
         fuels: [],
-      }
+      },
+      filteredStations: Stations.results
     }
   }
 
@@ -62,7 +62,18 @@ class MapStations extends React.Component {
           fuels: [],  
         }
       })
+      this.removeFilter()
   }
+
+  removeFilter = () => {
+    let slicedData = Stations.results.slice(0, 4);
+    this.setState({
+      filteredStations: Stations.results,
+      totalPages: Math.ceil(Stations.results.length / 4),
+      dataToBeRender: slicedData,
+    })
+  }
+
 
   openfilter = (num) => {
     if(this.state.filterOpen === num){
@@ -101,7 +112,6 @@ class MapStations extends React.Component {
           let fuels = filterListClone.fuels.filter(item => item !== val)
           filterListClone.fuels = fuels;
         } 
-
       }
       else if(type == 3){
         if(!this.checkFilterSelected(filterListClone.amenities,val)){
@@ -112,203 +122,64 @@ class MapStations extends React.Component {
           filterListClone.amenities = amenities;
         } 
       }
+      this.setState({
+        filterList : filterListClone,
+      })
+      this.filterStatons()
+  }
+
+filterStatons = () => {
+  let applied_filters = []
+  let filterList = this.state.filterList;
+  let filteredStations = []
+  let stations = Stations.results;
+  for (let f_type in filterList) {
+        if (f_type == "routes" && filterList[f_type].length > 0) {
+            for (let f_code of filterList[f_type])
+            applied_filters.push("routeid_" + f_code)
+        }
+        if (f_type == "amenities" && filterList[f_type].length > 0) {
+            for (let f_code of filterList[f_type])
+            applied_filters.push("amenityid_" + f_code)
+        }
+        if (f_type == "fuels" && filterList[f_type].length > 0) {
+            for (let f_code of filterList[f_type])
+            applied_filters.push("fuelid_" + f_code)
+        }
+     }
+    for (let station of stations) {
+      let _fiters = station.filterIds.split(",")
+      if (applied_filters.every(elem => _fiters.indexOf(elem) > -1) || applied_filters.length == 0) {
+        filteredStations.push(station)
+      }
+    }
+    let slicedData = filteredStations.slice(0, 4);
     this.setState({
-      filterList : filterListClone
+      filteredStations: filteredStations,
+      totalPages: Math.ceil(filteredStations.length / 4),
+      dataToBeRender: slicedData,
+      activePage: Math.ceil(filteredStations.length / 4) >= 1 ? 1 : 0
     })
-  }
+}
+
+paginationRight = (pageNum) => {
+  let num = pageNum - 1;
+  let slicedData = this.state.filteredStations.slice(num*4,num*4+4);
+  this.setState({
+     dataToBeRender: slicedData,
+     activePage: pageNum
+  })
+}
 
 
-filtered = () => {    
-  const stations2 = {
-    "results": [
-      {
-        "id": "1000",
-        "name": "Caltex Alexandra",
-        "street": "360 Alexandra Rd., Singapore 159951",
-        "city": "",
-        "state": "",
-        "country": "Singapore",
-        "postalCode": "159951",
-        "notes": "",
-        "phoneNumber": "+65 6475 3380",
-        "latitude": "1.29039",
-        "longitude": "103.807",
-        "operatingHours": "",
-        "fuelId": "1000,1001,1002,1003",
-        "amenitiesId": ['1002','1003','1005','9045'],
-        "distance": 0,
-        "filterIds": "fuelid_1000,fuelid_1001,fuelid_1002,fuelid_1003,amenityid_1002,amenityid_1003,amenityid_1005,amenityid_9045",
-        "amenitiesName": [
-          "Car Wash",
-          "5-Star Refreshrooms",
-          "Convenience Store",
-          "AXS Station"
-        ],
-        "fuelsName": [
-          "Platinum 98 with Techron",
-          "Premium 95 with Techron",
-          "Regular 92 with Techron",
-          "Caltex Diesel with Techron D"
-        ]
-      },
-      {
-        "id": "1003",
-        "name": "Caltex Balestier",
-        "street": "542 Balestier Road, Singapore 329864",
-        "city": "Singapore",
-        "state": "",
-        "country": "Singapore",
-        "postalCode": "329864",
-        "notes": "",
-        "phoneNumber": "+65 6255 2873",
-        "latitude": "1.32677",
-        "longitude": "103.84507",
-        "operatingHours": "",
-        "fuelId": "1000,1001,1002,1003",
-        "amenitiesId": ['1002','1003','1005','9009','9036','9045'],
-        "distance": 0,
-        "filterIds": "fuelid_1000,fuelid_1001,fuelid_1002,fuelid_1003,amenityid_1002,amenityid_1003,amenityid_1005,amenityid_9009,amenityid_9036,amenityid_9045",
-        "amenitiesName": [
-          "Car Wash",
-          "5-Star Refreshrooms",
-          "Convenience Store",
-          "OCBC ATM",
-          "Singpost POPStation",
-          "AXS Station"
-        ],
-        "fuelsName": [
-          "Platinum 98 with Techron",
-          "Premium 95 with Techron",
-          "Regular 92 with Techron",
-          "Caltex Diesel with Techron D"
-        ]
-      },
-      {
-        "id": "1004",
-        "name": "Caltex Beach Road",
-        "street": "4870 Beach Road, Singapore 199586",
-        "city": "Singapore",
-        "state": "",
-        "country": "Singapore",
-        "postalCode": "199586",
-        "notes": "",
-        "phoneNumber": "+65 6392 5609",
-        "latitude": "1.30373",
-        "longitude": "103.86583",
-        "operatingHours": "",
-        "fuelId": "1000,1001,1002,1003",
-        "amenitiesId": ['1001','1002','1003','1005','9009','9036','9045'],
-        "distance": 0,
-        "filterIds": "fuelid_1000,fuelid_1001,fuelid_1002,fuelid_1003,amenityid_1001,amenityid_1002,amenityid_1003,amenityid_1005,amenityid_9009,amenityid_9036,amenityid_9045",
-        "amenitiesName": [
-          "Tyre Bay",
-          "Car Wash",
-          "5-Star Refreshrooms",
-          "Convenience Store",
-          "OCBC ATM",
-          "Singpost POPStation",
-          "AXS Station"
-        ],
-        "fuelsName": [
-          "Platinum 98 with Techron",
-          "Premium 95 with Techron",
-          "Regular 92 with Techron",
-          "Caltex Diesel with Techron D"
-        ]
-      },
-      {
-        "id": "1005",
-        "name": "Caltex Binjai Park",
-        "street": "836 Dunearn Road, Singapore 589457",
-        "city": "",
-        "state": "",
-        "country": "Singapore",
-        "postalCode": "589457",
-        "notes": "",
-        "phoneNumber": "+65 6466 2407",
-        "latitude": "1.33525",
-        "longitude": "103.7868",
-        "operatingHours": "",
-        "fuelId": "1000,1001,1002,1003",
-        "amenitiesId": ['1003','1005','9045'],
-        "distance": 0,
-        "filterIds": "fuelid_1000,fuelid_1001,fuelid_1002,fuelid_1003,amenityid_1003,amenityid_1005,amenityid_9045",
-        "amenitiesName": [
-          "5-Star Refreshrooms",
-          "Convenience Store",
-          "AXS Station"
-        ],
-        "fuelsName": [
-          "Platinum 98 with Techron",
-          "Premium 95 with Techron",
-          "Regular 92 with Techron",
-          "Caltex Diesel with Techron D"
-        ]
-      },
-      {
-        "id": "1007",
-        "name": "Caltex Changi",
-        "street": "78 Changi Road, Singapore 419714",
-        "city": "",
-        "state": "",
-        "country": "Singapore",
-        "postalCode": "419714",
-        "notes": "",
-        "phoneNumber": "+65 6344 6595",
-        "latitude": "1.3163",
-        "longitude": "103.90013",
-        "operatingHours": "",
-        "fuelId": "1000,1001,1002,1003",
-        "amenitiesId": ['1002','1003','1005','9037','9045'],
-        "distance": 0,
-        "filterIds": "fuelid_1000,fuelid_1001,fuelid_1002,fuelid_1003,amenityid_1002,amenityid_1003,amenityid_1005,amenityid_9037,amenityid_9045",
-        "amenitiesName": [
-          "Car Wash",
-          "5-Star Refreshrooms",
-          "Convenience Store",
-          "Budget Car Rental",
-          "AXS Station"
-        ],
-        "fuelsName": [
-          "Platinum 98 with Techron",
-          "Premium 95 with Techron",
-          "Regular 92 with Techron",
-          "Caltex Diesel with Techron D"
-        ]
-      },
-    ]
-  };
-
-    const amenitiesFiltered =  stations2.results.filter( item => {
-      return this.state.filterList.amenities.every( filterAppied => {
-        if (item.amenitiesId.includes(filterAppied)) {
-          return item.amenitiesId.includes(filterAppied)
-        }
-      });
-    });
-
-    const fuelsFiltered =  stations2.results.filter( item => {
-      return this.state.filterList.fuels.every( filterAppied => {      
-        if (item.fuelId.includes(filterAppied)) {
-          return item.fuelId.includes(filterAppied);
-        }
-      });
-    });
-
-
-    Array.prototype.unique = function() {
-        var a = this.concat();
-        for(var i=0; i<a.length; ++i) {
-            for(var j=i+1; j<a.length; ++j) {
-                if(a[i] === a[j])
-                    a.splice(j--, 1);
-            }
-        }    
-        return a;
-    };
-
-    return amenitiesFiltered.concat(fuelsFiltered).unique(); 
-  }
+paginationLeft = (pageNum) => {    
+  let num = pageNum - 1;
+  let slicedData = this.state.filteredStations.slice(num*4,num*4+4);
+  this.setState({
+     dataToBeRender: slicedData,
+     activePage: pageNum
+  })
+}
 
   
 
@@ -399,7 +270,24 @@ filtered = () => {
             </li>
           </ul>
         </div>
-        <WithPagination allStations={Stations.results} showSidemapComp={this.props.showSidemapComp}/>
+          <div className="station-wrap">
+            {this.state.dataToBeRender.map(item => {
+              return (
+                <ClatexStationRow info={item} showSidemapComp={this.props.showSidemapComp}/>
+              )
+            })}
+            <div className="cs-pagination">
+                  <div className={`${this.state.activePage <= 1 && 'disable-btn'} left-arrow cursor-pointer`} onClick={() => this.paginationRight(this.state.activePage-1)}>
+                    <img src={img3}/>
+                  </div>
+                  <div className="page-no-wrap">
+                    Page  {this.state.activePage}  of {this.state.totalPages}
+                  </div>
+                  <div className={`${this.state.activePage >= this.state.totalPages && 'disable-btn'} right-arrow cursor-pointer`} onClick={() => this.paginationRight(this.state.activePage+1)}>
+                    <img src={img3}/>
+                  </div>
+            </div>
+          </div>
       </div>
       );
   }
