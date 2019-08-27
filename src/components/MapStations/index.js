@@ -310,7 +310,7 @@ filtered = () => {
   
 
   render() {
-    console.log('*********** Stations.results',this.filtered())
+    console.log('*********** Stations.results',this.filtered(),'this.state',this.state)
     return (
       <div className="mapstations-comp-wrap">
         <div className="cs-top-row">
@@ -332,12 +332,12 @@ filtered = () => {
 
                   {this.state.filterToShow.routes.map(item => {
                     return ( 
-                      <li class="form-field">
+                      <li className="form-field">
                         <input type="checkbox" id="checkbox-1" 
                         checked={this.checkFilterSelected(this.state.filterList.routes,item.value)} 
                         onClick={() => this.selectFilter(1,item.id)} value={item.value}/>
                         <span></span>
-                        <label for="checkbox-2" class="filter-item">
+                        <label for="checkbox-2" className="filter-item">
                           {item.name}
                         </label>
                       </li>
@@ -355,12 +355,12 @@ filtered = () => {
                 <ul>
                 {this.state.filterToShow.fuels.map(item => {
                     return ( 
-                      <li class="form-field">
+                      <li className="form-field">
                         <input type="checkbox" id="checkbox-1" 
                         checked={this.checkFilterSelected(this.state.filterList.fuels,item.value)} 
                         onClick={() => this.selectFilter(2,item.id)} value={item.value}/>
                         <span></span>
-                        <label for="checkbox-1" class="filter-item">
+                        <label for="checkbox-1" className="filter-item">
                           {item.name}
                         </label>
                       </li>
@@ -376,12 +376,12 @@ filtered = () => {
                 <ul>
                 {this.state.filterToShow.amenities.map(item => {
                     return ( 
-                      <li class="form-field">
+                      <li className="form-field">
                         <input type="checkbox" id="checkbox-1"
                         checked={this.checkFilterSelected(this.state.filterList.amenities,item.value)} 
                         onClick={() => this.selectFilter(3,item.id)} value={item.value}/>
                         <span></span>
-                        <label for="checkbox-2" class="filter-item">
+                        <label for="checkbox-2" className="filter-item">
                           {item.name}
                         </label>
                       </li>
@@ -397,7 +397,7 @@ filtered = () => {
             </li>
           </ul>
         </div>
-        <WithPagination allStations={Stations.results}/>
+        <WithPagination allStations={Stations.results} showSidemapComp={this.props.showSidemapComp}/>
       </div>
       );
   }

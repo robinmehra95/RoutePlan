@@ -4,7 +4,7 @@
 import React from 'react';
 import {withGoogleMap, GoogleMap, Marker, } from 'react-google-maps';
 import './style.css';
-import CaltexIcon from "./../../img/icon-caltex-circle.png";
+import CaltexIcon from "./../../img/marker_icon.png";
 
 class SmallMapComp extends React.Component {
 

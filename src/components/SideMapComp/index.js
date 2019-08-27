@@ -20,9 +20,9 @@ class SideMapComp extends React.Component {
       <div className="sidemap-overlay-outer-wrap">
           <div className="cs-top-row">
             <a className="close-btn cursor-pointer"  onClick={() => this.props.showSidemapComp()}><img src={img1}/></a>
-            <a className="top-back-link cursor-pointer" onClick={() => this.props.showSidemapComp()}>
+            {this.props.viaMapSationList && <a className="top-back-link cursor-pointer" onClick={() => this.props.showSidemapComp(null,true)}>
                 Back to Stations Listing
-            </a>
+            </a>}
           </div>
           <div className="col-right">
             <SmallMapComp className="cs-main-img"/>
@@ -66,7 +66,8 @@ class SideMapComp extends React.Component {
                   <p>Key Amentities:</p>
                     <ul className="with-icon">
                         {this.state.markerData.amenitiesName.map((item, index) => (
-                            <li>{item}</li>
+                            <li ><span className="cs-icon air-water-station"></span>{item}</li>   
+                                                                                              // air-water-station will depend on amenitiesName 
                         ))}
                     </ul>
                 </div>

@@ -6,25 +6,12 @@ import img2 from './../../img/4444444.png';
 class CaltexStationComp extends React.Component {
   constructor(props) {
     super(props);
-      this.state = {
-          markerData : props.markerData
-      }
+      
   }
 
-  showSidemapComp = (markerData) => {
-        if(this.state.showSideMap){
-            this.setState({
-                showSideMap: false,
-                markerData:markerData
-            })
-        }
-        else{
-            this.setState({
-                showSideMap: true,
-                markerData:markerData
-            })
-        }
-   };
+  showSidemap = (markerData,val) => {
+    this.props.showSidemapComp(markerData,val)
+  };
 
 
 
@@ -63,7 +50,7 @@ class CaltexStationComp extends React.Component {
                             <p>
                                 {markerData.fuelsName && markerData.fuelsName.length} Fuel Options • {markerData.amenitiesName && markerData.amenitiesName.length} Amenities
                             </p>
-                            <a className="cursor-pointer" onClick={() => this.showSidemapComp(markerData)}>More details</a>
+                            <a className="cursor-pointer" onClick={() => this.showSidemap(markerData,true)}>More details</a>
                         </div>
                     </div>
                 </div>            

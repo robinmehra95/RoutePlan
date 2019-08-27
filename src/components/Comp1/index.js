@@ -20,6 +20,7 @@ class Component1 extends React.Component {
       speakTous: false,
       showSideMap: false,
       thankYouComp: false,
+      viaMapSationList: false,
         markerData:undefined,
         routesArray : {
         "A": ["Torquay", "Exeter"],
@@ -72,17 +73,27 @@ class Component1 extends React.Component {
     })
   };
 
-  showSidemapComp = (markerData) => {
+  showSidemapComp = (markerData,val) => { 
+    console.log('***************** showSidemapComp',val)
     if(this.state.showSideMap){
-      this.setState({
-        showSideMap: false,
-          markerData:markerData
-      })
+      if(val){
+        this.setState({
+          showSideMap: false,
+          allStations: true
+        })
+      }
+      else{
+        this.setState({
+          showSideMap: false,
+        })
+      }
     }
     else{
       this.setState({
         showSideMap: true,
-          markerData:markerData
+        markerData: markerData && markerData,
+        viaMapSationList: val,
+        allStations: false
       })
     }
   };
@@ -115,15 +126,18 @@ class Component1 extends React.Component {
            {this.state.showTruckComp && <TruckComp closeTruckComp={() => this.closeTruckComp()}/>}
            
             <MapContainer showSidemapComp={this.showSidemapComp} />
-            {this.state.showSideMap && <SideMapComp markerData={this.state.markerData}  showSidemapComp={this.showSidemapComp}/>}
-            {this.state.allStations && <MapStations  onClose={this.toggleAllStations} />}
+            {this.state.showSideMap && 
+                       <SideMapComp  viaMapSationList={this.state.viaMapSationList} 
+                                      markerData={this.state.markerData}  
+                                      showSidemapComp={this.showSidemapComp}/>}
+            {this.state.allStations && <MapStations  onClose={this.toggleAllStations} showSidemapComp={this.showSidemapComp}/>}
 
             {!this.state.showTruckComp && <div className="create-another-fleet-route-section">
                 <div className="page-center">
                     {this.state.thankYouComp && !this.state.speakTous &&<ThankYouComp onShowThankYouComp={this.showThankYouComp}/>}
                     {this.state.speakTous && <SpeakToUS onSpeakToUs={this.showSpeakTous} onShowThankYouComp={this.showThankYouComp}/>}
                     {this.state.showModal && <RoutesList viewRoutes={this.showNoModal}  hideRouteList={() => this.hideRouteList()} routesArray={this.state.routesArray}/>}
-                    {(!this.state.allStations && !this.state.speakTous && !this.state.thankYouComp) && <StartOver 
+                    {(!this.state.allStations && !this.state.speakTous && !this.state.thankYouComp &&!this.state.showSideMap) && <StartOver 
                     onSpeakToUs={this.showSpeakTous}
                     onShowAllStations={this.toggleAllStations}
                     showFunction={() => this.showRouteList()} hideRouteList={() => this.hideRouteList()}/>}

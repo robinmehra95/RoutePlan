@@ -24,6 +24,14 @@
     background-color: rgb(19, 20, 36);
     opacity: 0.4;
 }
+.journeyPlanner-form-field strong  {
+    line-height: 3;
+}
+.journeyPlanner-form-field strong:after {
+    clear: both;
+    content: "";
+    display: contents;
+}
 body .journeyPlanner-form-field input {
     padding: 17px 32px;
 }
@@ -93,7 +101,7 @@ body .journeyPlanner-form-field input {
     margin: 0 0 10px;
 }
 .journey-list-item {
-    padding: 0 12px 17px;
+    padding: 11px 12px 9px;
     border-bottom: 1px solid rgb(240, 240, 240);
 }
 .journey-series {
@@ -141,7 +149,7 @@ body .journeyPlanner-form-field input {
 .journeyPlanner-form fieldset {
     border: 0 none;
     padding: 0;
-    margin: 0 0 23px;
+    margin: 0 0 17px;
 }
 .create-route-fieldset h3 {
     margin: 0 0 23px;
@@ -293,6 +301,7 @@ body .journeyPlanner-form-field input {
 .time-period-select {
     display: inline-block;
     width: 150px;
+    vertical-align: middle;
 }
 
 h3.your-routes {

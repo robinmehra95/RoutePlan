@@ -42,7 +42,7 @@ class WithPagination extends React.Component {
         <div className="station-wrap">
         {this.state.dataToBeRender.map(item => {
           return (
-            <ClatexStationRow info={item}/>
+            <ClatexStationRow info={item} showSidemapComp={this.props.showSidemapComp}/>
           )
         })}
         <div className="cs-pagination">

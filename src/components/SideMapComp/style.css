@@ -99,7 +99,59 @@
     list-style-type: none;
     padding-left: 0;
 }
-
+.two-col-wrap ul.with-icon .cs-icon{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    vertical-align: middle;
+    margin-right: 16px;
+    background-image: url('./../../img/icon-caltex-circle.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.two-col-wrap ul.with-icon .air-water-station{
+    background-image: url('./../../img/air-water-station.png');
+}
+.two-col-wrap ul.with-icon .workshop{
+    background-image: url('./../../img/workshop.png');
+}
+.two-col-wrap ul.with-icon .five-Star-Restrooms{
+    background-image: url('./../../img/five-Star-Restrooms.png');
+}
+.two-col-wrap ul.with-icon .Convenience-Store{
+    background-image: url('./../../img/Convenience-Store.png');
+}
+.two-col-wrap ul.with-icon .Car-Wash{
+    background-image: url('./../../img/Car-Wash.png');
+}
+.two-col-wrap ul.with-icon .Food-n-Drinks{
+    background-image: url('./../../img/Food-n-Drinks.png');
+}
+.two-col-wrap ul.with-icon .Money{
+    background-image: url('./../../img/Money.png');
+}
+.two-col-wrap ul.with-icon .Kiosk{
+    background-image: url('./../../img/Kiosk.png');
+}
+.two-col-wrap ul.with-icon .amen-car{
+    background-image: url('./../../img/amen-car.png');
+}
+.two-col-wrap ul.with-icon .Super-B{
+    background-image: url('./../../img/Super-B.png');
+}
+.two-col-wrap ul.with-icon .Clothes{
+    background-image: url('./../../img/Clothes.png');
+}
+.two-col-wrap ul.with-icon .Credit-Card{
+    background-image: url('./../../img/Credit-Card.png');
+}
+.two-col-wrap ul.with-icon .StarCard{
+    background-image: url('./../../img/StarCard.png');
+}
+.two-col-wrap ul.with-icon .Bed{
+    background-image: url('./../../img/Bed.png');
+}
 
 .two-col-wrap li{
     color: rgb(0, 0, 0);
@@ -147,6 +199,7 @@
 .sidemap-overlay-outer-wrap .col-left{
     display: inline-block;
     width: 50%;
+    padding-right: 12px;
     vertical-align: top;
 }
 .sidemap-overlay-outer-wrap .col-left .cs-main-img{

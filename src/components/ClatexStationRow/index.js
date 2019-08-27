@@ -22,7 +22,7 @@ class ClatexStationRow extends React.Component {
                 <img src={img2} />
             </div>
             <div className="right-col">
-                <CaltexStationComp markerData={info}/>
+                <CaltexStationComp markerData={info} showSidemapComp={this.props.showSidemapComp}/>
             </div>
           </div>
       </div>
