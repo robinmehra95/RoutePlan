@@ -77,8 +77,8 @@ class MapStations extends React.Component {
     }    
   }
 
-  checkFilterSelected = (filter, val) => {
-    return filter.find(item => item.id == val )
+  checkFilterSelected = (filter, id) => {
+    return filter.find(item => item == id )
   }
 
   selectFilter = (type,val) => {
@@ -88,7 +88,8 @@ class MapStations extends React.Component {
           filterListClone.routes.push(val)
         }   
         else{
-          filterListClone.routes.filter(item => item == val)
+          let routes = filterListClone.routes.filter(item => item !== val)
+          filterListClone.routes = routes;
         }    
          
       }
@@ -97,7 +98,8 @@ class MapStations extends React.Component {
           filterListClone.fuels.push(val)
         }  
          else{
-          filterListClone.fuels.filter(item => item == val)
+          let fuels = filterListClone.fuels.filter(item => item !== val)
+          filterListClone.fuels = fuels;
         } 
 
       }
@@ -106,7 +108,8 @@ class MapStations extends React.Component {
           filterListClone.amenities.push(val)
         }  
         else{
-          filterListClone.amenities.filter(item => item == val)
+          let amenities = filterListClone.amenities.filter(item => item !== val)
+          filterListClone.amenities = amenities;
         } 
       }
     this.setState({
@@ -310,7 +313,6 @@ filtered = () => {
   
 
   render() {
-    console.log('*********** Stations.results',this.filtered(),'this.state',this.state)
     return (
       <div className="mapstations-comp-wrap">
         <div className="cs-top-row">
@@ -334,7 +336,7 @@ filtered = () => {
                     return ( 
                       <li className="form-field">
                         <input type="checkbox" id="checkbox-1" 
-                        checked={this.checkFilterSelected(this.state.filterList.routes,item.value)} 
+                        checked={!!this.checkFilterSelected(this.state.filterList.routes,item.id)} 
                         onClick={() => this.selectFilter(1,item.id)} value={item.value}/>
                         <span></span>
                         <label for="checkbox-2" className="filter-item">
@@ -357,7 +359,7 @@ filtered = () => {
                     return ( 
                       <li className="form-field">
                         <input type="checkbox" id="checkbox-1" 
-                        checked={this.checkFilterSelected(this.state.filterList.fuels,item.value)} 
+                        checked={!!this.checkFilterSelected(this.state.filterList.fuels,item.id)} 
                         onClick={() => this.selectFilter(2,item.id)} value={item.value}/>
                         <span></span>
                         <label for="checkbox-1" className="filter-item">
@@ -378,7 +380,7 @@ filtered = () => {
                     return ( 
                       <li className="form-field">
                         <input type="checkbox" id="checkbox-1"
-                        checked={this.checkFilterSelected(this.state.filterList.amenities,item.value)} 
+                        checked={!!this.checkFilterSelected(this.state.filterList.amenities,item.id)} 
                         onClick={() => this.selectFilter(3,item.id)} value={item.value}/>
                         <span></span>
                         <label for="checkbox-2" className="filter-item">
