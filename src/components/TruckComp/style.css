@@ -20,7 +20,7 @@
     z-index: 9;
 }
 .truck-comp-wrap .caltex-journeyPlanner-section {
-    position: relative;
+    position: relative ;
     z-index: 10;
 }
 /* .caltex-journeyPlanner-section:after {
@@ -32,9 +32,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 0;
+    z-index: 00;
     background-color: rgb(19, 20, 36);
     opacity: 0.4;
+
 } */
 .caltex-journeyPlanner-section .page-center {
     position: relative;
