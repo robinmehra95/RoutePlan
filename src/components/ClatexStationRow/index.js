@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
-import img2 from './../../img/4444444.png';
 import CaltexStationComp from './../CaltexStationComp';
+import SmallMapComp from './../SmallMapComp';
 
 class ClatexStationRow extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class ClatexStationRow extends React.Component {
       <div className="station-inner-wrap">
           <div className="col-wrap">
             <div className="left-col">
-                <img src={img2} />
+                <SmallMapComp info={info} height="100px" width="100px" zoom={2}/>
             </div>
             <div className="right-col">
                 <CaltexStationComp markerData={info} showSidemapComp={this.props.showSidemapComp}/>

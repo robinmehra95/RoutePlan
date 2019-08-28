@@ -14,13 +14,21 @@ class SmallMapComp extends React.Component {
 
     render() {
         const that = this;
+        const { info, zoom } = this.props;
+        const zoomvalue = zoom ? zoom : 12;
+        const latitude = info && parseFloat(info.latitude , 10);
+        const longitude = info && parseFloat(info.longitude , 10) ;
+        const latitudeFinal = latitude ? latitude : 1.32677;
+        const longitudeFinal = longitude ? longitude : 103.807;
+        
+
         const GoogleMapExample = withGoogleMap(props => (
             <GoogleMap
-                defaultCenter={{lat: 1.32677, lng: 103.807}}
-                defaultZoom={12}  >                  
+                defaultCenter={{lat: latitudeFinal ,lng: longitudeFinal}}
+                defaultZoom={zoomvalue}  >                  
                     <Marker
                         icon={CaltexIcon} 
-                        position={{ lat: 1.32677, lng: 103.807 }}
+                        position={{lat: latitudeFinal ,lng: longitudeFinal}}
                         >
                     </Marker>
             </GoogleMap>
@@ -30,7 +38,7 @@ class SmallMapComp extends React.Component {
             <div className="smallmap">
                 <GoogleMapExample
                     containerElement={<div 
-                    style={{height: `450px`, width: '451px'}}/>}
+                    style={{height: this.props.height ? this.props.height : '450px', width: this.props.width ? this.props.width  : '451px'}}/>}
                     mapElement={<div style={{height: `100%`}}/>}
                     >                    
                  </GoogleMapExample>

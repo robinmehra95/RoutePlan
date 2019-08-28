@@ -25,7 +25,7 @@ class SideMapComp extends React.Component {
             </a>}
           </div>
           <div className="col-right">
-            <SmallMapComp className="cs-main-img"/>
+            <SmallMapComp className="cs-main-img" info={this.state.markerData}/>
           </div> 
           <div className="col-left">
               <div className="cs-main-heading">
