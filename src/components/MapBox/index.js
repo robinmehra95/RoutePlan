@@ -152,43 +152,43 @@ class Map extends React.Component {
                             averageCenter
                             enableRetinaIcons
                             gridSize={12}
-                            styles={[
-                                {
-                                    url: {CaltexIcon},
-                                    height: 26,
-                                    width: 26,
-                                    fontFamily:"Lato",
-                                    textColor:"#FFF",
-                                },
-                                {
-                                    url: {CaltexIcon},
-                                    height: 29,
-                                    width: 29,
-                                    fontFamily:"Lato",
-                                    textColor:"#FFF",
-                                },
-                                {
-                                    url: {CaltexIcon},
-                                    height: 34,
-                                    width: 34,
-                                    fontFamily:"Lato",
-                                    textColor:"#FFF",
-                                },
-                                {
-                                    url: {CaltexIcon},
-                                    height: 40,
-                                    width: 40,
-                                    fontFamily:"Lato",
-                                    textColor:"#FFF",
-                                },
-                                {
-                                    url: {CaltexIcon},
-                                    height: 46,
-                                    width: 46,
-                                    fontFamily:"Lato",
-                                    textColor:"#FFF",
-                                }
-                            ]}
+                            // styles={[
+                            //     {
+                            //         url: {CaltexIcon},
+                            //         height: 26,
+                            //         width: 26,
+                            //         fontFamily:"Lato",
+                            //         textColor:"#FFF",
+                            //     },
+                            //     {
+                            //         url: {CaltexIcon},
+                            //         height: 29,
+                            //         width: 29,
+                            //         fontFamily:"Lato",
+                            //         textColor:"#FFF",
+                            //     },
+                            //     {
+                            //         url: {CaltexIcon},
+                            //         height: 34,
+                            //         width: 34,
+                            //         fontFamily:"Lato",
+                            //         textColor:"#FFF",
+                            //     },
+                            //     {
+                            //         url: {CaltexIcon},
+                            //         height: 40,
+                            //         width: 40,
+                            //         fontFamily:"Lato",
+                            //         textColor:"#FFF",
+                            //     },
+                            //     {
+                            //         url: {CaltexIcon},
+                            //         height: 46,
+                            //         width: 46,
+                            //         fontFamily:"Lato",
+                            //         textColor:"#FFF",
+                            //     }
+                            // ]}
                         
                             >
                             {stations.map(marker => (
