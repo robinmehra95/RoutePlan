@@ -18,7 +18,6 @@ import img7 from './../../img/icons_print.svg'
 import img8 from './../../img/icons_download.svg'
 import img9 from './../../img/icons_share.svg'
 import Stations from "../../stations";
-const Config = window.config;
 
 
 class StartOver extends React.Component {
@@ -74,6 +73,7 @@ class StartOver extends React.Component {
 
 
     render() {
+        const Config = window.config;
         const {routes, stations} = this.props;
         let vehicles = this.calculatevehicles();
         let dailyFleetMileage = this.calculateDailyFleetMileage();

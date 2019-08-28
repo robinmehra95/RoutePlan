@@ -1,19 +1,20 @@
 import React from 'react';
 import './style.css';
 import img1 from './../../img/truck-jp.png';
-const Config = window.config;
 
 
 class TruckComp extends React.Component {
   constructor(props) {
     super(props);
-   
-  }
+  };
 
 
 
-  render() {
-    return (
+
+
+    render() {
+      const Config = window.config;
+        return (
       <div className="truck-comp-wrap">
         	<div className="caltex-journeyPlanner-section">
             <div className="page-center">

@@ -14,7 +14,6 @@ import img2 from './../../img/icons_red_edit@1x.svg'
 import img3 from './../../img/icons_remove@1x.svg'
 import img4 from './../../img/icons_travel_arrow@1x.svg'
 import img5 from './../../img/routegraphic@3x.png'
-const Config = window.config;
 
 
 let incrementChar = "A";
@@ -169,6 +168,7 @@ class RoutesList extends React.Component {
     };
 
     render() {
+        const Config = window.config;
         const {startPointAddress, endPointAddress, selectedTimePeriod, duration, vehicles, routesList} = this.state;
         // const {routesList} = this.props;
         const timePeriodOptions = [
