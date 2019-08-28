@@ -224,7 +224,7 @@ class RoutesList extends React.Component {
                         <div className="giveItGo-group">
                             <h3 className="your-routes">Give it a go.</h3>
                             <p>You don’t have any routes, begin by adding in your first fleet route.</p>
-                            <img src={img5} width="365" height="285" alt="Give It Go | Route" className="map-markers"/>
+                            <img src={Config.createRoute.noRouteImage} width="365" height="285" alt="Give It Go | Route" className="map-markers"/>
                         </div>
                     </div>}
 

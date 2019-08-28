@@ -20,7 +20,7 @@ class TruckComp extends React.Component {
               <div className="caltex-journeyPlanner-container">
                 <div className="caltex-journeyPlanner-content-wrap">
                   <div className="caltex-journeyPlanner-image">
-                    <img src={img1} alt="Caltex Journey Planner"/>
+                    <img src={Config.general.overlayImage} alt="Caltex Journey Planner"/>
                   </div>
                   <div className="caltex-journeyPlanner-content-group">
                     <h1>{Config.general.heading}</h1>
