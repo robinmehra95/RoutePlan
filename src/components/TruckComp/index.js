@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import img1 from './../../img/truck-jp.png';
-import Config from "../../config";
+const Config = window.config;
 
 
 class TruckComp extends React.Component {

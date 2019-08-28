@@ -14,7 +14,7 @@ import img2 from './../../img/icons_red_edit@1x.svg'
 import img3 from './../../img/icons_remove@1x.svg'
 import img4 from './../../img/icons_travel_arrow@1x.svg'
 import img5 from './../../img/routegraphic@3x.png'
-import Config from "../../config";
+const Config = window.config;
 
 
 let incrementChar = "A";

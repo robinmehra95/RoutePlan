@@ -18,7 +18,7 @@ import img7 from './../../img/icons_print.svg'
 import img8 from './../../img/icons_download.svg'
 import img9 from './../../img/icons_share.svg'
 import Stations from "../../stations";
-import Config from "../../config";
+const Config = window.config;
 
 
 class StartOver extends React.Component {
