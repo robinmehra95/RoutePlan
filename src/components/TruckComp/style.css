@@ -86,6 +86,7 @@
     margin-bottom: -199px;
 }
 .caltex-journeyPlanner-image img{
+    width: 100%;
     max-width: 750px;
 }
 .caltex-journeyPlanner-content-group {
@@ -95,6 +96,57 @@
     padding-left: 563px;
 }
 
+
+
+@media(min-width: 768px) {
+
+    .dark-layor {
+        position: relative;
+    }
+    .truck-comp-wrap {
+        position: static;
+    }
+    .truck-comp-wrap .caltex-journeyPlanner-section {
+        padding-bottom: 75px;
+    }
+    .caltex-journeyPlanner-image {
+        margin-bottom: -200px;
+    }
+    .caltex-journeyPlanner-image img {
+        width: 100%;
+        max-width: 915px;
+        margin-top: 30px;
+    }
+    .truck-comp-wrap + .map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .truck-comp-wrap + .map > div {
+        height: 100% !important;
+    }
+
+}
+
+
+@media (min-width: 1701px) {
+
+    .caltex-journeyPlanner-image img {
+        width: 100%;
+        max-width: 965px;
+        margin-top: 4vw;
+        margin-top: 3.3vw;
+    }
+    .caltex-journeyPlanner-content-group {
+        padding-left: 554px;
+        padding-right: 100px;
+    }
+
+}
 
 
 
@@ -120,6 +172,7 @@
 
     .caltex-journeyPlanner-section {
         padding: 100px 15px;
+        padding-bottom: 120px;
     }
     .caltex-journeyPlanner-image {
         padding: 0;
@@ -140,6 +193,7 @@
         text-transform: uppercase;
         letter-spacing: 0.5px;
         line-height: 42px;
+        margin: 0 0 18px;
     }
     .caltex-journeyPlanner-content-group p {
         color: rgb(255, 255, 255);
@@ -150,10 +204,42 @@
         letter-spacing: 0.5px;
         line-height: 22px;
     }
-    .caltex-journeyPlanner-image {
+    /*.caltex-journeyPlanner-image {
         padding: 0;
         margin: 57px 0 -30px;
         margin: 0 0 -8vw;
+    }*/
+
+    /**/
+    .dark-layor {
+        position: relative;
     }
+    .truck-comp-wrap {
+        position: static;
+    }
+    .truck-comp-wrap + .map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .truck-comp-wrap + .map > div {
+        height: 100% !important;
+    }
+    .caltex-journeyPlanner-image {
+        padding: 0;
+        margin: 28px -14px -5vw;
+    }
+
+}
+
+@media (max-width: 320px) {
+
+.caltex-journeyPlanner-image {
+    margin-bottom: -5.7vw;
+}
 
 }

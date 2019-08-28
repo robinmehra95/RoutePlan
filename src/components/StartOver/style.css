@@ -267,6 +267,20 @@ ul.print-download-share-list > li img {
 
 
 
+@media (max-width: 1000px) and (min-width: 768px) {
+
+    .displayingRoute-topSec-col,
+    .displayingRoute-btSec-col,
+    .think-make-good-fit-group {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+
+
+
 @media (max-width: 767px) {
     .displaying-routes-container{
         top: 0;
